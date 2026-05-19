@@ -43,7 +43,7 @@
     "@nuxtjs/sitemap": "^8.0.15",
     "@unhead/vue": "^2.1.13",
     "better-sqlite3": "^12.9.0",
-    "nuxt": "^4.4.2",
+    "nuxt": "^4.4.6",
     "nuxt-llms": "^0.2.0",
     "nuxt-site-config": "3.2.21",
     "rss": "^1.2.2",
