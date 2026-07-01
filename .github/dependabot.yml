@@ -16,12 +16,12 @@ updates:
       github-actions:
         patterns: ["*"]
     open-pull-requests-limit: 3
-    assignees: [Jarmos-san]
+    assignees: [jarmos-san]
 
   - package-ecosystem: npm
     directory: /website
     schedule:
-      interval: monthly
+      interval: weekly
       day: monday
       time: "06:00"
       timezone: Asia/Kolkata
@@ -34,4 +34,4 @@ updates:
         patterns: ["*"]
         dependency-type: development
     open-pull-requests-limit: 3
-    assignees: [Jarmos-san]
+    assignees: [jarmos-san]
