@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.7",
-    "@nuxt/content": "^3.13.0",
+    "@nuxt/content": "^3.14.0",
     "@nuxt/scripts": "1.3.0",
     "@nuxtjs/robots": "^5.7.1",
     "@nuxtjs/sitemap": "^8.0.15",
