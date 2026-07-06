@@ -15,7 +15,7 @@
     "@fontsource/poppins": "^5.2.7",
     "@nuxt/content": "^3.13.0",
     "@nuxt/scripts": "1.2.1",
-    "@nuxtjs/robots": "^5.7.1",
+    "@nuxtjs/robots": "^6.1.2",
     "@nuxtjs/sitemap": "^8.0.15",
     "@unhead/vue": "^2.1.15",
     "better-sqlite3": "^12.9.0",
