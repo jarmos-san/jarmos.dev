@@ -21,7 +21,7 @@
     "better-sqlite3": "^12.9.0",
     "nuxt": "^4.4.7",
     "nuxt-llms": "^0.2.0",
-    "nuxt-site-config": "3.2.21",
+    "nuxt-site-config": "4.1.1",
     "rss": "^1.2.2",
     "vue": "^3.5.39",
     "vue-router": "^5.0.6"
