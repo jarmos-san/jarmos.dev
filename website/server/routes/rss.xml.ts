@@ -8,7 +8,8 @@
  */
 
 import { queryCollection } from "@nuxt/content/server";
-import RSS from "rss";
+import { version } from "nuxt/package.json";
+import { Feed } from "rivu";
 
 export default defineEventHandler(async (event) => {
   const baseURL = useRuntimeConfig().public.baseURL;
@@ -20,48 +21,37 @@ export default defineEventHandler(async (event) => {
     .order("publishedOn", "DESC")
     .all();
 
-  // Create a the `RSS` instance to generate the RSS feed with.
-  const feed = new RSS({
+  // Create a the `Feed` instance to generate the RSS feed with.
+  const feed = new Feed({
     title: "jarmos.dev",
+    link: baseURL,
     description:
       "I'm Jarmos - CTO at Weburz, Senior Engineer by title, " +
       "open-source hacker by heart. I design systems, mentor devs and " +
       "occasionally tame misbehaving servers.",
-    generator: `Node.js v${process.version}`,
-    feed_url: `${baseURL}/rss.xml`,
-    site_url: baseURL,
-    image_url: `${baseURL}/icons/logo.svg`,
-    managingEditor: "Somraj Saha <contact@jarmos.dev>",
-    webMaster: "Somraj Saha <contact@jarmos.dev>",
-    copyright: "Licensed under CC BY-NC 4.0",
-    language: "en",
-    categories: [
-      "computer science",
-      "programming",
-      "technical writing",
-      "economics",
-    ],
-    pubDate: new Date("2018-01-01"),
-    ttl: 1440,
-  });
-
-  // Add the items to the RSS feed along with all the necessary metadata of each
-  // blog post.
-  for (const post of posts) {
-    feed.item({
+    items: posts.map((post) => ({
       title: post.title,
       description: post.description,
-      url: `${baseURL}${post.path}`,
       guid: post.id,
-      date: post.publishedOn,
-      // TODO: Add the "categories" metadata for the blogs
-      // categories: post.categories,
-    });
-  }
+      pubDate: new Date(post.publishedOn),
+      link: baseURL + post.path,
+      author: "Somraj Saha <contact@jarmos.dev>",
+    })),
+    language: "en-US",
+    copyright: "Somraj Saha © 2016-" + new Date().getFullYear(),
+    managingEditor: "Somraj Saha <contact@jarmos.dev>",
+    webMaster: "Somraj Saha <contact@jarmos.dev>",
+    pubDate: new Date(),
+    lastBuildDate: new Date(),
+    category: "Technology",
+    generator: `Nuxt.js ${version} (Node.js ${process.version})`,
+    docs: "https://www.rssboard.org/rss-specification",
+    ttl: 1440,
+  });
 
   // Set the response header and return the data as an appropriate XML data
   // response.
   event.node.res.setHeader("Content-Type", "application/xml");
 
-  return feed.xml({ indent: true });
+  return feed.generate();
 });

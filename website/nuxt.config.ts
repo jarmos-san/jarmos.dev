@@ -132,12 +132,8 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    routeRules: {
-      "/rss.xml": {
-        cache: {
-          maxAge: 86400,
-        },
-      },
+    prerender: {
+      routes: ["/rss.xml"],
     },
   },
 });
