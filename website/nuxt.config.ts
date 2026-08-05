@@ -140,6 +140,9 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["@iconify-json/mdi"],
+    },
   },
   css: ["./assets/css/main.css"],
 });
