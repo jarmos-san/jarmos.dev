@@ -8,7 +8,7 @@
 
     <!-- Hamburger menu icon (displayed ONLY on mobile viewports) -->
     <div v-if="isMobile" @click="toggle()">
-      <img src="/icons/menu.svg" alt="menu" width="40" height="40" />
+      <Icon icon="mdi:menu" height="2.5rem" />
     </div>
 
     <!-- Navigation links (displayed ONLY on large screens) -->
@@ -34,6 +34,8 @@
 </template>
 
 <script lang="ts" setup>
+import { Icon } from "@iconify/vue";
+
 import type { NavBarProps } from "~/types/components/NavBar";
 
 // Define the props to pass to the component
