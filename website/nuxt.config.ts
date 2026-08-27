@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from "nuxt/config";
+import tailwindcss from "@tailwindcss/vite";
 
 const BASE_URL = "https://jarmos.dev";
 
@@ -135,5 +136,8 @@ export default defineNuxtConfig({
     prerender: {
       routes: ["/rss.xml"],
     },
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

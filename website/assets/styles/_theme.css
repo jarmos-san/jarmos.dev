@@ -3,18 +3,18 @@ body {
   color: #ecf8ff;
   font-family: "Poppins", sans-serif;
 
-  a {
+  & a {
     color: #b0fbbc;
   }
 
-  p {
+  & p {
     font-weight: normal;
     font-size: 1rem;
     color: #ecf8ff;
     margin: 1rem auto;
   }
 
-  h1 {
+  & h1 {
     font-weight: bold;
     font-size: 2rem;
     line-height: 142%;
@@ -22,24 +22,24 @@ body {
     margin-bottom: 1.5rem;
   }
 
-  h2 {
+  & h2 {
     margin: 1.5rem auto;
   }
 
-  ol,
-  ul {
+  & ol,
+  & ul {
     padding-left: 1rem;
 
-    li {
+    & li {
       margin: 0.5rem;
     }
   }
 
-  ol {
+  & ol {
     list-style-type: decimal;
   }
 
-  ul {
+  & ul {
     list-style-type: disc;
   }
 }
