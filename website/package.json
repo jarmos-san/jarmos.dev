@@ -27,7 +27,7 @@
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^3.2.4",
+    "@nuxt/devtools": "^3.3.1",
     "@nuxt/eslint": "^1.16.0",
     "@nuxt/eslint-config": "^1.16.0",
     "@nuxt/eslint-plugin": "^1.16.0",
