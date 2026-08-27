@@ -22,9 +22,29 @@
 </template>
 
 <script setup lang="ts">
-import type { FooterProps } from "~/types/components/Footer";
+interface Link {
+  label: string;
+  href: string;
+}
 
-// Define the props for the component
+interface NavLink extends Link {
+  label: "Home" | "About" | "Blogs" | "Projects";
+}
+
+interface LegalDoc extends Link {
+  label: "Terms and Conditions" | "Distribution Rights" | "Privacy Policy";
+  href: "/terms-and-conditions" | "/distribution-rights" | "/privacy-policy";
+}
+
+interface FooterProps {
+  /** The (optional) navigation links. */
+  navLinks?: NavLink[];
+  /** The (optional) links to the legal documents. */
+  legalDocs?: LegalDoc[];
+  /** The logo to render on the footer. */
+  logo?: string;
+}
+
 const props = defineProps<FooterProps>();
 </script>
 

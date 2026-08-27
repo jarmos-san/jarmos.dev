@@ -5,7 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ProseAProps } from "~/types/components/ProseA";
+interface ProseAProps {
+  href?: string;
+  target?: "_blank" | "_parent" | "_self" | "_top" | (string & object) | null | undefined;
+}
 
 const props = defineProps<ProseAProps>();
 </script>

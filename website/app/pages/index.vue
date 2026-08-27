@@ -16,7 +16,12 @@
 </template>
 
 <script setup lang="ts">
-import type { Project } from "~/types/models/project";
+interface Project {
+  name: string;
+  desc: string;
+  href: string;
+  isExperimental?: boolean;
+}
 
 const title = "Home";
 const description = `I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source
