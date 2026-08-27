@@ -15,8 +15,21 @@
 </template>
 
 <script lang="ts" setup>
-import type { LegalDoc, NavLink } from "~/types/models/links";
-import type { SocialLink } from "~/types/components/MobileMenu";
+import type { SocialLink } from "~/components/common/MobileMenu.vue";
+
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface NavLink extends Link {
+  label: "Home" | "About" | "Blogs" | "Projects";
+}
+
+interface LegalDoc extends Link {
+  label: "Terms and Conditions" | "Distribution Rights" | "Privacy Policy";
+  href: "/terms-and-conditions" | "/distribution-rights" | "/privacy-policy";
+}
 
 useHead({
   htmlAttrs: {

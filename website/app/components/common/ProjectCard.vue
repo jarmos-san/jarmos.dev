@@ -16,10 +16,14 @@
 </template>
 
 <script lang="ts" setup>
-import type { ProjectCardProps } from "~/types/components/ProjectCard";
+interface Project {
+  name: string;
+  desc: string;
+  href: string;
+  isExperimental?: boolean;
+}
 
-// Define the props for the component
-const props = defineProps<ProjectCardProps>();
+const props = defineProps<Project>();
 
 // A predefined list of hex colour codes which will be assigned to each project after
 // they're hashed to ensure visually distinct left-side borders

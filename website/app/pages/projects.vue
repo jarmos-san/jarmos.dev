@@ -21,7 +21,12 @@
 </template>
 
 <script lang="ts" setup>
-import type { Project } from "~/types/models/project";
+interface Project {
+  name: string;
+  desc: string;
+  href: string;
+  isExperimental?: boolean;
+}
 
 const title = "Projects";
 const description = `Explore my personal projects in software development, ecommerce

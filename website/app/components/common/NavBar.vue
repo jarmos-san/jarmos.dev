@@ -34,9 +34,22 @@
 </template>
 
 <script lang="ts" setup>
-import type { NavBarProps } from "~/types/components/NavBar";
+import type { SocialLink } from "~/components/common/MobileMenu.vue";
 
-// Define the props to pass to the component
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface NavLink extends Link {
+  label: "Home" | "About" | "Blogs" | "Projects";
+}
+
+interface NavBarProps {
+  navLinks: NavLink[];
+  socialLinks?: SocialLink[];
+}
+
 const props = defineProps<NavBarProps>();
 
 // Check whether the viewport is mobile

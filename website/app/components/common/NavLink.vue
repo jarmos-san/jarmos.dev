@@ -5,9 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import type { NavLinkProps } from "~/types/components/NavLink";
+interface NavLinkProps {
+  /** href represents the hyperlink to an internal URL. */
+  href: string;
+}
 
-// Define the props to pass to the component
 const props = defineProps<NavLinkProps>();
 </script>
 

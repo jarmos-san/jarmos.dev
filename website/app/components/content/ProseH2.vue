@@ -8,7 +8,9 @@
 </template>
 
 <script setup lang="ts">
-import type { ProseH2Props } from "~/types/components/ProseH2";
+interface ProseH2Props {
+  id?: string;
+}
 
 const props = defineProps<ProseH2Props>();
 

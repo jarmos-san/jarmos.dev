@@ -29,12 +29,30 @@
 </template>
 
 <script lang="ts" setup>
-import type { MobileMenuProps } from "~/types/components/MobileMenu";
+export interface SocialLink {
+  name: string;
+  href: string;
+  icon: string;
+}
 
-// Define the props for the component
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface NavLink extends Link {
+  label: "Home" | "About" | "Blogs" | "Projects";
+}
+
+interface MobileMenuProps {
+  /** The navigation links to the various sections of the site. */
+  navLinks: NavLink[];
+  /** The social links to render on the mobile menu component. */
+  socialLinks?: SocialLink[];
+}
+
 const props = defineProps<MobileMenuProps>();
 
-// Emit close event to parent
 const emit = defineEmits<{ (e: "closeMenu"): void }>();
 const closeMenu = () => emit("closeMenu");
 </script>
