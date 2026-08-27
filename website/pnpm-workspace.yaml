@@ -3,8 +3,4 @@ allowBuilds:
   better-sqlite3: true
   esbuild: true
   unrs-resolver: true
-onlyBuiltDependencies:
-  - "@parcel/watcher"
-  - better-sqlite3
-  - esbuild
-  - unrs-resolver
+  vue-demi: true
