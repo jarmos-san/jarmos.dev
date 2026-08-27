@@ -15,8 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-import type { LegalDoc, NavLink } from "~/types//models/links";
-import type { SocialLink } from "./types/components/MobileMenu";
+import type { LegalDoc, NavLink } from "~/types/models/links";
+import type { SocialLink } from "~/types/components/MobileMenu";
 
 useHead({
   htmlAttrs: {
