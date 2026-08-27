@@ -82,6 +82,6 @@ const socialLinks: SocialLink[] = [
 ];
 </script>
 
-<style lang="scss">
-@use "~/assets/styles/main.scss";
+<style>
+@import "~/assets/styles/main.css";
 </style>

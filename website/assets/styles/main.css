@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@layer base {
+  @import "./_resets.css";
+  @import "./_theme.css";
+}
