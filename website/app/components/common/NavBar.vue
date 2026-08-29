@@ -1,38 +1,3 @@
-<template>
-  <nav>
-    <!-- Website logo -->
-    <div class="logo">
-      <img src="/icons/logo.svg" alt="logo" width="50" height="50" />
-      <span v-if="!isMobile">jarmos.dev</span>
-    </div>
-
-    <!-- Hamburger menu icon (displayed ONLY on mobile viewports) -->
-    <div v-if="isMobile" @click="toggle()">
-      <img src="/icons/menu.svg" alt="menu" width="40" height="40" />
-    </div>
-
-    <!-- Navigation links (displayed ONLY on large screens) -->
-    <div v-else class="nav-links">
-      <ul>
-        <li v-for="(link, index) in props.navLinks" :key="index">
-          <CommonNavLink :href="link.href">
-            {{ link.label }}
-          </CommonNavLink>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <Teleport to="body">
-    <CommonMobileMenu
-      v-if="isOpen"
-      :nav-links="props.navLinks"
-      :social-links="props.socialLinks"
-      @close-menu="toggle()"
-    />
-  </Teleport>
-</template>
-
 <script lang="ts" setup>
 import type { SocialLink } from "~/components/common/MobileMenu.vue";
 
@@ -58,6 +23,41 @@ const { isMobile } = useIsMobile();
 // Fetch the toggle state and the toggle function to switch the button close/open
 const { state: isOpen, toggle } = useToggle();
 </script>
+
+<template>
+  <nav>
+    <!-- Website logo -->
+    <div class="logo">
+      <img src="/icons/logo.svg" alt="logo" width="50" height="50" />
+      <span v-if="!isMobile">jarmos.dev</span>
+    </div>
+
+    <!-- Hamburger menu icon (displayed ONLY on mobile viewports) -->
+    <div v-if="isMobile" @click="toggle()">
+      <Icon name="material-symbols:menu" class="bg-slate-100" size="2.15rem" />
+    </div>
+
+    <!-- Navigation links (displayed ONLY on large screens) -->
+    <div v-else class="nav-links">
+      <ul>
+        <li v-for="(link, index) in props.navLinks" :key="index">
+          <CommonNavLink :href="link.href">
+            {{ link.label }}
+          </CommonNavLink>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <Teleport to="body">
+    <CommonMobileMenu
+      v-if="isOpen"
+      :nav-links="props.navLinks"
+      :social-links="props.socialLinks"
+      @close-menu="toggle()"
+    />
+  </Teleport>
+</template>
 
 <style lang="scss" scoped>
 nav {
