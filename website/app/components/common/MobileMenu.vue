@@ -1,33 +1,3 @@
-<template>
-  <div class="overlay" @click.self="closeMenu">
-    <div class="header">
-      <img src="/icons/logo.svg" alt="" width="50" height="50" />
-      <img src="/icons/cross.svg" alt="" @click="closeMenu" />
-    </div>
-
-    <div class="menu">
-      <NuxtLink
-        v-for="(link, index) in props.navLinks"
-        :key="index"
-        :to="link.href"
-      >
-        {{ link.label }}
-      </NuxtLink>
-    </div>
-
-    <div v-if="props.socialLinks" class="socials">
-      <a
-        v-for="(item, index) in props.socialLinks"
-        :key="index"
-        :href="item.href"
-        target="_blank"
-      >
-        <img :src="item.icon" :alt="item.name" />
-      </a>
-    </div>
-  </div>
-</template>
-
 <script lang="ts" setup>
 export interface SocialLink {
   name: string;
@@ -56,6 +26,32 @@ const props = defineProps<MobileMenuProps>();
 const emit = defineEmits<{ (e: "closeMenu"): void }>();
 const closeMenu = () => emit("closeMenu");
 </script>
+
+<template>
+  <div class="overlay" @click.self="closeMenu">
+    <div class="header">
+      <img src="/icons/logo.svg" alt="" width="50" height="50" />
+      <Icon
+        name="material-symbols:close-small-outline"
+        class="bg-slate-200"
+        size="2.15rem"
+        @click="closeMenu"
+      />
+    </div>
+
+    <div class="menu">
+      <NuxtLink v-for="(link, index) in props.navLinks" :key="index" :to="link.href">
+        {{ link.label }}
+      </NuxtLink>
+    </div>
+
+    <div v-if="props.socialLinks" class="socials">
+      <a v-for="(item, index) in props.socialLinks" :key="index" :href="item.href" target="_blank">
+        <img :src="item.icon" :alt="item.name" />
+      </a>
+    </div>
+  </div>
+</template>
 
 <style lang="scss">
 .overlay,
