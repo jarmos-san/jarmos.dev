@@ -39,9 +39,9 @@ const closeMenu = () => emit("closeMenu");
       </NuxtLink>
     </div>
 
-    <div v-if="socialLinks" class="socials">
+    <div v-if="socialLinks" class="flex justify-between">
       <a v-for="(item, index) in socialLinks" :key="index" :href="item.href" target="_blank">
-        <img :src="item.icon" :alt="item.name" />
+        <Icon :name="item.icon" size="1.5rem" class="bg-slate-200" />
       </a>
     </div>
   </div>
@@ -50,8 +50,7 @@ const closeMenu = () => emit("closeMenu");
 <style lang="scss">
 .overlay,
 .header,
-.menu,
-.socials {
+.menu {
   display: flex;
 }
 
@@ -61,8 +60,7 @@ const closeMenu = () => emit("closeMenu");
 }
 
 .overlay,
-.header,
-.socials {
+.header {
   justify-content: space-between;
 }
 

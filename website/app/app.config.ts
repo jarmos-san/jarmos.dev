@@ -7,27 +7,27 @@ export default defineAppConfig({
     {
       name: "Twitter",
       href: "https://x.com/jarmosan",
-      icon: "/icons/x.svg",
+      icon: "line-md:twitter-x",
     },
     {
       name: "GitHub",
       href: "https://github.com/Jarmos-san",
-      icon: "/icons/github.svg",
+      icon: "line-md:github",
     },
     {
       name: "Instagram",
       href: "https://www.instagram.com/jarmos.san",
-      icon: "/icons/instagram.svg",
+      icon: "line-md:instagram",
     },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/jarmos",
-      icon: "/icons/linkedin.svg",
+      icon: "line-md:linkedin",
     },
     {
       name: "RSS",
       href: "/rss.xml",
-      icon: "/icons/rss.svg",
+      icon: "material-symbols:rss-feed-rounded",
     },
   ],
 });
