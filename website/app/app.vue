@@ -1,15 +1,9 @@
 <template>
   <main>
-    <CommonNavBar :nav-links="navLinks" />
+    <CommonNavBar />
     <NuxtPage />
-    <CommonFooter
-      :nav-links="navLinks"
-      :legal-docs="legalDocs"
-      :logo="footerLogo"
-    >
-      <span>
-        Built with Open-Source ❤️ | &copy; 2018-{{ new Date().getFullYear() }}
-      </span>
+    <CommonFooter :nav-links="navLinks" :legal-docs="legalDocs" :logo="footerLogo">
+      <span> Built with Open-Source ❤️ | &copy; 2018-{{ new Date().getFullYear() }} </span>
     </CommonFooter>
   </main>
 </template>

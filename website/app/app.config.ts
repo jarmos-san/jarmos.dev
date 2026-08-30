@@ -30,4 +30,10 @@ export default defineAppConfig({
       icon: "material-symbols:rss-feed-rounded",
     },
   ],
+  navLinks: [
+    { label: "Home", href: "/" },
+    { label: "About Me", href: "/about-me" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Projects", href: "/projects" },
+  ],
 });
