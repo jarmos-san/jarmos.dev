@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import type { SocialLink } from "~/components/common/MobileMenu.vue";
-
 interface Link {
   label: string;
   href: string;
@@ -12,7 +10,6 @@ interface NavLink extends Link {
 
 interface NavBarProps {
   navLinks: NavLink[];
-  socialLinks?: SocialLink[];
 }
 
 const props = defineProps<NavBarProps>();
@@ -50,12 +47,7 @@ const { state: isOpen, toggle } = useToggle();
   </nav>
 
   <Teleport to="body">
-    <CommonMobileMenu
-      v-if="isOpen"
-      :nav-links="props.navLinks"
-      :social-links="props.socialLinks"
-      @close-menu="toggle()"
-    />
+    <CommonMobileMenu v-if="isOpen" :nav-links="props.navLinks" @close-menu="toggle()" />
   </Teleport>
 </template>
 

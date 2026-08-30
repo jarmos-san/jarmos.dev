@@ -1,10 +1,4 @@
 <script lang="ts" setup>
-export interface SocialLink {
-  name: string;
-  href: string;
-  icon: string;
-}
-
 interface Link {
   label: string;
   href: string;
@@ -17,11 +11,11 @@ interface NavLink extends Link {
 interface MobileMenuProps {
   /** The navigation links to the various sections of the site. */
   navLinks: NavLink[];
-  /** The social links to render on the mobile menu component. */
-  socialLinks?: SocialLink[];
 }
 
 const props = defineProps<MobileMenuProps>();
+
+const { socialLinks } = useAppConfig();
 
 const emit = defineEmits<{ (e: "closeMenu"): void }>();
 const closeMenu = () => emit("closeMenu");
@@ -45,8 +39,8 @@ const closeMenu = () => emit("closeMenu");
       </NuxtLink>
     </div>
 
-    <div v-if="props.socialLinks" class="socials">
-      <a v-for="(item, index) in props.socialLinks" :key="index" :href="item.href" target="_blank">
+    <div v-if="socialLinks" class="socials">
+      <a v-for="(item, index) in socialLinks" :key="index" :href="item.href" target="_blank">
         <img :src="item.icon" :alt="item.name" />
       </a>
     </div>
