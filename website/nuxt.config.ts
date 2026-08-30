@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "nuxt-llms",
     "@nuxt/icon",
+    "@vueuse/nuxt",
   ],
   llms: {
     domain: BASE_URL,

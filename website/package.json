@@ -43,6 +43,8 @@
     "@vue/test-utils": "^2.4.11",
     "@vue/typescript": "^1.8.20",
     "@vue/typescript-plugin": "^3.3.11",
+    "@vueuse/core": "^14.4.0",
+    "@vueuse/nuxt": "^14.4.0",
     "eslint": "^10.9.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-nuxt": "^4.0.0",
