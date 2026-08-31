@@ -36,7 +36,7 @@ const { socialLinks, navLinks } = useAppConfig();
           :aria-label="link.label"
           :aria-current="route.path === link.href ? 'page' : undefined"
           :class="[
-            'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
+            'px-4 py-2 rounded-full text-md font-medium transition-all duration-200',
             route.path === link.href
               ? 'text-green-200 bg-white/10 shadow-sm'
               : 'text-[#ecf8ff]/80 hover:text-green-200 hover:bg-white/10 hover:shadow-sm',
