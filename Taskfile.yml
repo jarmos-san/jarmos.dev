@@ -86,7 +86,7 @@ tasks:
       - "*"
     generates:
       - ".output/**/*"
-    cmd: pnpm build
+    cmd: pnpm generate
 
   preview:
     desc: Preview the production-ready version of the site.

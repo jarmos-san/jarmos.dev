@@ -1,10 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm build",
+  "buildCommand": "pnpm generate",
   "cleanUrls": true,
   "devCommand": "pnpm dev",
   "framework": "nuxtjs",
   "installCommand": "pnpm install --frozen-lockfile",
-  "outputDirectory": ".output",
+  "outputDirectory": "dist",
   "trailingSlash": false
 }

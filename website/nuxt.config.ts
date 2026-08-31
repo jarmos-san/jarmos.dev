@@ -134,12 +134,12 @@ export default defineNuxtConfig({
       },
     },
   },
-  nitro: {
-    prerender: {
-      routes: ["/rss.xml"],
-    },
-  },
   vite: {
     plugins: [tailwindcss()],
+  },
+  routeRules: {
+    "/**": {
+      prerender: true,
+    },
   },
 });
