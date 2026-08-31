@@ -22,7 +22,7 @@
     "better-sqlite3": "^12.9.0",
     "nuxt": "^4.5.2",
     "nuxt-llms": "^0.2.0",
-    "nuxt-site-config": "4.1.1",
+    "nuxt-site-config": "4.2.3",
     "reka-ui": "^2.10.4",
     "rivu": "^1.2.1",
     "tailwindcss": "^4.3.3",
