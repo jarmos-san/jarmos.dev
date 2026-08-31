@@ -11,7 +11,7 @@ import {
   VisuallyHidden,
 } from "reka-ui";
 
-const isDesktop = useMediaQuery("(min-width: 640px)");
+const isDesktop = useMediaQuery("(min-width: 768px)");
 const open = ref(false);
 const route = useRoute();
 
@@ -19,13 +19,33 @@ const { socialLinks, navLinks } = useAppConfig();
 </script>
 
 <template>
-  <nav class="flex justify-between px-8 pt-10">
+  <nav class="flex justify-between items-center px-8 pt-10 md:px-16 lg:px-28 xl:px-56">
     <!-- Logo -->
     <div>
       <img src="/icons/logo.svg" alt="logo" height="70" width="70" />
     </div>
     <!-- Desktop navigation menu -->
-    <div v-if="isDesktop">Desktop Navigation Menu</div>
+    <div v-if="isDesktop">
+      <div
+        class="flex items-center gap-1.5 bg-white/3 border border-white/10 p-1.5 rounded-full backdrop-blur-md"
+      >
+        <NuxtLink
+          v-for="link in navLinks"
+          :key="link.label"
+          :to="link.href"
+          :aria-label="link.label"
+          :aria-current="route.path === link.href ? 'page' : undefined"
+          :class="[
+            'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
+            route.path === link.href
+              ? 'text-green-200 bg-white/10 shadow-sm'
+              : 'text-[#ecf8ff]/80 hover:text-green-200 hover:bg-white/10 hover:shadow-sm',
+          ]"
+        >
+          {{ link.label }}
+        </NuxtLink>
+      </div>
+    </div>
 
     <!-- Mobile navigation menu -->
     <DrawerRoot v-else v-model:open="open" swipe-direction="right">
