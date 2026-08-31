@@ -1,22 +1,14 @@
 <template>
   <main>
-    <CommonNavBar :nav-links="navLinks" :social-links="socialLinks" />
+    <CommonNavBar />
     <NuxtPage />
-    <CommonFooter
-      :nav-links="navLinks"
-      :legal-docs="legalDocs"
-      :logo="footerLogo"
-    >
-      <span>
-        Built with Open-Source ❤️ | &copy; 2018-{{ new Date().getFullYear() }}
-      </span>
+    <CommonFooter :nav-links="navLinks" :legal-docs="legalDocs" :logo="footerLogo">
+      <span> Built with Open-Source ❤️ | &copy; 2018-{{ new Date().getFullYear() }} </span>
     </CommonFooter>
   </main>
 </template>
 
 <script lang="ts" setup>
-import type { SocialLink } from "~/components/common/MobileMenu.vue";
-
 interface Link {
   label: string;
   href: string;
@@ -64,35 +56,6 @@ const legalDocs: LegalDoc[] = [
 
 // The logo to render on the footer
 const footerLogo = "/icons/logo.svg";
-
-// The social media links
-const socialLinks: SocialLink[] = [
-  {
-    name: "Twitter",
-    href: "https://x.com/jarmosan",
-    icon: "/icons/x.svg",
-  },
-  {
-    name: "GitHub",
-    href: "https://github.com/Jarmos-san",
-    icon: "/icons/github.svg",
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/jarmos.san",
-    icon: "/icons/instagram.svg",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/jarmos",
-    icon: "icons/linkedin.svg",
-  },
-  {
-    name: "RSS",
-    href: "/rss.xml",
-    icon: "/icons/rss.svg",
-  },
-];
 </script>
 
 <style>
