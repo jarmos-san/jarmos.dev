@@ -1,12 +1,10 @@
 version: "3"
 
-dotenv:
-  - .env
+dotenv: [.env]
 
 tasks:
   default:
-    cmds:
-      - task --list
+    cmds: [task --list]
     silent: true
 
   pre-commit:install:
@@ -30,8 +28,7 @@ tasks:
   install:
     internal: true
     dir: ./website
-    sources:
-      - package.json
+    sources: [package.json]
     generates:
       - pnpm-lock.yaml
       - pnpm-workspace.yaml
@@ -46,8 +43,7 @@ tasks:
     dir: ./website
     cmd: pnpm dev
     requires:
-      vars:
-        - GITHUB_TOKEN
+      vars: [GITHUB_TOKEN]
     env:
       GITHUB_TOKEN: "{{ .GITHUB_TOKEN }}"
 
@@ -78,15 +74,12 @@ tasks:
     desc: Build a production-ready version of the site.
     dir: ./website
     requires:
-      vars:
-        - GITHUB_TOKEN
+      vars: [GITHUB_TOKEN]
     env:
       GITHUB_TOKEN: "{{ .GITHUB_TOKEN }}"
-    sources:
-      - "*"
-    generates:
-      - ".output/**/*"
-    cmd: pnpm build
+    sources: ["*"]
+    generates: [".output/**/*"]
+    cmd: pnpm generate
 
   preview:
     desc: Preview the production-ready version of the site.
