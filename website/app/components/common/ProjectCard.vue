@@ -1,20 +1,3 @@
-<template>
-  <div class="container" :style="{ borderLeft: `4px solid ${borderColor}` }">
-    <div class="header">
-      <span>{{ props.name }}</span>
-      <span v-if="props.isExperimental">
-        <img
-          src="/icons/wip.svg"
-          alt="work-in-progress project"
-          title="WIP Project"
-        >
-      </span>
-    </div>
-    <p>{{ props.desc }}</p>
-    <a :href="props.href" target="_blank">Source Code</a>
-  </div>
-</template>
-
 <script lang="ts" setup>
 interface Project {
   name: string;
@@ -25,8 +8,6 @@ interface Project {
 
 const props = defineProps<Project>();
 
-// A predefined list of hex colour codes which will be assigned to each project after
-// they're hashed to ensure visually distinct left-side borders
 const borderColors = [
   "#FF5733",
   "#FF8D1A",
@@ -50,94 +31,122 @@ const borderColors = [
   "#16A085",
 ];
 
-/**
- * Converts a string into a numeric hash.
- *
- * @param str - Any string to be hashed.
- * @returns A positive 32-bit integer representing the hash of the string.
- *
- * @example
- * hashStringToNumber('ProjectName')
- */
 const hashStringToNumber = (str: string): number => {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
     hash = (hash << 5) - hash + str.charCodeAt(i);
-    hash |= 0; // convert to 32bit integer
+    hash |= 0;
   }
-
   return Math.abs(hash);
 };
 
-/**
- * Maps a given project name to one of the predefined border colors.
- *
- * @param name - The project name string used to generate a color.
- * @returns A hex color string selected from borderColors.
- *
- * @example
- * getBorderColor('ProjectName') // -> "#FF5733"
- */
 const getBorderColor = (name: string): string | undefined => {
   const hash = hashStringToNumber(name);
   const index = hash % borderColors.length;
   return borderColors[index];
 };
 
-/**
- * The color assigned to the current project's left border.
- * This ensures the same project name will always map to the same color.
- */
 const borderColor = getBorderColor(props.name);
 </script>
 
+<template>
+  <div class="card">
+    <div class="card-header">
+      <span class="accent-dot" :style="{ backgroundColor: borderColor }" />
+      <span class="project-name">{{ props.name }}</span>
+      <span v-if="props.isExperimental" class="wip-badge">WIP</span>
+    </div>
+    <p class="project-desc">{{ props.desc }}</p>
+    <a :href="props.href" class="card-link" target="_blank">
+      Source Code
+      <Icon name="material-symbols:arrow-outward" size="1rem" />
+    </a>
+  </div>
+</template>
+
 <style lang="scss" scoped>
-.container {
-  border-radius: 0.5rem;
-  background-color: #1c2c35;
-  padding: 1.5rem;
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.75rem;
-  border-top: 1px solid #b0fbbc;
-  border-right: 1px solid #b0fbbc;
-  border-bottom: 1px solid #b0fbbc;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 
-  .header {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
+}
 
-  a,
-  span {
-    font-weight: 400;
-    color: #ecf8ff;
-  }
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
 
-  a,
-  p {
-    font-size: 1rem;
-  }
+.accent-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 
-  span {
-    font-size: 1.5rem;
-  }
+.project-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ecf8ff;
+}
 
-  p {
-    font-weight: 700;
-    color: #c9e2f0;
-  }
+.wip-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #f39c12;
+  background: rgba(243, 156, 18, 0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(243, 156, 18, 0.2);
+  line-height: 1;
+}
 
-  a {
-    border: 2px solid #7cc9ff;
-    padding: 0.5rem;
-    border-radius: 0.37rem;
-    font-weight: normal;
-    font-size: 1rem;
-    width: 7.5rem;
-    text-align: center;
+.project-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(236, 248, 255, 0.65);
+  font-weight: 400;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #b0fbbc;
+  background: rgba(176, 251, 188, 0.08);
+  border: 1px solid rgba(176, 251, 188, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    background: rgba(176, 251, 188, 0.14);
+    border-color: rgba(176, 251, 188, 0.3);
   }
 }
 </style>

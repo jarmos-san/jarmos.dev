@@ -1,25 +1,3 @@
-<template>
-  <article>
-    <h1>Projects</h1>
-    <p>
-      Here you'll find a collection of projects I've built over the years-most
-      of them open-source and free for anyone to explore. If something sparks
-      your curiosity or solves a little problem of yours, feel free to give it a
-      spin. Who knows, it might just become your new favorite tool!
-    </p>
-    <div class="grid">
-      <CommonProjectCard
-        v-for="(project, index) in projects"
-        :key="index"
-        :name="project.name"
-        :desc="project.desc"
-        :href="project.href"
-        :is-experimental="project.isExperimental"
-      />
-    </div>
-  </article>
-</template>
-
 <script lang="ts" setup>
 interface Project {
   name: string;
@@ -34,12 +12,10 @@ tools, and experiments at the intersection of technology and economics.`;
 const baseURL = useRuntimeConfig().public.baseURL;
 const image = "/icons/favicon.svg";
 
-// Set the title of the page.
 useHead({
   title: title,
 });
 
-// Set the SEO metadata of the page.
 useSeoMeta({
   description: description,
   ogTitle: title,
@@ -52,10 +28,6 @@ useSeoMeta({
   twitterCard: "summary",
 });
 
-// FIXME: Refactor and move the array to a different module for better legibility and
-// maintenance. There are rendering issues when the array is being auto imported from
-// the "utils" directory.
-// List of all projects
 const projects: Project[] = [
   {
     name: "jarmos.dev",
@@ -64,14 +36,12 @@ const projects: Project[] = [
     it's always evolving as I tinker with new ideas.`,
     href: "https://github.com/Jarmos-san/jarmos.dev",
   },
-
   {
     name: "Crisp",
     desc: `A Go-powered commit message police which makes sure you speak the
     language of Conventional Commits--clear, structured & changelog-friendly.`,
     href: "https://github.com/Weburz/crisp",
   },
-
   {
     name: "BurzPage",
     desc: `A lightweight blogging CMS we use at Weburz to keep content
@@ -79,7 +49,6 @@ const projects: Project[] = [
     href: "https://github.com/Weburz/burzpage",
     isExperimental: true,
   },
-
   {
     name: "Terox",
     desc: `A Go-based project template generator that saves us from copy-pasting
@@ -91,36 +60,37 @@ const projects: Project[] = [
 ];
 </script>
 
-<style lang="scss" scoped>
-article {
-  padding: 0 2rem;
-  margin: 2rem auto;
+<template>
+  <article class="px-5 mx-0 md:px-16 lg:px-28 xl:px-56 mb-12 mt-8">
+    <!-- Hero -->
+    <section class="bg-white/5 border border-white/10 rounded-2xl p-10 md:p-12 lg:p-14 mb-6">
+      <span
+        class="inline-block text-xs font-semibold tracking-wider text-green-400 bg-green-400/10 border border-green-400/20 px-3 py-1.5 rounded-full mb-5"
+      >
+        OPEN-SOURCE
+      </span>
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-  }
+      <h1 class="text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-4">
+        Projects
+      </h1>
 
-  // Tablet
-  @media screen and (min-width: 768px) {
-    padding: 0 4rem;
-  }
+      <p class="text-base md:text-lg leading-relaxed text-white/70 max-w-2xl">
+        Here you'll find a collection of projects I've built over the years &mdash; most of them
+        open-source and free for anyone to explore. If something sparks your curiosity or solves a
+        little problem of yours, feel free to give it a spin.
+      </p>
+    </section>
 
-  // Laptops
-  @media screen and (min-width: 1024px) {
-    padding: 0 7rem;
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-  }
-
-  // 2K Desktops
-  @media screen and (min-width: 1440px) {
-    padding: 0 14rem;
-  }
-}
-</style>
+    <!-- Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+      <CommonProjectCard
+        v-for="(project, index) in projects"
+        :key="index"
+        :name="project.name"
+        :desc="project.desc"
+        :href="project.href"
+        :is-experimental="project.isExperimental"
+      />
+    </section>
+  </article>
+</template>
