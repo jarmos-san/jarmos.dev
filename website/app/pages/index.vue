@@ -37,12 +37,13 @@ const projects = computed(() => {
     <HomepageHeader />
 
     <!-- Featured project section -->
-    <section class="px-5 md:px-16 lg:px-28 xl:px-56 mt-16">
+    <section class="mt-12 px-5 md:mt-16 md:px-16 lg:px-28 xl:px-56">
       <h2 class="text-3xl font-bold text-white mb-2">Featured Projects</h2>
 
       <p class="text-base text-white/60 max-w-2xl mb-8">
-        A selection of open-source projects I've built or contributed to — from developer tools to
-        content platforms. Each one solved a real problem I or my team ran into.
+        A selection of open-source projects I've built or contributed to — from
+        developer tools to content platforms. Each one solved a real problem I
+        or my team ran into.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
