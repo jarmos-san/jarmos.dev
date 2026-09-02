@@ -5,29 +5,40 @@ export default defineAppConfig({
   },
   socialLinks: [
     {
+      name: "Email",
+      href: "mailto:contact@jarmos.dev",
+      icon: "mdi:gmail",
+      label: "contact@jarmos.dev",
+    },
+    {
       name: "Twitter",
       href: "https://x.com/jarmosan",
       icon: "line-md:twitter-x",
+      label: "@Jarmossan",
     },
     {
       name: "GitHub",
       href: "https://github.com/Jarmos-san",
       icon: "line-md:github",
+      label: "jarmos-san",
     },
     {
       name: "Instagram",
       href: "https://www.instagram.com/jarmos.san",
       icon: "line-md:instagram",
+      label: "jarmos.san",
     },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/jarmos",
       icon: "line-md:linkedin",
+      label: "jarmos",
     },
     {
       name: "RSS",
       href: "/rss.xml",
       icon: "material-symbols:rss-feed-rounded",
+      label: "RSS",
     },
   ],
   navLinks: [
@@ -82,4 +93,18 @@ export default defineAppConfig({
       img: "/icons/favicon.svg",
     },
   },
+  legalLinks: [
+    {
+      label: "Terms and Conditions",
+      href: "/terms-and-conditions",
+    },
+    {
+      label: "Distribution Rights",
+      href: "/distribution-rights",
+    },
+    {
+      label: "Privacy Policy",
+      href: "/privacy-policy",
+    },
+  ],
 });
