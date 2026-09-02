@@ -1,11 +1,4 @@
 <script lang="ts" setup>
-interface Project {
-  name: string;
-  desc: string;
-  href: string;
-  isExperimental?: boolean;
-}
-
 const title = "Projects";
 const description = `Explore my personal projects in software development, ecommerce
 tools, and experiments at the intersection of technology and economics.`;
@@ -28,36 +21,7 @@ useSeoMeta({
   twitterCard: "summary",
 });
 
-const projects: Project[] = [
-  {
-    name: "jarmos.dev",
-    desc: `An open-source website built with Nuxt.js which doubles as my digital
-    garden. It is part portfolio, part blog and part "look-what-I-just-built",
-    it's always evolving as I tinker with new ideas.`,
-    href: "https://github.com/Jarmos-san/jarmos.dev",
-  },
-  {
-    name: "Crisp",
-    desc: `A Go-powered commit message police which makes sure you speak the
-    language of Conventional Commits--clear, structured & changelog-friendly.`,
-    href: "https://github.com/Weburz/crisp",
-  },
-  {
-    name: "BurzPage",
-    desc: `A lightweight blogging CMS we use at Weburz to keep content
-    flowing. It is simple, open & built to grow with us.`,
-    href: "https://github.com/Weburz/burzpage",
-    isExperimental: true,
-  },
-  {
-    name: "Terox",
-    desc: `A Go-based project template generator that saves us from copy-pasting
-    the same boilerplate. Terox makes spinning up new projects fast &
-    consistent.`,
-    href: "https://github.com/Weburz/terox",
-    isExperimental: true,
-  },
-];
+const { projects } = useAppConfig();
 </script>
 
 <template>
