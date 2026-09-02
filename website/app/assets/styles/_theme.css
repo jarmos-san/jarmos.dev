@@ -25,12 +25,4 @@ body {
   & h2 {
     margin-block: 1.5rem;
   }
-
-  & ol {
-    list-style-type: decimal;
-  }
-
-  & ul {
-    list-style-type: disc;
-  }
 }
