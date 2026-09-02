@@ -11,7 +11,7 @@ body {
     font-weight: normal;
     font-size: 1rem;
     color: #ecf8ff;
-    margin: 1rem auto;
+    margin-block: 1rem;
   }
 
   & h1 {
@@ -23,7 +23,7 @@ body {
   }
 
   & h2 {
-    margin: 1.5rem auto;
+    margin-block: 1.5rem;
   }
 
   & ol,

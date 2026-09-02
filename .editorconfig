@@ -9,6 +9,6 @@ charset = utf-8
 indent_style = space
 indent_size = 2
 
-[*.{ts,vue,mjs}]
+[*.{ts,vue,mjs,css}]
 indent_style = space
 indent_size = 2

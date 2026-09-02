@@ -1,28 +1,4 @@
-<template>
-  <article>
-    <HomepageHeader />
-    <HomepageProjects>
-      <CommonProjectCard
-        v-for="(project, index) in projects.splice(0, 4)"
-        :key="index"
-        :name="project.name"
-        :desc="project.desc"
-        :href="project.href"
-        :is-experimental="project.isExperimental"
-      />
-    </HomepageProjects>
-    <HomepageCTA />
-  </article>
-</template>
-
 <script setup lang="ts">
-interface Project {
-  name: string;
-  desc: string;
-  href: string;
-  isExperimental?: boolean;
-}
-
 const title = "Home";
 const description = `I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source
 hacker by heart. I design systems, mentor devs, and occasionally tame misbehaving
@@ -49,38 +25,38 @@ useSeoMeta({
   twitterCard: "summary",
 });
 
-// FIXME: Refactor and move the array to a different module for better legibility and
-// maintenance. There are rendering issues when the array is being auto imported from
-// the "utils" directory.
-// List of all projects
-const projects: Project[] = [
-  {
-    name: "jarmos.dev",
-    desc: `An open-source website built with Nuxt.js which doubles as my digital
-    garden. It is part portfolio, part blog and part "look-what-I-just-built",
-    it's always evolving as I tinker with new ideas.`,
-    href: "https://github.com/Jarmos-san/jarmos.dev",
-  },
-  {
-    name: "Crisp",
-    desc: `A Go-powered commit message police which makes sure you speak the
-    language of Conventional Commits--clear, structured & changelog-friendly.`,
-    href: "https://github.com/Weburz/crisp",
-  },
-  {
-    name: "BurzPage",
-    desc: `A lightweight blogging CMS we use at Weburz to keep content
-    flowing. It is simple, open & built to grow with us.`,
-    href: "https://github.com/Weburz/burzpage",
-    isExperimental: true,
-  },
-  {
-    name: "Terox",
-    desc: `A Go-based project template generator that saves us from copy-pasting
-    the same boilerplate. Terox makes spinning up new projects fast &
-    consistent.`,
-    href: "https://github.com/Weburz/terox",
-    isExperimental: true,
-  },
-];
+const config = useAppConfig();
+
+const projects = computed(() => {
+  return config.projects.slice(0, 4);
+});
 </script>
+
+<template>
+  <article>
+    <HomepageHeader />
+
+    <!-- Featured project section -->
+    <section class="px-5 md:px-16 lg:px-28 xl:px-56 mt-16">
+      <h2 class="text-3xl font-bold text-white mb-2">Featured Projects</h2>
+
+      <p class="text-base text-white/60 max-w-2xl mb-8">
+        A selection of open-source projects I've built or contributed to — from developer tools to
+        content platforms. Each one solved a real problem I or my team ran into.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+        <CommonProjectCard
+          v-for="(project, index) in projects"
+          :key="index"
+          :name="project.name"
+          :desc="project.desc"
+          :href="project.href"
+          :is-experimental="project.isExperimental"
+        />
+      </div>
+    </section>
+
+    <HomepageCTA />
+  </article>
+</template>
