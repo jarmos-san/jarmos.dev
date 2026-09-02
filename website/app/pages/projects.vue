@@ -1,27 +1,35 @@
 <script lang="ts" setup>
-const title = "Projects";
-const description = `Explore my personal projects in software development, ecommerce
-tools, and experiments at the intersection of technology and economics.`;
-const baseURL = useRuntimeConfig().public.baseURL;
-const image = "/icons/favicon.svg";
+const { projects, seo } = useAppConfig();
+
+const config = useRuntimeConfig();
 
 useHead({
-  title: title,
+  title: seo.projects.title,
 });
 
+const route = useRoute();
+
 useSeoMeta({
-  description: description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: image,
-  ogUrl: `${baseURL}/projects`,
-  twitterTitle: title,
-  twitterDescription: description,
-  twitterImage: image,
+  description: seo.projects.desc,
+  ogTitle: seo.projects.title,
+  ogDescription: seo.projects.desc,
+  ogImage: seo.projects.img,
+  ogUrl: config.public.baseURL + route.fullPath,
+  twitterTitle: seo.projects.title,
+  twitterDescription: seo.projects.desc,
+  twitterImage: seo.projects.img,
   twitterCard: "summary",
 });
 
-const { projects } = useAppConfig();
+const pageDetails = {
+  category: "OPEN-SOURCE",
+  title: "Projects",
+  description:
+    "Here you'll find a collection of projects I've built over the " +
+    "years-most of them open-source and free for anyone to explore. If " +
+    "something sparks your curiosity or solves a little problem of yours, " +
+    "feel free to give it a spin.",
+};
 </script>
 
 <template>
@@ -31,17 +39,15 @@ const { projects } = useAppConfig();
       <span
         class="inline-block text-xs font-semibold tracking-wider text-green-400 bg-green-400/10 border border-green-400/20 px-3 py-1.5 rounded-full mb-5"
       >
-        OPEN-SOURCE
+        {{ pageDetails.category }}
       </span>
 
       <h1 class="text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-4">
-        Projects
+        {{ pageDetails.title }}
       </h1>
 
       <p class="text-base md:text-lg leading-relaxed text-white/70 max-w-2xl">
-        Here you'll find a collection of projects I've built over the years &mdash; most of them
-        open-source and free for anyone to explore. If something sparks your curiosity or solves a
-        little problem of yours, feel free to give it a spin.
+        {{ pageDetails.description }}
       </p>
     </section>
 

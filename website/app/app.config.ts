@@ -73,4 +73,13 @@ export default defineAppConfig({
       href: "https://github.com/jarmos-san/rivu",
     },
   ],
+  seo: {
+    projects: {
+      title: "Projects",
+      desc:
+        "Explore my personal projects in software development, ecommerce " +
+        "tools, and experiments at the intersection of technology and economics.",
+      img: "/icons/favicon.svg",
+    },
+  },
 });
