@@ -26,15 +26,6 @@ body {
     margin-block: 1.5rem;
   }
 
-  & ol,
-  & ul {
-    padding-left: 1rem;
-
-    & li {
-      margin: 0.5rem;
-    }
-  }
-
   & ol {
     list-style-type: decimal;
   }
