@@ -1,61 +1,32 @@
 <template>
-  <section>
-    <h2>What're you working on?</h2>
-    <p class="text">
+  <section
+    class="mx-5 mt-12 mb-12 rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-md md:mx-16 md:mt-16 md:mb-16 md:p-12 lg:mx-28 xl:mx-56"
+  >
+    <!-- Heading -->
+    <h2
+      class="text-2xl font-bold bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl"
+    >
+      What're you working on?
+    </h2>
+
+    <!-- Body -->
+    <p
+      class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+    >
       Let's have a conversation! I'd love to hear about what you're working on
       and find a way to work together.
     </p>
-    <NuxtLink to="/contact-me" class="chat">
-      <img
-        src="/icons/chat.svg"
-        alt="Chat with Jarmos"
-        width="24"
-        height="24"
+
+    <!-- CTA button -->
+    <NuxtLink
+      to="/contact-me"
+      class="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#83f9a2] px-5 py-2.5 text-sm font-bold text-[#111a20] no-underline transition-all duration-200 hover:bg-[#82f9a1] hover:shadow-[0_0_1.5rem_rgba(131,249,162,0.3)]"
+    >
+      <Icon
+        name="material-symbols:mark-unread-chat-alt-outline-rounded"
+        size="1.25rem"
       />
       <span>Contact Me!</span>
     </NuxtLink>
   </section>
 </template>
-
-<style lang="scss" scoped>
-section {
-  background-color: #1c2c35;
-  text-align: center;
-  padding: 2rem;
-  color: #ecf8ff;
-  margin: 3rem auto;
-  width: 100%;
-
-  // Tablet
-  @media screen and (min-width: 768px) {
-    padding: 4rem;
-  }
-
-  // Laptops
-  @media screen and (min-width: 1024px) {
-    padding: 4rem 7rem;
-  }
-
-  // 2K Desktops
-  @media screen and (min-width: 1440px) {
-    padding: 3rem 14rem;
-  }
-
-  .text {
-    margin: 1.5rem auto;
-  }
-
-  .chat {
-    display: inline-flex;
-    gap: 0.5625rem;
-    align-items: center;
-    background-color: #83f9a2;
-    color: #111a20;
-    padding: 0.375rem 1.25rem;
-    border-radius: 0.375rem;
-    font-weight: bold;
-    font-style: 1.125rem;
-    text-decoration: none;
-  }
-}
-</style>

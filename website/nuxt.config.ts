@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     "nuxt-llms",
     "@nuxt/icon",
     "@vueuse/nuxt",
+    "@nuxt/image",
   ],
   llms: {
     domain: BASE_URL,
