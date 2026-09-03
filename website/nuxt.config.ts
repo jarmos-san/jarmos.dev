@@ -139,6 +139,9 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   routeRules: {
+    "/rss.xml": {
+      prerender: true,
+    },
     "/**": {
       prerender: true,
     },

@@ -5,6 +5,6 @@
   "devCommand": "pnpm dev",
   "framework": "nuxtjs",
   "installCommand": "pnpm install --frozen-lockfile",
-  "outputDirectory": "dist",
+  "outputDirectory": ".output",
   "trailingSlash": false
 }

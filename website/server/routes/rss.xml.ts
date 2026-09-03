@@ -1,10 +1,9 @@
 /**
  * Server route to generate the site's RSS feed.
  *
- * This handler dynamically queries all the document, ordered by publication
- * date from the "contents" source (managed by the `@nuxt/content` module).
- * After a successful document query, the data is serialised in to an RSS 2.0
- * feed.
+ * This handler queries all the documents, ordered by publication date from the
+ * "contents" source (managed by the `@nuxt/content` module). After a successful
+ * document query, the data is serialised in to an RSS 2.0 feed.
  */
 
 import { queryCollection } from "@nuxt/content/server";
@@ -51,7 +50,7 @@ export default defineEventHandler(async (event) => {
 
   // Set the response header and return the data as an appropriate XML data
   // response.
-  event.node.res.setHeader("Content-Type", "application/xml");
+  setResponseHeader(event, "Content-Type", "application/xml");
 
   return feed.generate();
 });
