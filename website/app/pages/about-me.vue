@@ -61,7 +61,7 @@ useSeoMeta({
         Science, I occasionally wander into other territories like Financial Economics and
         Investments.
       </p>
-      <p>
+      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
         And in case you're wondering: no, none of this is AI-generated fluff. I do use AI to catch
         typos and polish grammar (English isn't my first language), but the ideas and words are all
         mine.
