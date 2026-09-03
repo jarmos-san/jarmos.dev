@@ -4,7 +4,7 @@
       <h1>{{ post?.title }}</h1>
       <p>{{ post?.description }}</p>
       <div>Published on: {{ publishedOn }}</div>
-      <img :src="post?.coverImage.url" alt="" >
+      <img :src="post?.coverImage.url" alt="" />
       <ContentRenderer v-if="post" :value="post" />
     </template>
     <template v-else>

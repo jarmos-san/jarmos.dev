@@ -49,8 +49,9 @@ const { data: posts } = await useAsyncData("featured-posts", () => {
       <h2 class="text-3xl font-bold text-white mb-2">Featured Projects</h2>
 
       <p class="text-base text-white/60 max-w-2xl mb-8">
-        A selection of open-source projects I've built or contributed to — from developer tools to
-        content platforms. Each one solved a real problem I or my team ran into.
+        A selection of open-source projects I've built or contributed to — from
+        developer tools to content platforms. Each one solved a real problem I
+        or my team ran into.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -70,8 +71,8 @@ const { data: posts } = await useAsyncData("featured-posts", () => {
       <h2 class="text-3xl font-bold text-white mb-2">Featured Blogposts</h2>
 
       <p class="text-base text-white/60 max-w-2xl mb-8">
-        Thoughts on software engineering, open-source, and building products — distilled from real
-        projects and hard-won lessons.
+        Thoughts on software engineering, open-source, and building products —
+        distilled from real projects and hard-won lessons.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">

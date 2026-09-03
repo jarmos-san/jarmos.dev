@@ -7,7 +7,14 @@
 <script setup lang="ts">
 interface ProseAProps {
   href?: string;
-  target?: "_blank" | "_parent" | "_self" | "_top" | (string & object) | null | undefined;
+  target?:
+    | "_blank"
+    | "_parent"
+    | "_self"
+    | "_top"
+    | (string & object)
+    | null
+    | undefined;
 }
 
 const props = defineProps<ProseAProps>();

@@ -57,7 +57,10 @@ const iconColour = computed(() => {
   >
     <!-- Project name -->
     <div class="flex items-center gap-2.5">
-      <span class="w-2.5 h-2.5 rounded-full shrink-0" :style="{ backgroundColor: iconColour }" />
+      <span
+        class="w-2.5 h-2.5 rounded-full shrink-0"
+        :style="{ backgroundColor: iconColour }"
+      />
       <span class="text-lg font-semibold text-white">{{ props.name }}</span>
       <span
         v-if="props.isExperimental"

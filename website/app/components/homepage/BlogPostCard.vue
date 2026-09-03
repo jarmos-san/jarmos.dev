@@ -33,7 +33,9 @@ const publishedOn = computed(() => {
     <NuxtImg :src="props.coverImage" />
 
     <!-- Description -->
-    <p class="text-sm leading-7 font-medium text-white/60">{{ props.description }}</p>
+    <p class="text-sm leading-7 font-medium text-white/60">
+      {{ props.description }}
+    </p>
 
     <span>Read more...</span>
   </NuxtLink>

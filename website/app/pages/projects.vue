@@ -35,14 +35,18 @@ const pageDetails = {
 <template>
   <article class="px-5 mx-0 md:px-16 lg:px-28 xl:px-56 mb-12 mt-8">
     <!-- Hero -->
-    <section class="bg-white/5 border border-white/10 rounded-2xl p-10 md:p-12 lg:p-14 mb-6">
+    <section
+      class="bg-white/5 border border-white/10 rounded-2xl p-10 md:p-12 lg:p-14 mb-6"
+    >
       <span
         class="inline-block text-xs font-semibold tracking-wider text-green-400 bg-green-400/10 border border-green-400/20 px-3 py-1.5 rounded-full mb-5"
       >
         {{ pageDetails.category }}
       </span>
 
-      <h1 class="text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-4">
+      <h1
+        class="text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-4"
+      >
         {{ pageDetails.title }}
       </h1>
 
