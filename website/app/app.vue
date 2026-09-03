@@ -20,6 +20,12 @@ useHead({
       type: "image/svg+xml",
       href: "/icons/favicon.svg",
     },
+    {
+      rel: "alternate",
+      type: "application/rss+xml",
+      title: "jarmos.dev RSS Feed",
+      href: "/rss.xml",
+    },
   ],
 });
 </script>
