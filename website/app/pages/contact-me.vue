@@ -1,18 +1,18 @@
 <template>
   <article>
     <h1>Contact Me</h1>
-    <form @submit.prevent="handleSubmit" class="contact-form">
+    <form class="contact-form" @submit.prevent="handleSubmit">
       <div class="form-group">
         <label for="name">Full Name</label>
-        <input v-model="name" id="name" type="text" required />
+        <input id="name" v-model="name" type="text" required />
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input v-model="email" id="email" type="email" required />
+        <input id="email" v-model="email" type="email" required />
       </div>
       <div class="form-group">
         <label for="message">Your Message</label>
-        <textarea v-model="message" id="message" rows="5" required />
+        <textarea id="message" v-model="message" rows="5" required />
       </div>
       <button type="submit">Send</button>
     </form>

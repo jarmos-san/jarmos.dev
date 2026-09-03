@@ -28,7 +28,9 @@ const currentYear = computed(() => {
     <section class="grid grid-cols-2 md:grid-cols-3 gap-8">
       <!-- Navigate -->
       <div>
-        <h3 class="text-sm font-semibold text-white/60 mb-3">{{ details.columns[0] }}</h3>
+        <h3 class="text-sm font-semibold text-white/60 mb-3">
+          {{ details.columns[0] }}
+        </h3>
         <ul class="flex flex-col gap-2 list-none p-0">
           <li v-for="(link, index) in navLinks" :key="index">
             <NuxtLink
@@ -43,7 +45,9 @@ const currentYear = computed(() => {
 
       <!-- Legal -->
       <div>
-        <h3 class="text-sm font-semibold text-white/60 mb-3">{{ details.columns[1] }}</h3>
+        <h3 class="text-sm font-semibold text-white/60 mb-3">
+          {{ details.columns[1] }}
+        </h3>
         <ul class="flex flex-col gap-2 list-none p-0">
           <li v-for="(link, index) in legalLinks" :key="index">
             <NuxtLink
@@ -58,7 +62,9 @@ const currentYear = computed(() => {
 
       <!-- Connect -->
       <div>
-        <h3 class="text-sm font-semibold text-white/60 mb-3">{{ details.columns[2] }}</h3>
+        <h3 class="text-sm font-semibold text-white/60 mb-3">
+          {{ details.columns[2] }}
+        </h3>
         <ul class="flex flex-col gap-2 list-none">
           <li v-for="(link, index) in socialLinks" :key="index">
             <a

@@ -1,5 +1,5 @@
-import { defineNuxtConfig } from "nuxt/config";
 import tailwindcss from "@tailwindcss/vite";
+import { defineNuxtConfig } from "nuxt/config";
 
 const BASE_URL = "https://jarmos.dev";
 

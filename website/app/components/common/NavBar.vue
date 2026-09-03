@@ -19,7 +19,9 @@ const { socialLinks, navLinks } = useAppConfig();
 </script>
 
 <template>
-  <nav class="flex justify-between items-center px-8 pt-10 md:px-16 lg:px-28 xl:px-56">
+  <nav
+    class="flex justify-between items-center px-8 pt-10 md:px-16 lg:px-28 xl:px-56"
+  >
     <!-- Logo -->
     <div>
       <img src="/icons/logo.svg" alt="logo" height="70" width="70" />
@@ -64,7 +66,9 @@ const { socialLinks, navLinks } = useAppConfig();
           class="content fixed right-0 top-0 z-100 flex h-full w-full max-w-sm flex-col rounded-l-2xl bg-[#162028] shadow-[-4px_0_24px_rgba(0,0,0,0.4)] outline-none"
         >
           <!-- Close button, nav links, social links — evenly spaced -->
-          <div class="flex-1 flex flex-col items-center justify-between px-6 py-8">
+          <div
+            class="flex-1 flex flex-col items-center justify-between px-6 py-8"
+          >
             <DrawerClose
               aria-label="Close navigation"
               class="p-2 rounded-lg transition-colors duration-200 hover:bg-white/10"
