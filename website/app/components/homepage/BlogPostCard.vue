@@ -10,7 +10,7 @@ interface BlogPost {
 const props = defineProps<BlogPost>();
 
 const publishedOn = computed(() => {
-  return new Date(props.publishedOn).toLocaleDateString(undefined, {
+  return new Date(props.publishedOn).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
