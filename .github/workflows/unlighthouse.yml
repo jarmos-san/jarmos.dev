@@ -1,0 +1,43 @@
+name: Unlighthouse Audit
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    name: Unlighthouse Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6.0.10
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: 24
+          cache: "pnpm"
+          cache-dependency-path: "./website/pnpm-lock.yaml"
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+        working-directory: ./website
+
+      - name: Run Unlighthouse
+        run: npx unlighthouse-ci --site https://jarmos.dev
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./.unlighthouse
+          destination_dir: unlighthouse
