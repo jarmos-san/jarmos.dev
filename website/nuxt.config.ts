@@ -45,6 +45,11 @@ export default defineNuxtConfig({
   site: {
     url: "https://jarmos.dev",
     name: "jarmos.dev",
+    description:
+      "I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source " +
+      "hacker by heart. I design systems, mentor devs, and occasionally tame " +
+      "misbehaving servers.",
+    defaultLocale: "en",
   },
   ogImage: {
     enabled: false,
@@ -145,6 +150,21 @@ export default defineNuxtConfig({
     },
     "/**": {
       prerender: true,
+    },
+  },
+  app: {
+    head: {
+      meta: [
+        {
+          name: "theme-color",
+          content: "#00dc82",
+        },
+        {
+          name: "theme-color",
+          content: "18181b",
+          media: "(prefers-color-scheme: dark)",
+        },
+      ],
     },
   },
 });
