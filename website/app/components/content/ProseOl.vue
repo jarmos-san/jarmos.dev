@@ -1,13 +1,7 @@
 <template>
-  <ol>
+  <ol
+    class="list-decimal pl-6 my-4 space-y-1 text-base font-normal text-[#ecf8ff]"
+  >
     <slot />
   </ol>
 </template>
-
-<style lang="scss" scoped>
-ol {
-  font-weight: normal;
-  font-size: 1rem;
-  color: #ecf8ff;
-}
-</style>
