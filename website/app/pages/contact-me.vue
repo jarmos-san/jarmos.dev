@@ -22,8 +22,8 @@
 <script setup lang="ts">
 const title = "Contact Me";
 const description = "";
-const image = "/icons/favicon.svg";
 const baseURL = useRuntimeConfig().public.baseURL;
+const image = `${baseURL}/icons/favicon.svg`;
 
 useSeoMeta({
   title,

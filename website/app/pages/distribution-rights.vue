@@ -75,7 +75,7 @@ const title = "Licensing & Distribution Rights";
 const description = `Learn about licensing and distribution rights for jarmos.dev. Source
 code under MIT license, blogs under CC-BY-4.0, free to use, modify, and share.`;
 const baseURL = useRuntimeConfig().public.baseURL;
-const image = "/icons/favicon.svg";
+const image = `${baseURL}/icons/favicon.svg`;
 
 useSeoMeta({
   title,

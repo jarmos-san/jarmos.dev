@@ -10,7 +10,7 @@ const details = {
 };
 
 const config = useRuntimeConfig();
-const image = "/icons/favicon.svg";
+const image = `${config.public.baseURL}/icons/favicon.svg`;
 const route = useRoute();
 
 useSeoMeta({
@@ -47,7 +47,9 @@ const { data: posts } = await useAsyncData(route.path, () => {
       >
         {{ details.title }}
       </h1>
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
         {{ details.description }}
       </p>
     </section>
