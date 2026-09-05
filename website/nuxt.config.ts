@@ -15,9 +15,7 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxt/eslint",
-    "nuxt-site-config",
-    "@nuxtjs/robots",
-    "@nuxtjs/sitemap",
+    "@nuxtjs/seo",
     "@nuxt/content",
     "@nuxt/test-utils/module",
     "@nuxt/scripts",
@@ -47,6 +45,9 @@ export default defineNuxtConfig({
   site: {
     url: "https://jarmos.dev",
     name: "jarmos.dev",
+  },
+  ogImage: {
+    enabled: false,
   },
   sitemap: {
     defaults: {

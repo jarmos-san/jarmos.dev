@@ -1,22 +1,12 @@
 <script lang="ts" setup>
 const { projects, seo } = useAppConfig();
-
-const config = useRuntimeConfig();
-
-useHead({
-  title: seo.projects.title,
-});
-
 const route = useRoute();
 
 useSeoMeta({
+  title: seo.projects.title,
   description: seo.projects.desc,
-  ogTitle: seo.projects.title,
-  ogDescription: seo.projects.desc,
   ogImage: seo.projects.img,
-  ogUrl: config.public.baseURL + route.fullPath,
-  twitterTitle: seo.projects.title,
-  twitterDescription: seo.projects.desc,
+  ogUrl: useRuntimeConfig().public.baseURL + route.fullPath,
   twitterImage: seo.projects.img,
   twitterCard: "summary",
 });

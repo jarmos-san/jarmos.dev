@@ -2,22 +2,13 @@
 const title = "About Me";
 const description = `Somraj Saha (Jarmos) - CTO at Weburz. Writing about software
 engineering, open-source, and the occasional dive into economics and investments.`;
-
-useHead({
-  title: title,
-});
-
 const baseUrl = useRuntimeConfig().public.baseURL;
 
 useSeoMeta({
-  title: title,
-  description: description,
-  ogTitle: title,
-  ogDescription: description,
+  title,
+  description,
   ogImage: "/icons/logo.svg",
   ogUrl: baseUrl,
-  twitterTitle: title,
-  twitterDescription: description,
   twitterImage: "/icons/logo.svg",
   twitterCard: "summary_large_image",
 });

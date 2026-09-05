@@ -257,20 +257,11 @@ product usage, services, privacy, intellectual property, and legal disclaimers.`
 const baseURL = useRuntimeConfig().public.baseURL;
 const image = "/icons/favicon.svg";
 
-// Set the title of the page
-useHead({
-  title: title,
-});
-
-// Set the SEO metadata for the page.
 useSeoMeta({
-  description: description,
-  ogTitle: title,
-  ogDescription: description,
+  title,
+  description,
   ogImage: image,
   ogUrl: `${baseURL}/terms-and-conditions`,
-  twitterTitle: title,
-  twitterDescription: description,
   twitterImage: image,
   twitterCard: "summary",
 });

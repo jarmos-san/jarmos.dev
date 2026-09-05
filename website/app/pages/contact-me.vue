@@ -25,19 +25,11 @@ const description = "";
 const image = "/icons/favicon.svg";
 const baseURL = useRuntimeConfig().public.baseURL;
 
-// Set the title of the page
-useHead({ title });
-
-// Set the SEO metadata for the page
 useSeoMeta({
   title,
   description,
-  ogTitle: title,
-  ogDescription: description,
   ogImage: image,
   ogUrl: baseURL,
-  twitterTitle: title,
-  twitterDescription: description,
   twitterImage: image,
   twitterCard: "summary",
 });
