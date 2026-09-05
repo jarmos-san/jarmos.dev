@@ -41,7 +41,9 @@ tasks:
 
       This command will run the development environment.
     dir: ./website
-    cmd: pnpm dev
+    cmds:
+      - defer: pnpm exec nuxt cleanup
+      - pnpm dev
     requires:
       vars: [GITHUB_TOKEN]
     env:
