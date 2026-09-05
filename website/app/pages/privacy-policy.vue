@@ -223,23 +223,14 @@
 const title = "Privacy Policy";
 const description = `Read the Privacy Policy of jarmos.dev. Learn how we collect, use,
 and protect your personal data under GDPR, analytics tools, and Indian IT laws.`;
-const image = "/icons/favicon.svg";
 const baseURL = useRuntimeConfig().public.baseURL;
+const image = `${baseURL}/icons/favicon.svg`;
 
-// Set the the title of the page
-useHead({
-  title: title,
-});
-
-// Set the SEO metadata for the page
 useSeoMeta({
-  description: description,
-  ogTitle: title,
-  ogDescription: description,
+  title,
+  description,
   ogImage: image,
   ogUrl: `${baseURL}/privacy-policy`,
-  twitterTitle: title,
-  twitterDescription: description,
   twitterImage: image,
   twitterCard: "summary",
 });

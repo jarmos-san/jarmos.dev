@@ -2,23 +2,14 @@
 const title = "About Me";
 const description = `Somraj Saha (Jarmos) - CTO at Weburz. Writing about software
 engineering, open-source, and the occasional dive into economics and investments.`;
-
-useHead({
-  title: title,
-});
-
 const baseUrl = useRuntimeConfig().public.baseURL;
 
 useSeoMeta({
-  title: title,
-  description: description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: "/icons/logo.svg",
+  title,
+  description,
+  ogImage: `${baseUrl}/icons/logo.svg`,
   ogUrl: baseUrl,
-  twitterTitle: title,
-  twitterDescription: description,
-  twitterImage: "/icons/logo.svg",
+  twitterImage: `${baseUrl}/icons/logo.svg`,
   twitterCard: "summary_large_image",
 });
 </script>
@@ -41,13 +32,18 @@ useSeoMeta({
         Hello there! 👋
       </h1>
 
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
         My name is
-        <strong class="font-semibold text-[#ecf8ff]">Somraj Saha</strong>, though many of my friends
-        (and occasionally my family) call me by my pen name: Jarmos.
+        <strong class="font-semibold text-[#ecf8ff]">Somraj Saha</strong>,
+        though many of my friends (and occasionally my family) call me by my pen
+        name: Jarmos.
       </p>
 
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
         Welcome to my
         <a
           href="https://www.thunknotes.com/blog/what-is-a-digital-garden"
@@ -56,15 +52,17 @@ useSeoMeta({
           class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           digital garden </a
-        >&mdash; a space where I share my thoughts, learnings, and experiments as a Software
-        Engineer. While most of my writing revolves around Software Engineering and Computer
-        Science, I occasionally wander into other territories like Financial Economics and
-        Investments.
+        >&mdash; a space where I share my thoughts, learnings, and experiments
+        as a Software Engineer. While most of my writing revolves around
+        Software Engineering and Computer Science, I occasionally wander into
+        other territories like Financial Economics and Investments.
       </p>
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
-        And in case you're wondering: no, none of this is AI-generated fluff. I do use AI to catch
-        typos and polish grammar (English isn't my first language), but the ideas and words are all
-        mine.
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
+        And in case you're wondering: no, none of this is AI-generated fluff. I
+        do use AI to catch typos and polish grammar (English isn't my first
+        language), but the ideas and words are all mine.
       </p>
     </section>
 
@@ -78,9 +76,13 @@ useSeoMeta({
         My Background
       </h2>
 
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
         I currently serve as the
-        <strong class="font-semibold text-[#ecf8ff]">Chief Technology Officer (CTO)</strong>
+        <strong class="font-semibold text-[#ecf8ff]"
+          >Chief Technology Officer (CTO)</strong
+        >
         at
         <a
           href="https://weburz.com"
@@ -89,8 +91,8 @@ useSeoMeta({
           class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           Weburz </a
-        >, where I lead our engineering and infrastructure efforts. Together with my friend (and
-        boss),
+        >, where I lead our engineering and infrastructure efforts. Together
+        with my friend (and boss),
         <a
           href="https://www.sagarkapoor.eu"
           target="_blank"
@@ -98,9 +100,9 @@ useSeoMeta({
           class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           Sagar Kapoor</a
-        >, we build tools and services that help small businesses thrive online. Beyond our
-        proprietary work, we're also big on Free and Open-Source Software (FOSS)-you can explore
-        some of our projects at our
+        >, we build tools and services that help small businesses thrive online.
+        Beyond our proprietary work, we're also big on Free and Open-Source
+        Software (FOSS)-you can explore some of our projects at our
         <a
           href="https://github.com/Weburz"
           target="_blank"
@@ -111,9 +113,13 @@ useSeoMeta({
         >.
       </p>
 
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
         Fun fact: despite holding a
-        <strong class="font-semibold text-[#ecf8ff]">Master's degree in Economics</strong>
+        <strong class="font-semibold text-[#ecf8ff]"
+          >Master's degree in Economics</strong
+        >
         from the
         <a
           href="https://uohyd.ac.in"
@@ -122,22 +128,29 @@ useSeoMeta({
           class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           University of Hyderabad</a
-        >, I eventually traded demand curves for code. While I still enjoy reading the occasional
-        economics paper, my true passion lies in Computer Science and building software that
-        actually helps people. You'll still catch me writing about Economics here once in a
-        while-but don't expect a supply-demand diagram in every post.
+        >, I eventually traded demand curves for code. While I still enjoy
+        reading the occasional economics paper, my true passion lies in Computer
+        Science and building software that actually helps people. You'll still
+        catch me writing about Economics here once in a while-but don't expect a
+        supply-demand diagram in every post.
       </p>
 
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
-        My fascination with computers started in my teens, though resources back then were scarce.
-        University changed that: access to labs, a community of peers, and an environment that
-        encouraged self-learning. I'm forever grateful for the people who supported my journey from
-        those days to where I am now.
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
+        My fascination with computers started in my teens, though resources back
+        then were scarce. University changed that: access to labs, a community
+        of peers, and an environment that encouraged self-learning. I'm forever
+        grateful for the people who supported my journey from those days to
+        where I am now.
       </p>
 
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
-        Today, I find joy in knowing my work has a real-world impact. If you've benefited from
-        something I've built or written, I'd love to hear from you! Drop me a message at
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
+        Today, I find joy in knowing my work has a real-world impact. If you've
+        benefited from something I've built or written, I'd love to hear from
+        you! Drop me a message at
         <a
           href="mailto:contact@jarmos.dev"
           target="_blank"
@@ -160,18 +173,27 @@ useSeoMeta({
         My Developer Toolkit
       </h2>
 
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
-        Over the years, I've worked with a dizzying number of technologies. Here's a curated list of
-        the ones I keep closest to my heart (and fingertips):
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
+        Over the years, I've worked with a dizzying number of technologies.
+        Here's a curated list of the ones I keep closest to my heart (and
+        fingertips):
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mt-6">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mt-6"
+      >
         <!-- Programming Languages -->
         <div
           class="bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-200 hover:bg-white/10 hover:border-white/15"
         >
-          <h3 class="text-lg font-semibold text-white mb-4">Programming Languages</h3>
-          <ol class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium">
+          <h3 class="text-lg font-semibold text-white mb-4">
+            Programming Languages
+          </h3>
+          <ol
+            class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium"
+          >
             <li>
               <a
                 href="https://www.python.org"
@@ -181,8 +203,9 @@ useSeoMeta({
               >
                 Python</a
               >
-              &mdash; my go-to for server-side applications, microservices, and automation scripts.
-              It's clean, reliable, and easier on the eyes than Bash.
+              &mdash; my go-to for server-side applications, microservices, and
+              automation scripts. It's clean, reliable, and easier on the eyes
+              than Bash.
             </li>
             <li>
               <a
@@ -193,7 +216,8 @@ useSeoMeta({
               >
                 TypeScript</a
               >
-              &mdash; for building web applications with type safety, especially with
+              &mdash; for building web applications with type safety, especially
+              with
               <a
                 href="https://vuejs.org"
                 target="_blank"
@@ -212,7 +236,8 @@ useSeoMeta({
               >
                 Lua</a
               >
-              &mdash; a niche but powerful language I mainly use to customize tools like
+              &mdash; a niche but powerful language I mainly use to customize
+              tools like
               <a
                 href="https://neovim.io"
                 target="_blank"
@@ -247,9 +272,9 @@ useSeoMeta({
               >
                 Go</a
               >
-              &mdash; my choice for writing performance-sensitive software, particularly CLI tools
-              that need to be distributed as binaries. (Yes, I'm that person who gets excited about
-              small executables.)
+              &mdash; my choice for writing performance-sensitive software,
+              particularly CLI tools that need to be distributed as binaries.
+              (Yes, I'm that person who gets excited about small executables.)
             </li>
           </ol>
         </div>
@@ -258,11 +283,16 @@ useSeoMeta({
         <div
           class="bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-200 hover:bg-white/10 hover:border-white/15"
         >
-          <h3 class="text-lg font-semibold text-white mb-4">Frameworks & Libraries</h3>
+          <h3 class="text-lg font-semibold text-white mb-4">
+            Frameworks & Libraries
+          </h3>
           <p class="text-sm leading-7 text-white/60 font-medium mb-4">
-            Here are some frameworks that make my developer life easier (and more enjoyable):
+            Here are some frameworks that make my developer life easier (and
+            more enjoyable):
           </p>
-          <ol class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium">
+          <ol
+            class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium"
+          >
             <li>
               <a
                 href="https://nuxt.com"
@@ -272,7 +302,8 @@ useSeoMeta({
               >
                 Nuxt.js</a
               >
-              &mdash; for building modern, responsive, and SEO-friendly web apps.
+              &mdash; for building modern, responsive, and SEO-friendly web
+              apps.
             </li>
             <li>
               <a
@@ -283,8 +314,9 @@ useSeoMeta({
               >
                 FastAPI</a
               >
-              &mdash; my go-to for building REST APIs in Python, complete with auto-generated docs
-              that feel like cheating (in the best way possible).
+              &mdash; my go-to for building REST APIs in Python, complete with
+              auto-generated docs that feel like cheating (in the best way
+              possible).
             </li>
             <li>
               <a
@@ -295,8 +327,8 @@ useSeoMeta({
               >
                 NuxtUI</a
               >
-              &mdash; a lightweight component library that makes MVP development feel like a sprint,
-              not a marathon.
+              &mdash; a lightweight component library that makes MVP development
+              feel like a sprint, not a marathon.
             </li>
           </ol>
           <p class="mt-4 text-sm leading-7 text-white/60 font-medium">
@@ -348,12 +380,17 @@ useSeoMeta({
         <div
           class="bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-200 hover:bg-white/10 hover:border-white/15"
         >
-          <h3 class="text-lg font-semibold text-white mb-4">Other Tools I Rely On</h3>
+          <h3 class="text-lg font-semibold text-white mb-4">
+            Other Tools I Rely On
+          </h3>
           <p class="text-sm leading-7 text-white/60 font-medium mb-4">
-            My work doesn't stop at writing code, there's DevOps, infra, and general tinkering
-            involved too. Here are some of the tools I keep in my toolkit:
+            My work doesn't stop at writing code, there's DevOps, infra, and
+            general tinkering involved too. Here are some of the tools I keep in
+            my toolkit:
           </p>
-          <ol class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium">
+          <ol
+            class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium"
+          >
             <li>
               <a
                 href="https://ubuntu.com"
@@ -381,8 +418,8 @@ useSeoMeta({
               >
                 Debian</a
               >
-              for deployments. I also use WSL 2 on a Windows laptop (not my favorite, but hey;
-              compromise is part of engineering).
+              for deployments. I also use WSL 2 on a Windows laptop (not my
+              favorite, but hey; compromise is part of engineering).
             </li>
             <li>
               <a
@@ -428,8 +465,8 @@ useSeoMeta({
               >
                 Ansible</a
               >
-              &mdash; for provisioning and managing infrastructure as code, because SSH'ing into
-              boxes manually gets old fast.
+              &mdash; for provisioning and managing infrastructure as code,
+              because SSH'ing into boxes manually gets old fast.
             </li>
             <li>
               <a
@@ -472,8 +509,11 @@ useSeoMeta({
         Let's work together
       </h2>
 
-      <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
-        If you'd like to work with me, feel free to view my resume or just drop me a message at
+      <p
+        class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
+        If you'd like to work with me, feel free to view my resume or just drop
+        me a message at
         <a
           href="mailto:contact@jarmos.dev"
           class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
@@ -482,7 +522,9 @@ useSeoMeta({
         >.
       </p>
 
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <div
+        class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+      >
         <a
           href="/resume.pdf"
           target="_blank"
@@ -496,7 +538,10 @@ useSeoMeta({
           to="/contact-me"
           class="inline-flex items-center gap-2 rounded-lg border border-[#83f9a2]/30 bg-[#83f9a2]/10 px-5 py-2.5 text-sm font-bold text-[#83f9a2] no-underline transition-all duration-200 hover:bg-[#83f9a2]/20 hover:border-[#83f9a2]/50"
         >
-          <Icon name="material-symbols:mark-unread-chat-alt-outline-rounded" size="1.25rem" />
+          <Icon
+            name="material-symbols:mark-unread-chat-alt-outline-rounded"
+            size="1.25rem"
+          />
           <span>Contact Me</span>
         </NuxtLink>
       </div>

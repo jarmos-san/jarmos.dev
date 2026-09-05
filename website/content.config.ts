@@ -5,7 +5,7 @@ import {
   type CollectionSource,
   type CollectionType,
 } from "@nuxt/content";
-import { defineSitemapSchema } from "@nuxtjs/sitemap/content";
+import { defineSitemapSchema } from "@nuxtjs/seo/content";
 
 // The URL of the repository, the directory and the GitHub access token to fetch
 // the blogposts from

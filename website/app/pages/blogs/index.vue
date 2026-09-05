@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// Page details
 const details = {
   tagline: "blogging",
   title: "Blog",
@@ -11,24 +10,14 @@ const details = {
 };
 
 const config = useRuntimeConfig();
-const image = "/icons/favicon.svg";
-
-// Set the title of the page
-useHead({
-  title: details.title,
-});
-
+const image = `${config.public.baseURL}/icons/favicon.svg`;
 const route = useRoute();
 
-// Configure the SEO metadata for the page
 useSeoMeta({
+  title: details.title,
   description: details.description,
-  ogTitle: details.title,
-  ogDescription: details.description,
   ogImage: image,
   ogUrl: config.public.baseURL + route.path,
-  twitterTitle: details.title,
-  twitterDescription: details.description,
   twitterImage: image,
   twitterCard: "summary",
 });
@@ -58,7 +47,9 @@ const { data: posts } = await useAsyncData(route.path, () => {
       >
         {{ details.title }}
       </h1>
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
+      <p
+        class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+      >
         {{ details.description }}
       </p>
     </section>

@@ -19,29 +19,19 @@ const { data: post } = await useAsyncData(route.path, () =>
   queryCollection("content").path(route.path).first(),
 );
 
-// Set the metadata of the page (mostly for SEO reasons)
 const title = post.value?.title;
 const baseURL = useRuntimeConfig().public.baseURL;
 const description = post.value?.description;
 const image = post.value?.coverImage.url;
 const url = `${baseURL}/${route.path}`;
 
-// Set the dynamic title for the page
-useHead({
-  title: title ?? "Not Found",
-});
-
-// Set the SEO metadata for the blogpost
 useSeoMeta({
-  ogTitle: title,
-  ogDescription: description,
+  title: title ?? "Not Found",
+  description,
   ogImage: image,
   ogUrl: url,
-  twitterTitle: title,
-  twitterDescription: description,
   twitterImage: image,
   twitterCard: "summary_large_image",
-  description: description,
 });
 
 // Compute and cache the publication date
