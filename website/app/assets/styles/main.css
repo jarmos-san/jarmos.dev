@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
 @layer base {
-  @import "./_resets.css";
-  @import "./_theme.css";
-
   pre code .line {
     display: block;
   }

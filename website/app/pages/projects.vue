@@ -48,7 +48,7 @@ const pageDetails = {
 
     <!-- Grid -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
-      <CommonProjectCard
+      <ProjectCard
         v-for="(project, index) in projects"
         :key="index"
         :name="project.name"

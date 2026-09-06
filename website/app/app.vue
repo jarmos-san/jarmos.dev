@@ -1,8 +1,8 @@
 <template>
-  <main>
-    <CommonNavBar />
+  <main class="bg-[#111a20]">
+    <NavBar />
     <NuxtPage />
-    <CommonFooter />
+    <AppFooter />
   </main>
 </template>
 
