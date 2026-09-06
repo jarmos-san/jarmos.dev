@@ -1,13 +1,18 @@
 <template>
-  <div class="code-wrapper">
-    <!-- Add filename header -->
-    <div v-if="props.filename" class="code-header">
+  <div
+    class="border border-white/10 rounded-lg overflow-hidden bg-[#1c2c35] my-6"
+  >
+    <!-- Filename header -->
+    <div
+      v-if="props.filename"
+      class="bg-[#2a2a2a] px-3 py-1.5 text-sm font-mono text-white/60 border-b border-white/10"
+    >
       {{ props.filename }}
     </div>
 
-    <!-- Call the original template -->
-    <div class="code-body">
-      <pre :class="props.class"><slot /></pre>
+    <!-- Code body -->
+    <div class="py-4 px-3">
+      <pre :class="[props.class, 'overflow-x-auto scrollbar-thin pb-2']"><slot /></pre>
     </div>
   </div>
 </template>
@@ -35,29 +40,3 @@ interface ProsePreProps {
 
 const props = defineProps<ProsePreProps>();
 </script>
-
-<style scoped lang="scss">
-.code-wrapper {
-  border: 1px solid #333;
-  border-radius: 6px;
-  overflow: hidden;
-  background: #1c2c35;
-
-  pre code .line {
-    display: block;
-  }
-
-  .code-header {
-    background: #2a2a2a;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-    font-family: monospace;
-    color: #ccc;
-    border-bottom: 1px solid #333;
-  }
-
-  .code-body {
-    padding: 1rem 0.8rem;
-  }
-}
-</style>

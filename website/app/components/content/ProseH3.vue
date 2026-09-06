@@ -1,6 +1,10 @@
 <template>
-  <h3 :id="props.id">
-    <a v-if="props.id && generate" :href="`#${props.id}`">
+  <h3 :id="props.id" class="text-xl font-bold mt-10 mb-3 text-[#ecf8ff]">
+    <a
+      v-if="props.id && generate"
+      :href="`#${props.id}`"
+      class="text-[#ecf8ff] no-underline"
+    >
       <slot />
     </a>
     <slot v-else />
@@ -24,16 +28,3 @@ const generate = computed(
       (typeof headings?.anchorLinks === "object" && headings?.anchorLinks?.h3)),
 );
 </script>
-
-<style scoped lang="scss">
-h3 {
-  font-weight: bold;
-  font-size: 1.25rem;
-  margin-top: 2.5rem;
-
-  a {
-    color: #ecf8ff;
-    text-decoration: none;
-  }
-}
-</style>
