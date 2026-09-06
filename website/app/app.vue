@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="bg-[#111a20]">
     <NavBar />
     <NuxtPage />
     <AppFooter />
