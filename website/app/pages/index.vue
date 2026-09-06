@@ -32,7 +32,7 @@ const { data: posts } = await useAsyncData("featured-posts", () => {
 
 <template>
   <article>
-    <HomepageHeader />
+    <AppHeader />
 
     <!-- Featured project section -->
     <section class="mt-12 px-5 md:mt-16 md:px-16 lg:px-28 xl:px-56">
@@ -45,7 +45,7 @@ const { data: posts } = await useAsyncData("featured-posts", () => {
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-        <CommonProjectCard
+        <ProjectCard
           v-for="(project, index) in projects"
           :key="index"
           :name="project.name"
@@ -66,7 +66,7 @@ const { data: posts } = await useAsyncData("featured-posts", () => {
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-        <HomepageBlogPostCard
+        <BlogPostCard
           v-for="(post, index) in posts"
           :key="index"
           :post="post"
@@ -74,6 +74,6 @@ const { data: posts } = await useAsyncData("featured-posts", () => {
       </div>
     </section>
 
-    <HomepageCTA />
+    <CTA />
   </article>
 </template>

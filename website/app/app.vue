@@ -1,8 +1,8 @@
 <template>
   <main>
-    <CommonNavBar />
+    <NavBar />
     <NuxtPage />
-    <CommonFooter />
+    <AppFooter />
   </main>
 </template>
 
