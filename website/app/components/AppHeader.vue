@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-const details = {
-  header:
-    "I'm Jarmos — a Senior Engineer by title, Open-Source hacker by heart.",
-};
+  const details = {
+    header:
+      "I'm Jarmos — a Senior Engineer by title, Open-Source hacker by heart.",
+  };
 
-// TODO: Figure a way out to safely the header description sections.
+  // TODO: Figure a way out to safely the header description sections.
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const details = {
     >
       <!-- Heading: gradient text with glow -->
       <h1
-        class="text-3xl font-bold leading-tight bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl"
+        class="bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-3xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl"
       >
         {{ details.header }}
       </h1>
@@ -34,7 +34,7 @@ const details = {
           href="https://weburz.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           Weburz </a
         >. My day job involves architecting systems, mentoring developers and
@@ -58,7 +58,7 @@ const details = {
         If you're curious, head over to my
         <NuxtLink
           to="/about-me"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           About Me
         </NuxtLink>

@@ -251,40 +251,40 @@
 </template>
 
 <script lang="ts" setup>
-const title = "Terms and Conditions";
-const description = `Read the Terms and Conditions for using jarmos.dev, including
+  const title = "Terms and Conditions";
+  const description = `Read the Terms and Conditions for using jarmos.dev, including
 product usage, services, privacy, intellectual property, and legal disclaimers.`;
-const baseURL = useRuntimeConfig().public.baseURL;
-const image = `${baseURL}/icons/favicon.svg`;
+  const baseURL = useRuntimeConfig().public.baseURL;
+  const image = `${baseURL}/icons/favicon.svg`;
 
-useSeoMeta({
-  title,
-  description,
-  ogImage: image,
-  ogUrl: `${baseURL}/terms-and-conditions`,
-  twitterImage: image,
-  twitterCard: "summary",
-});
+  useSeoMeta({
+    title,
+    description,
+    ogImage: image,
+    ogUrl: `${baseURL}/terms-and-conditions`,
+    twitterImage: image,
+    twitterCard: "summary",
+  });
 </script>
 
 <style lang="scss" scoped>
-article {
-  padding: 0 2rem;
-  margin: 2rem auto;
+  article {
+    padding: 0 2rem;
+    margin: 2rem auto;
 
-  // Tablet
-  @media screen and (min-width: 768px) {
-    padding: 0 4rem;
-  }
+    // Tablet
+    @media screen and (min-width: 768px) {
+      padding: 0 4rem;
+    }
 
-  // Laptops
-  @media screen and (min-width: 1024px) {
-    padding: 0 7rem;
-  }
+    // Laptops
+    @media screen and (min-width: 1024px) {
+      padding: 0 7rem;
+    }
 
-  // 2K Desktops
-  @media screen and (min-width: 1440px) {
-    padding: 0 14rem;
+    // 2K Desktops
+    @media screen and (min-width: 1440px) {
+      padding: 0 14rem;
+    }
   }
-}
 </style>

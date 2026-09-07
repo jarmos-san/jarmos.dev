@@ -1,33 +1,33 @@
 <script setup lang="ts">
-const title = "Home";
-const description = `I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source
+  const title = "Home";
+  const description = `I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source
 hacker by heart. I design systems, mentor devs, and occasionally tame misbehaving
 servers.`;
-const baseURL = useRuntimeConfig().public.baseURL;
-const image = `${baseURL}/icons/favicon.svg`;
+  const baseURL = useRuntimeConfig().public.baseURL;
+  const image = `${baseURL}/icons/favicon.svg`;
 
-useSeoMeta({
-  title,
-  description,
-  ogImage: image,
-  ogUrl: baseURL,
-  twitterImage: image,
-  twitterCard: "summary",
-});
+  useSeoMeta({
+    title,
+    description,
+    ogImage: image,
+    ogUrl: baseURL,
+    twitterImage: image,
+    twitterCard: "summary",
+  });
 
-const config = useAppConfig();
+  const config = useAppConfig();
 
-const projects = computed(() => {
-  return config.projects.slice(0, 4);
-});
+  const projects = computed(() => {
+    return config.projects.slice(0, 4);
+  });
 
-const { data: posts } = await useAsyncData("featured-posts", () => {
-  return queryCollection("content")
-    .select("path", "title", "publishedOn", "description", "coverImage")
-    .order("publishedOn", "DESC")
-    .limit(4)
-    .all();
-});
+  const { data: posts } = await useAsyncData("featured-posts", () => {
+    return queryCollection("content")
+      .select("path", "title", "publishedOn", "description", "coverImage")
+      .order("publishedOn", "DESC")
+      .limit(4)
+      .all();
+  });
 </script>
 
 <template>
@@ -36,15 +36,15 @@ const { data: posts } = await useAsyncData("featured-posts", () => {
 
     <!-- Featured project section -->
     <section class="mt-12 px-5 md:mt-16 md:px-16 lg:px-28 xl:px-56">
-      <h2 class="text-3xl font-bold text-white mb-2">Featured Projects</h2>
+      <h2 class="mb-2 text-3xl font-bold text-white">Featured Projects</h2>
 
-      <p class="text-base text-white/60 max-w-2xl mb-8">
+      <p class="mb-8 max-w-2xl text-base text-white/60">
         A selection of open-source projects I've built or contributed to — from
         developer tools to content platforms. Each one solved a real problem I
         or my team ran into.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
         <ProjectCard
           v-for="(project, index) in projects"
           :key="index"
@@ -58,14 +58,14 @@ const { data: posts } = await useAsyncData("featured-posts", () => {
 
     <!-- Featured blogposts section -->
     <section class="mt-12 px-5 md:mt-16 md:px-16 lg:px-28 xl:px-56">
-      <h2 class="text-3xl font-bold text-white mb-2">Featured Blogposts</h2>
+      <h2 class="mb-2 text-3xl font-bold text-white">Featured Blogposts</h2>
 
-      <p class="text-base text-white/60 max-w-2xl mb-8">
+      <p class="mb-8 max-w-2xl text-base text-white/60">
         Thoughts on software engineering, open-source, and building products —
         distilled from real projects and hard-won lessons.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
         <BlogPostCard
           v-for="(post, index) in posts"
           :key="index"

@@ -1,33 +1,33 @@
 <script lang="ts" setup>
-const title = "About Me";
-const description = `Somraj Saha (Jarmos) - CTO at Weburz. Writing about software
+  const title = "About Me";
+  const description = `Somraj Saha (Jarmos) - CTO at Weburz. Writing about software
 engineering, open-source, and the occasional dive into economics and investments.`;
-const baseUrl = useRuntimeConfig().public.baseURL;
+  const baseUrl = useRuntimeConfig().public.baseURL;
 
-useSeoMeta({
-  title,
-  description,
-  ogImage: `${baseUrl}/icons/logo.svg`,
-  ogUrl: baseUrl,
-  twitterImage: `${baseUrl}/icons/logo.svg`,
-  twitterCard: "summary_large_image",
-});
+  useSeoMeta({
+    title,
+    description,
+    ogImage: `${baseUrl}/icons/logo.svg`,
+    ogUrl: baseUrl,
+    twitterImage: `${baseUrl}/icons/logo.svg`,
+    twitterCard: "summary_large_image",
+  });
 </script>
 
 <template>
-  <article class="px-5 md:px-16 lg:px-28 xl:px-56 mb-12 mt-8">
+  <article class="mt-8 mb-12 px-5 md:px-16 lg:px-28 xl:px-56">
     <!-- Hero card -->
     <section
-      class="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 lg:p-14 mb-6 backdrop-blur-md"
+      class="mb-6 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:p-14"
     >
       <span
-        class="inline-block text-xs font-semibold tracking-wider text-green-400 bg-green-400/10 border border-green-400/20 px-3 py-1.5 rounded-full mb-5"
+        class="mb-5 inline-block rounded-full border border-green-400/20 bg-green-400/10 px-3 py-1.5 text-xs font-semibold tracking-wider text-green-400"
       >
         ABOUT ME
       </span>
 
       <h1
-        class="text-3xl font-bold leading-tight bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl mb-4"
+        class="mb-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-3xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl"
       >
         Hello there! 👋
       </h1>
@@ -49,7 +49,7 @@ useSeoMeta({
           href="https://www.thunknotes.com/blog/what-is-a-digital-garden"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           digital garden </a
         >&mdash; a space where I share my thoughts, learnings, and experiments
@@ -68,10 +68,10 @@ useSeoMeta({
 
     <!-- My Background -->
     <section
-      class="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 lg:p-14 mb-6 backdrop-blur-md"
+      class="mb-6 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:p-14"
     >
       <h2
-        class="text-3xl font-bold leading-tight bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl mb-4"
+        class="mb-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-3xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl"
       >
         My Background
       </h2>
@@ -88,7 +88,7 @@ useSeoMeta({
           href="https://weburz.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           Weburz </a
         >, where I lead our engineering and infrastructure efforts. Together
@@ -97,7 +97,7 @@ useSeoMeta({
           href="https://www.sagarkapoor.eu"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           Sagar Kapoor</a
         >, we build tools and services that help small businesses thrive online.
@@ -107,7 +107,7 @@ useSeoMeta({
           href="https://github.com/Weburz"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           GitHub organization</a
         >.
@@ -125,7 +125,7 @@ useSeoMeta({
           href="https://uohyd.ac.in"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           University of Hyderabad</a
         >, I eventually traded demand curves for code. While I still enjoy
@@ -155,7 +155,7 @@ useSeoMeta({
           href="mailto:contact@jarmos.dev"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           contact@jarmos.dev</a
         >
@@ -165,10 +165,10 @@ useSeoMeta({
 
     <!-- My Developer Toolkit -->
     <section
-      class="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 lg:p-14 mb-6 backdrop-blur-md"
+      class="mb-6 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:p-14"
     >
       <h2
-        class="text-3xl font-bold leading-tight bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl mb-4"
+        class="mb-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-3xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl"
       >
         My Developer Toolkit
       </h2>
@@ -182,24 +182,24 @@ useSeoMeta({
       </p>
 
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mt-6"
+        class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3"
       >
         <!-- Programming Languages -->
         <div
-          class="bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-200 hover:bg-white/10 hover:border-white/15"
+          class="rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-200 hover:border-white/15 hover:bg-white/10"
         >
-          <h3 class="text-lg font-semibold text-white mb-4">
+          <h3 class="mb-4 text-lg font-semibold text-white">
             Programming Languages
           </h3>
           <ol
-            class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium"
+            class="flex list-none flex-col gap-3 text-sm leading-7 font-medium text-white/60"
           >
             <li>
               <a
                 href="https://www.python.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Python</a
               >
@@ -212,7 +212,7 @@ useSeoMeta({
                 href="https://www.typescriptlang.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 TypeScript</a
               >
@@ -222,7 +222,7 @@ useSeoMeta({
                 href="https://vuejs.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Vue.js</a
               >.
@@ -232,7 +232,7 @@ useSeoMeta({
                 href="https://lua.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Lua</a
               >
@@ -242,7 +242,7 @@ useSeoMeta({
                 href="https://neovim.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Neovim</a
               >,
@@ -250,7 +250,7 @@ useSeoMeta({
                 href="https://wezterm.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 WezTerm</a
               >, and
@@ -258,7 +258,7 @@ useSeoMeta({
                 href="https://redis.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Redis</a
               >.
@@ -268,7 +268,7 @@ useSeoMeta({
                 href="https://go.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Go</a
               >
@@ -281,24 +281,24 @@ useSeoMeta({
 
         <!-- Frameworks & Libraries -->
         <div
-          class="bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-200 hover:bg-white/10 hover:border-white/15"
+          class="rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-200 hover:border-white/15 hover:bg-white/10"
         >
-          <h3 class="text-lg font-semibold text-white mb-4">
+          <h3 class="mb-4 text-lg font-semibold text-white">
             Frameworks & Libraries
           </h3>
-          <p class="text-sm leading-7 text-white/60 font-medium mb-4">
+          <p class="mb-4 text-sm leading-7 font-medium text-white/60">
             Here are some frameworks that make my developer life easier (and
             more enjoyable):
           </p>
           <ol
-            class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium"
+            class="flex list-none flex-col gap-3 text-sm leading-7 font-medium text-white/60"
           >
             <li>
               <a
                 href="https://nuxt.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Nuxt.js</a
               >
@@ -310,7 +310,7 @@ useSeoMeta({
                 href="https://fastapi.tiangolo.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 FastAPI</a
               >
@@ -323,7 +323,7 @@ useSeoMeta({
                 href="https://ui.nuxt.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 NuxtUI</a
               >
@@ -331,13 +331,13 @@ useSeoMeta({
               feel like a sprint, not a marathon.
             </li>
           </ol>
-          <p class="mt-4 text-sm leading-7 text-white/60 font-medium">
+          <p class="mt-4 text-sm leading-7 font-medium text-white/60">
             Honorable mentions:
             <a
               href="https://nextjs.org"
               target="_blank"
               rel="noopener noreferrer"
-              class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+              class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
             >
               Next.js</a
             >,
@@ -345,7 +345,7 @@ useSeoMeta({
               href="https://tailwindcss.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+              class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
             >
               TailwindCSS</a
             >,
@@ -353,7 +353,7 @@ useSeoMeta({
               href="https://flask.palletsprojects.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+              class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
             >
               Flask</a
             >,
@@ -361,7 +361,7 @@ useSeoMeta({
               href="https://pytorch.org"
               target="_blank"
               rel="noopener noreferrer"
-              class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+              class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
             >
               PyTorch</a
             >,
@@ -369,7 +369,7 @@ useSeoMeta({
               href="https://scikit-learn.org"
               target="_blank"
               rel="noopener noreferrer"
-              class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+              class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
             >
               scikit-learn</a
             >, and more-because the list never truly ends.
@@ -378,25 +378,25 @@ useSeoMeta({
 
         <!-- Other Tools I Rely On -->
         <div
-          class="bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-200 hover:bg-white/10 hover:border-white/15"
+          class="rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-200 hover:border-white/15 hover:bg-white/10"
         >
-          <h3 class="text-lg font-semibold text-white mb-4">
+          <h3 class="mb-4 text-lg font-semibold text-white">
             Other Tools I Rely On
           </h3>
-          <p class="text-sm leading-7 text-white/60 font-medium mb-4">
+          <p class="mb-4 text-sm leading-7 font-medium text-white/60">
             My work doesn't stop at writing code, there's DevOps, infra, and
             general tinkering involved too. Here are some of the tools I keep in
             my toolkit:
           </p>
           <ol
-            class="flex flex-col gap-3 list-none text-sm leading-7 text-white/60 font-medium"
+            class="flex list-none flex-col gap-3 text-sm leading-7 font-medium text-white/60"
           >
             <li>
               <a
                 href="https://ubuntu.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Ubuntu</a
               >
@@ -405,7 +405,7 @@ useSeoMeta({
                 href="https://fedoraproject.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Fedora</a
               >
@@ -414,7 +414,7 @@ useSeoMeta({
                 href="https://debian.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Debian</a
               >
@@ -426,7 +426,7 @@ useSeoMeta({
                 href="https://www.docker.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Docker</a
               >
@@ -435,7 +435,7 @@ useSeoMeta({
                 href="https://www.donthitsave.com/comic/2016/07/15/it-works-on-my-computer"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
                 >"but it works on my machine"</a
               >.
             </li>
@@ -444,7 +444,7 @@ useSeoMeta({
                 href="https://developer.hashicorp.com/terraform"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Terraform</a
               >,
@@ -452,7 +452,7 @@ useSeoMeta({
                 href="https://packer.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Packer
               </a>
@@ -461,7 +461,7 @@ useSeoMeta({
                 href="https://www.ansible.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Ansible</a
               >
@@ -473,7 +473,7 @@ useSeoMeta({
                 href="https://neovim.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
               >
                 Neovim
               </a>
@@ -482,14 +482,14 @@ useSeoMeta({
                 href="https://youtu.be/QMVIJhC9Veg"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
                 >personalized development environment</a
               >. My
               <a
                 href="https://github.com/Jarmos-san/dotfiles"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+                class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
                 >dotfiles</a
               >
               are open if you'd like to borrow ideas for your own setup.
@@ -501,10 +501,10 @@ useSeoMeta({
 
     <!-- CTA -->
     <section
-      class="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 lg:p-14 mb-6 backdrop-blur-md text-center"
+      class="mb-6 rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-md md:p-12 lg:p-14"
     >
       <h2
-        class="text-2xl font-bold bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl"
+        class="bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl"
       >
         Let's work together
       </h2>
@@ -516,14 +516,14 @@ useSeoMeta({
         me a message at
         <a
           href="mailto:contact@jarmos.dev"
-          class="underline decoration-[#b0fbbc]/30 underline-offset-2 text-[#b0fbbc] transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
         >
           contact@jarmos.dev</a
         >.
       </p>
 
       <div
-        class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+        class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
       >
         <a
           href="/resume.pdf"
@@ -536,7 +536,7 @@ useSeoMeta({
         </a>
         <NuxtLink
           to="/contact-me"
-          class="inline-flex items-center gap-2 rounded-lg border border-[#83f9a2]/30 bg-[#83f9a2]/10 px-5 py-2.5 text-sm font-bold text-[#83f9a2] no-underline transition-all duration-200 hover:bg-[#83f9a2]/20 hover:border-[#83f9a2]/50"
+          class="inline-flex items-center gap-2 rounded-lg border border-[#83f9a2]/30 bg-[#83f9a2]/10 px-5 py-2.5 text-sm font-bold text-[#83f9a2] no-underline transition-all duration-200 hover:border-[#83f9a2]/50 hover:bg-[#83f9a2]/20"
         >
           <Icon
             name="material-symbols:mark-unread-chat-alt-outline-rounded"
