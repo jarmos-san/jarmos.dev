@@ -1,7 +1,28 @@
+<script lang="ts" setup>
+  const title = "Terms and Conditions";
+  const description = `Read the Terms and Conditions for using jarmos.dev, including
+product usage, services, privacy, intellectual property, and legal disclaimers.`;
+  const baseURL = useRuntimeConfig().public.baseURL;
+  const image = `${baseURL}/icons/favicon.svg`;
+
+  useSeoMeta({
+    title,
+    description,
+    ogImage: image,
+    ogUrl: `${baseURL}/terms-and-conditions`,
+    twitterImage: image,
+    twitterCard: "summary",
+  });
+</script>
+
 <template>
-  <article>
-    <h1>Terms and Conditions</h1>
-    <p>
+  <article class="mt-8 mb-12 px-5 text-[#ecf8ff] md:px-16 lg:px-28 xl:px-56">
+    <h1
+      class="mb-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-3xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl"
+    >
+      Terms and Conditions
+    </h1>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       <strong>
         PLEASE READ THIS TERMS OF SERVICE AGREEMENT CAREFULLY. BY USING THIS
         WEBSITE, SUBSRIBING TO OUR PRODUCTS AND/OR USING OUR SERVICES FROM THIS
@@ -9,10 +30,15 @@
         AGREEMENT.
       </strong>
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       This Terms of Service Agreement (the "<strong>Agreement</strong>
       ") governs your use of this website,
-      <a href="/"> jarmos.dev</a>
+      <NuxtLink
+        to="/"
+        class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+      >
+        jarmos.dev
+      </NuxtLink>
       (the "
       <strong>Website</strong>"), business name ("
       <strong>Somraj Saha</strong>") offer of services and/or products for
@@ -36,36 +62,44 @@
       immediately terminate your use of the Website. If you would like to print
       this Agreement, please click the print button on your browser toolbar.
     </p>
-    <h2>I. Products</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      I. Products
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Terms of Offer. This Website offers for sale certain products (the
       "<strong>Products</strong>"). By placing an order for Products through
       this Website, you agree to the terms and conditions set forth in this
       Agreement.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       <strong>Reader Solicitation</strong>: Unless you notify Somraj Saha, while
       they are communicating with you, of your desire to opt out from further
       direct company communications and solicitations, you are agreeing to
       continue to receive further emails and solicitations from Somraj Saha.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       <strong>Opt-Out Procedure</strong>: We provide 3 easy ways to opt out of
       from future solicitations.
     </p>
-    <ol>
+    <ol class="my-4 list-decimal space-y-1 pl-6 text-base font-normal">
       <li>
         You may use the opt out link found in any email solicitation that you
         may receive.
       </li>
       <li>
         You may also choose to opt out, via sending your email address to:
-        <a href="mailto:contact@jarmos.dev" target="_blank">
+        <a
+          href="mailto:contact@jarmos.dev"
+          target="_blank"
+          class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+        >
           contact@jarmos.dev
         </a>
       </li>
     </ol>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       <strong>Proprietary Rights</strong>. Somraj Saha has proprietary rights
       and trade secrets in the Products & Services mentioned in this Website.
       You may copy, reproduce, resell or redistribute any Products & Services
@@ -74,18 +108,23 @@
       <a
         href="https://creativecommons.org/licenses/by-nc/4.0/legalcode"
         target="_blank"
+        class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
       >
         CC BY-NA 4.0
       </a>
       .
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       <strong>Sales Tax</strong>. If you purchase any Products and/or Services,
       you will be responsible for paying any applicable sales tax (
       <em>if any</em>).
     </p>
-    <h2>II. Website</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      II. Website
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Content; Intellectual Property; Third Party as. In addition to making
       Products available, this Website also offers information and marketing
       materials. This Website also offers information, both directly and through
@@ -103,7 +142,7 @@
       that may result from your access to or reliance on these third-party
       websites. If you link to third-party websites, you do so at your own risk.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Use of Website; Somraj Saha is not responsible for any damages resulting
       from use of this website by anyone. You will not use the Website for
       illegal purposes. You will (1) abide by all applicable local, state,
@@ -115,7 +154,7 @@
       other type of unsolicited communication, and (5) not defame, harass,
       abuse, or disrupt other users of the Website
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       License. By using this Website, you are granted a limited, non-exclusive,
       non-transferable right to use the content and materials on the Website in
       connection with your normal, noncommercial, use of the Website under the
@@ -123,6 +162,7 @@
       <a
         href="https://creativecommons.org/licenses/by-nc/4.0/legalcode"
         target="_blank"
+        class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
       >
         CC BY-NA 4.0
       </a>
@@ -131,7 +171,7 @@
       authorization from Somraj Saha or the applicable third party (if third
       party content is at issue).
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Sharing Information. By sharing your personal information, storing, or
       transmitting any content with us on the Website, you hereby grant Somraj
       Saha a perpetual, worldwide, non-exclusive, royalty-free, assignable,
@@ -146,39 +186,56 @@
       any content Somraj Saha deems objectionable, in Somraj Saha&apos;s sole
       discretion.
     </p>
-    <h2>III. Disclaimer of Warranties</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      III. Disclaimer of Warranties
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Somraj Saha believes strongly in protecting user privacy and providing you
       with notice of Somraj Saha&apos;s blog&apos;s use of data. Please refer to
       Somraj Saha&apos;s
-      <a href="/privacy-policy"> Privacy Policy</a>
+      <NuxtLink
+        to="/privacy-policy"
+        class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+      >
+        Privacy Policy
+      </NuxtLink>
       , incorporated by reference herein, that is posted on the Website.
     </p>
-    <h2>VII. Agreement to be Bound</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      VII. Agreement to be Bound
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       By using this Website, ordering Products and/or subscribing to our
       Services, you acknowledge that you have read and agree to be bound by this
       Agreement and all terms and conditions on this Website.
     </p>
-    <h2>VIII. General</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      VIII. General
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Force Majeure. Somaraj Saha will not be deemed in default hereunder or
       held responsible for any cessation, interruption or delay in the
       performance of its obligations hereunder due to earthquake, flood, fire,
       storm, natural disaster, act of God, war, terrorism, armed conflict, labor
       strike, lockout, or boycott.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Cessation of Operation. Somraj Saha may at any time, in its sole
       discretion and without advance notice to you, cease operation of the
       Website and distribution of the Products.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Entire Agreement. This Agreement comprises the entire agreement between
       you and Somraj Saha and supersedes any prior agreements pertaining to the
       subject matter contained herein.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Effect of Waiver. The failure of Somraj Saha to exercise or enforce any
       right or provision of this Agreement will not constitute a waiver of such
       right or provision. If any provision of this Agreement is found by a court
@@ -187,9 +244,13 @@
       intentions as reflected in the provision, and the other provisions of this
       Agreement remain in full force and effect.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Governing Law;
-      <a href="https://main.sci.gov.in/jurisdiction" target="_blank">
+      <a
+        href="https://main.sci.gov.in/jurisdiction"
+        target="_blank"
+        class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+      >
         Supreme Court of India
       </a>
       . This Website originates from the city of Agartala in Tripura, India.
@@ -205,20 +266,20 @@
       Agreement. You hereby waive any right to trial by jury arising out of this
       Agreement and any related documents.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Statute of Limitation. You agree that regardless of any statute or law to
       the contrary, any claim or cause of action arising out of or related to
       use of the Website or Products or this Agreement must be filed within one
       (1) year after such claim or cause of action arose or be forever barred.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Waiver of Class Action Rights. BY ENTERING INTO THIS AGREEMENT, YOU HEREBY
       IRREVOCABLY WAIVE ANY RIGHT YOU MAY HAVE TO JOIN CLAIMS WITH THOSE OF
       OTHER IN THE FORM OF A CLASS ACTION OR SIMILAR PROCEDURAL DEVICE. ANY
       CLAIMS ARISING OUT OF, RELATING TO, OR CONNECTION WITH THIS AGREEMENT MUST
       BE ASSERTED INDIVIDUALLY.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Termination. Somraj Saha reserves the right to terminate your access to
       the Website if it reasonably believes, in its sole discretion, that you
       have breached any of the terms and conditions of this Agreement. Following
@@ -230,61 +291,22 @@
       Agreement will survive indefinitely unless and until Somraj Saha chooses,
       in its sole discretion and without advance to you, to terminate it.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Domestic Use. Somraj Saha makes no representation that the Website or
       Products are appropriate or available for use in locations outside India.
       Users who access the Website from outside India do so at their own risk
       and initiative and must bear all responsibility for compliance with any
       applicable local laws.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       Assignment. You may not assign your rights and obligations under this
       Agreement to anyone. Somraj Saha may assign its rights and obligations
       under this Agreement in its sole discretion and without advance notice to
       you.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       BY USING THIS WEBSITE OR ORDERING PRODUCTS FROM THIS WEBSITE YOU AGREE TO
       BE BOUND BY ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT.
     </p>
   </article>
 </template>
-
-<script lang="ts" setup>
-  const title = "Terms and Conditions";
-  const description = `Read the Terms and Conditions for using jarmos.dev, including
-product usage, services, privacy, intellectual property, and legal disclaimers.`;
-  const baseURL = useRuntimeConfig().public.baseURL;
-  const image = `${baseURL}/icons/favicon.svg`;
-
-  useSeoMeta({
-    title,
-    description,
-    ogImage: image,
-    ogUrl: `${baseURL}/terms-and-conditions`,
-    twitterImage: image,
-    twitterCard: "summary",
-  });
-</script>
-
-<style lang="scss" scoped>
-  article {
-    padding: 0 2rem;
-    margin: 2rem auto;
-
-    // Tablet
-    @media screen and (min-width: 768px) {
-      padding: 0 4rem;
-    }
-
-    // Laptops
-    @media screen and (min-width: 1024px) {
-      padding: 0 7rem;
-    }
-
-    // 2K Desktops
-    @media screen and (min-width: 1440px) {
-      padding: 0 14rem;
-    }
-  }
-</style>
