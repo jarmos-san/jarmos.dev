@@ -57,7 +57,7 @@ const { data: posts } = await useAsyncData(route.path, () => {
     <!-- List of blogs -->
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <li v-for="(post, index) in posts" :key="index">
-        <HomepageBlogPostCard :post="post" />
+        <BlogPostCard :post="post" />
       </li>
     </ul>
   </article>

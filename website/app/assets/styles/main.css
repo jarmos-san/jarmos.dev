@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 @layer base {
-  @import "./_resets.css";
-  @import "./_theme.css";
+  html,
+  body {
+    background-color: #111a20;
+  }
 
   pre code .line {
     display: block;

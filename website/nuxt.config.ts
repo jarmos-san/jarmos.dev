@@ -43,7 +43,7 @@ export default defineNuxtConfig({
     blockNonSeoBots: true,
   },
   site: {
-    url: "https://jarmos.dev",
+    url: BASE_URL,
     name: "jarmos.dev",
     description:
       "I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source " +
@@ -161,10 +161,23 @@ export default defineNuxtConfig({
         },
         {
           name: "theme-color",
-          content: "18181b",
+          content: "#18181b",
           media: "(prefers-color-scheme: dark)",
         },
       ],
+      htmlAttrs: {
+        lang: "en-GB",
+      },
+      link: [
+        {
+          rel: "alternate",
+          type: "application/rss+xml",
+          title: "jarmos.dev RSS Feed",
+          href: "/rss.xml",
+        },
+      ],
+      titleTemplate: "%s | jarmos.dev",
     },
   },
+  css: ["~/assets/styles/main.css"],
 });
