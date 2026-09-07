@@ -16,3 +16,9 @@ repos:
     hooks:
       - id: crisp
         name: lint commit messages
+
+  - repo: https://github.com/oxc-project/mirrors-oxfmt
+    rev: v0.65.0
+    hooks:
+      - id: oxfmt
+        name: enforce uniform formatting
