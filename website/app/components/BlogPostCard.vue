@@ -37,7 +37,9 @@ const publishedOn = computed(() => {
     class="group h-full flex flex-col justify-between gap-3 p-7 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md no-underline overflow-hidden transition-all duration-200 hover:bg-white/10 hover:border-white/15 hover:shadow-xl"
   >
     <!-- Date -->
-    <span class="text-xs font-semibold tracking-wide text-[#7ab6d9]">{{ publishedOn }}</span>
+    <span class="text-xs font-semibold tracking-wide text-[#7ab6d9]">{{
+      publishedOn
+    }}</span>
 
     <!-- Title -->
     <h3 class="text-xl font-semibold text-white leading-snug">

@@ -12,7 +12,9 @@
 
     <!-- Code body -->
     <div class="py-4 px-3">
-      <pre :class="[props.class, 'overflow-x-auto scrollbar-thin pb-2']"><slot /></pre>
+      <pre
+        :class="[props.class, 'overflow-x-auto scrollbar-thin pb-2']"
+      ><slot /></pre>
     </div>
   </div>
 </template>
