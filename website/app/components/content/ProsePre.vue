@@ -28,14 +28,14 @@
     code?: string;
 
     /**
-     * @description The language identifier used for syntax highlighting using Shiki. If `null`
-     * or `undefined` then no syntax highlighting is applied.
+     * @description The language identifier used for syntax highlighting using Shiki. If
+     * `null` or `undefined` then no syntax highlighting is applied.
      */
     language?: string | null;
 
     /**
-     * @description Optional file name to display above the code block. If `null` then no file
-     * names are rendered above the code block.
+     * @description Optional file name to display above the code block. If `null` then no
+     * file names are rendered above the code block.
      */
     filename?: string | null;
 

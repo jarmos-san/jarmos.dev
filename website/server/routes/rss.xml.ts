@@ -1,9 +1,8 @@
 /**
- * @description Server route to generate the site's RSS feed.
- *
- * This handler queries all the documents, ordered by publication date from the
- * "contents" source (managed by the `@nuxt/content` module). After a successful
- * document query, the data is serialised in to an RSS 2.0 feed.
+ * @description Server route to generate the site's RSS feed. This handler queries all the
+ * documents, ordered by publication date from the "contents" source (managed by
+ * the `@nuxt/content` module). After a successful document query, the data is
+ * serialised in to an RSS 2.0 feed.
  */
 
 import { queryCollection } from "@nuxt/content/server";
