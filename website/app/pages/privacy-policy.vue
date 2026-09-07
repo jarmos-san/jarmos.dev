@@ -1,17 +1,33 @@
 <template>
-  <article>
-    <h1>Privacy Policy</h1>
-    <p>
+  <article class="mt-8 mb-12 px-5 md:px-16 lg:px-28 xl:px-56">
+    <h1
+      class="mb-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-3xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-4xl lg:text-5xl"
+    >
+      Privacy Policy
+    </h1>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       While developing and maintaining this project, our reader&'s privacy
       concerns is of utmost importance to us. Hence, at each and every step of
       developing this website, we ensured everything is covered under the
-      <a href="https://gdpr-info.eu" target="_blank"> GDPR</a> guidelines. That
-      said, if you are concerned about what sort of private data do we collect,
-      this section of the website contains everything you will need to read
-      about.
+      <a
+        href="https://gdpr-info.eu"
+        target="_blank"
+        class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+      >
+        GDPR
+      </a>
+      guidelines. That said, if you are concerned about what sort of private
+      data do we collect, this section of the website contains everything you
+      will need to read about.
     </p>
-    <h2>Information We Collect</h2>
-    <ul>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      Information We Collect
+    </h2>
+    <ul
+      class="my-4 list-decimal space-y-1 pl-6 text-base font-normal text-[#ecf8ff]"
+    >
       <li>
         <strong>Contact Information</strong>: We might collect your name, email,
         mobile number, phone number, street, city, state, pincode, country and
@@ -40,8 +56,14 @@
         version of the operating system your computer or device is running.
       </li>
     </ul>
-    <h2>We Collect Information in Different Ways</h2>
-    <ul>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      We Collect Information in Different Ways
+    </h2>
+    <ul
+      class="my-4 list-decimal space-y-1 pl-6 text-base font-normal text-[#ecf8ff]"
+    >
       <li>
         <strong>We Collect Information Directly From You</strong>: We collect
         information directly from you when you share your email with us to join
@@ -61,8 +83,14 @@
         you. This could include your name and email address.
       </li>
     </ul>
-    <h2>Use of Your Personal Information</h2>
-    <ul>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      Use of Your Personal Information
+    </h2>
+    <ul
+      class="my-4 list-decimal space-y-1 pl-6 text-base font-normal text-[#ecf8ff]"
+    >
       <li>
         <strong>We Use the Information to Contact You</strong>: We might use the
         information you provide to contact you for confirmation of a
@@ -109,9 +137,17 @@
         between Somraj Saha & you or a subscription.
       </li>
     </ul>
-    <p>We use the information as permitted by law.</p>
-    <h2>Sharing of Information with Third-Parties</h2>
-    <ul>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
+      We use the information as permitted by law.
+    </p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      Sharing of Information with Third-Parties
+    </h2>
+    <ul
+      class="my-4 list-decimal space-y-1 pl-6 text-base font-normal text-[#ecf8ff]"
+    >
       <li>
         <strong>
           We Will Share Information With Third Parties Who Perform Services On
@@ -151,17 +187,25 @@
         for us to do so.
       </li>
     </ul>
-    <h2>Email Opt-Out and/or Unsubscribe from Routine Updates</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      Email Opt-Out and/or Unsubscribe from Routine Updates
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       You can opt out of receiving our marketing emails and/or receiving
       personalized contents for our private email list(s). To stop receiving our
       promotional emails, please email
-      <a href="mailto:contact@jarmos.dev" target="_blank">
+      <a
+        href="mailto:contact@jarmos.dev"
+        target="_blank"
+        class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
+      >
         contact@jarmos.dev
       </a>
       . It may take about ten days to process your request.
     </p>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       But, to receive a prompt unsubsribe request, please check the last email
       you received. There will be an unsubscribe option at the bottom of it. Do
       note, even if you opt out of getting marketing messages, we will still be
@@ -169,25 +213,30 @@
       our goods & services.
     </p>
     <h2>Third-Party Sites</h2>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       If you click on one of the links to third party websites, you may be taken
       to websites we do not control. This policy does not apply to the privacy
       practices of those websites. Read the privacy policy of other websites
       carefully. We are not responsible for these third party sites.
     </p>
-    <h2>Grievance Complaints</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      Grievance Complaints
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       In accordance with
       <a
         href="https://www.indiacode.nic.in/bitstream/123456789/1999/3/A2000-21.pdf"
         target="_blank"
+        class="text-[#b0fbbc] underline decoration-[#b0fbbc]/30 underline-offset-2 transition-colors duration-200 hover:text-[#83f9a2] hover:decoration-[#83f9a2]/60"
       >
         Information Technology Act, 2000</a
       >
       and rules made there under, the name and contact details of the individual
       to share your grievance complaints at the provided email address.
     </p>
-    <address>
+    <address class="my-4 max-w-3xl rounded-2xl bg-slate-600 p-4 text-white">
       <div>Somraj Saha,</div>
       <div>2nd Floor, S.K. Market, Masjid Road</div>
       <div>Agartala, West Tripura,</div>
@@ -196,21 +245,29 @@
       <div>Email: contact@jarmos.dev</div>
       <div>Phone: (+91) 7731 824 653 | (+91) 8794 891 882</div>
     </address>
-    <p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       If you have any questions about this Policy or other privacy concerns, you
       can reach out to us over electronic mail, traditional mail, telephone or
       whichever means is convenient for you. Please do so without any
       hesitation.
     </p>
-    <h2>Updates to This Policy</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      Updates to This Policy
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       From time to time we may change our privacy practices. We will notify you
       of any material changes to this policy as required by law. We will also
       post an updated copy on our website which you will find on the top of this
       Privacy Policy document. Please check our site periodically for updates.
     </p>
-    <h2>Jurisdiction</h2>
-    <p>
+    <h2
+      class="my-4 bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl leading-tight font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl lg:text-4xl"
+    >
+      Jurisdiction
+    </h2>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]">
       If you choose to visit the website, your visit and any dispute over
       privacy is subject to this Policy and the website&'s terms of use. In
       addition to the foregoing, any disputes arising under this Policy shall be
@@ -235,34 +292,3 @@ and protect your personal data under GDPR, analytics tools, and Indian IT laws.`
     twitterCard: "summary",
   });
 </script>
-
-<style lang="scss" scoped>
-  article {
-    padding: 0 2rem;
-    margin: 2rem auto;
-
-    address {
-      background-color: #1c2c35;
-      padding: 1rem;
-
-      div {
-        margin: 0.35rem auto;
-      }
-    }
-
-    // Tablet
-    @media screen and (min-width: 768px) {
-      padding: 0 4rem;
-    }
-
-    // Laptops
-    @media screen and (min-width: 1024px) {
-      padding: 0 7rem;
-    }
-
-    // 2K Desktops
-    @media screen and (min-width: 1440px) {
-      padding: 0 14rem;
-    }
-  }
-</style>
