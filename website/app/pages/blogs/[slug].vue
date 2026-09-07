@@ -6,7 +6,9 @@
         class="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 lg:p-14 mb-6 backdrop-blur-md"
       >
         <!-- Published date -->
-        <span class="inline-block text-xs font-semibold tracking-wide text-[#7ab6d9] mb-4">
+        <span
+          class="inline-block text-xs font-semibold tracking-wide text-[#7ab6d9] mb-4"
+        >
           {{ publishedOn }}
         </span>
 
@@ -18,7 +20,9 @@
         </h1>
 
         <!-- Description -->
-        <p class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg">
+        <p
+          class="mt-4 max-w-3xl text-base leading-relaxed text-[#ecf8ff]/90 md:text-lg"
+        >
           {{ post.description }}
         </p>
 
