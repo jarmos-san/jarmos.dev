@@ -4,7 +4,7 @@
   >
     <!-- Heading -->
     <h2
-      class="text-2xl font-bold bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl"
+      class="bg-linear-to-r from-[#b0fbbc] to-[#82f9a1] bg-clip-text text-2xl font-bold text-transparent [text-shadow:0_0_1rem_rgba(131,249,162,0.3)] md:text-3xl"
     >
       What're you working on?
     </h2>

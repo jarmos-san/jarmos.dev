@@ -1,5 +1,5 @@
 /**
- * Server route to generate the site's RSS feed.
+ * @description Server route to generate the site's RSS feed.
  *
  * This handler queries all the documents, ordered by publication date from the
  * "contents" source (managed by the `@nuxt/content` module). After a successful

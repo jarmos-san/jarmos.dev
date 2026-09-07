@@ -3,14 +3,14 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --host",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "lint": "nuxt typecheck && eslint .",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
+    "generate": "nuxt generate",
+    "lint": "nuxt typecheck && eslint .",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview",
     "test": "vitest",
-    "test:e2e": "playwright test",
-    "postinstall": "nuxt prepare"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.7",
