@@ -22,3 +22,11 @@ repos:
     hooks:
       - id: oxfmt
         name: enforce uniform formatting
+
+  - repo: https://github.com/oxc-project/mirrors-oxlint
+    rev: v1.82.0
+    hooks:
+      - id: oxlint
+        name: fix linting issues
+        args:
+          - --disable-nested-config
