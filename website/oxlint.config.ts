@@ -5,6 +5,7 @@ export default defineConfig({
     correctness: "error",
     nursery: "warn",
     perf: "warn",
+    restriction: "warn",
   },
   env: {
     builtin: true,
