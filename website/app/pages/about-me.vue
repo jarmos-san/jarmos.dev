@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+  import { useRuntimeConfig, useSeoMeta } from "#imports";
+
   const title = "About Me";
   const description = `Somraj Saha (Jarmos) - CTO at Weburz. Writing about software
 engineering, open-source, and the occasional dive into economics and investments.`;

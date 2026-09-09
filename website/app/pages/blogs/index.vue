@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+  import {
+    useRuntimeConfig,
+    useRoute,
+    useSeoMeta,
+    useAsyncData,
+    queryCollection,
+  } from "#imports";
+
   const details = {
     tagline: "blogging",
     title: "Blog",

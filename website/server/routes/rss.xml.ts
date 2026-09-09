@@ -9,6 +9,12 @@ import { queryCollection } from "@nuxt/content/server";
 import { version } from "nuxt/package.json";
 import { Feed } from "rivu";
 
+import {
+  defineEventHandler,
+  useRuntimeConfig,
+  setResponseHeader,
+} from "#imports";
+
 export default defineEventHandler(async (event) => {
   const baseURL = useRuntimeConfig().public.baseURL;
 

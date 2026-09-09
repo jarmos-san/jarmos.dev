@@ -1,4 +1,13 @@
 <script setup lang="ts">
+  import {
+    useRuntimeConfig,
+    useSeoMeta,
+    useAppConfig,
+    computed,
+    useAsyncData,
+    queryCollection,
+  } from "#imports";
+
   const title = "Home";
   const description = `I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source
 hacker by heart. I design systems, mentor devs, and occasionally tame misbehaving

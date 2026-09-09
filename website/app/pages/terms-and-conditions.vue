@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+  import { useRuntimeConfig, useSeoMeta } from "#imports";
+
   const title = "Terms and Conditions";
   const description = `Read the Terms and Conditions for using jarmos.dev, including
 product usage, services, privacy, intellectual property, and legal disclaimers.`;

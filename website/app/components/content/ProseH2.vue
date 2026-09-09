@@ -1,20 +1,6 @@
-<template>
-  <h2
-    :id="props.id"
-    class="mt-16 mb-4 text-[1.625rem] font-bold text-[#ecf8ff]"
-  >
-    <a
-      v-if="props.id && generate"
-      :href="`#${props.id}`"
-      class="text-[#ecf8ff] no-underline"
-    >
-      <slot />
-    </a>
-    <slot v-else />
-  </h2>
-</template>
-
 <script setup lang="ts">
+  import { useRuntimeConfig, computed } from "#imports";
+
   interface ProseH2Props {
     id?: string;
   }
@@ -32,3 +18,19 @@
           headings?.anchorLinks?.h2)),
   );
 </script>
+
+<template>
+  <h2
+    :id="props.id"
+    class="mt-16 mb-4 text-[1.625rem] font-bold text-[#ecf8ff]"
+  >
+    <a
+      v-if="props.id && generate"
+      :href="`#${props.id}`"
+      class="text-[#ecf8ff] no-underline"
+    >
+      <slot />
+    </a>
+    <slot v-else />
+  </h2>
+</template>

@@ -10,9 +10,18 @@
     ToastViewport,
   } from "reka-ui";
 
+  import {
+    useRuntimeConfig,
+    useSeoMeta,
+    ref,
+    computed,
+    onMounted,
+  } from "#imports";
+
   const title = "Contact Me";
   const description =
-    "Get in touch with Somraj Saha (Jarmos) for collaborations, open-source work, or just a friendly chat about tech.";
+    "Get in touch with Somraj Saha (Jarmos) for " +
+    "collaborations, open-source work, or just a friendly chat about tech.";
   const baseURL = useRuntimeConfig().public.baseURL;
   const image = `${baseURL}/icons/favicon.svg`;
 
@@ -112,7 +121,7 @@
     ].join("\n");
 
     const mailtoLink = `mailto:contact@jarmos.dev?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    globalThis.location.href = mailtoLink;
 
     toastMessage.value = {
       title: "Opening email client",

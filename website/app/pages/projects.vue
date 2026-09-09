@@ -1,4 +1,11 @@
 <script lang="ts" setup>
+  import {
+    useAppConfig,
+    useRoute,
+    useRuntimeConfig,
+    useSeoMeta,
+  } from "#imports";
+
   const { projects, seo } = useAppConfig();
   const route = useRoute();
   const baseURL = useRuntimeConfig().public.baseURL;

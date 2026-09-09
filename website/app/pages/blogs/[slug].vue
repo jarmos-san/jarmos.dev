@@ -1,3 +1,46 @@
+<script setup lang="ts">
+  import {
+    useRoute,
+    useAsyncData,
+    queryCollection,
+    useRuntimeConfig,
+    useSeoMeta,
+    computed,
+  } from "#imports";
+
+  const route = useRoute();
+  const { data: post } = await useAsyncData(route.path, () =>
+    queryCollection("content").path(route.path).first(),
+  );
+
+  const title = post.value?.title;
+  const baseURL = useRuntimeConfig().public.baseURL;
+  const description = post.value?.description;
+  const image = post.value?.coverImage.url;
+  const url = `${baseURL}/${route.path}`;
+
+  useSeoMeta({
+    title: title ?? "Not Found",
+    description,
+    ogImage: image,
+    ogUrl: url,
+    twitterImage: image,
+    twitterCard: "summary_large_image",
+  });
+
+  // Compute and cache the publication date
+  const publishedOn = computed(() =>
+    post.value?.publishedOn
+      ? new Date(post.value.publishedOn).toLocaleDateString(undefined, {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      : "",
+  );
+</script>
+
 <template>
   <article class="mt-8 mb-12 px-5 md:px-16 lg:px-28 xl:px-56">
     <template v-if="post">
@@ -66,37 +109,3 @@
     </template>
   </article>
 </template>
-
-<script setup lang="ts">
-  const route = useRoute();
-  const { data: post } = await useAsyncData(route.path, () =>
-    queryCollection("content").path(route.path).first(),
-  );
-
-  const title = post.value?.title;
-  const baseURL = useRuntimeConfig().public.baseURL;
-  const description = post.value?.description;
-  const image = post.value?.coverImage.url;
-  const url = `${baseURL}/${route.path}`;
-
-  useSeoMeta({
-    title: title ?? "Not Found",
-    description,
-    ogImage: image,
-    ogUrl: url,
-    twitterImage: image,
-    twitterCard: "summary_large_image",
-  });
-
-  // Compute and cache the publication date
-  const publishedOn = computed(() =>
-    post.value?.publishedOn
-      ? new Date(post.value.publishedOn).toLocaleDateString(undefined, {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })
-      : "",
-  );
-</script>
