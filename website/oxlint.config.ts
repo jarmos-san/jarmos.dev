@@ -4,6 +4,7 @@ export default defineConfig({
   categories: {
     correctness: "error",
     nursery: "warn",
+    perf: "warn",
   },
   env: {
     builtin: true,
