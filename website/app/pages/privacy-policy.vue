@@ -1,3 +1,24 @@
+<script lang="ts" setup>
+  import { useSeoMeta, useRuntimeConfig } from "#imports";
+
+  const title = "Privacy Policy";
+  const description =
+    "Read the Privacy Policy of jarmos.dev. Learn how we " +
+    "collect, use, and protect your personal data under GDPR, analytics " +
+    "tools, and Indian IT laws.";
+  const baseURL = useRuntimeConfig().public.baseURL;
+  const image = `${baseURL}/icons/favicon.svg`;
+
+  useSeoMeta({
+    title,
+    description,
+    ogImage: image,
+    ogUrl: `${baseURL}/privacy-policy`,
+    twitterImage: image,
+    twitterCard: "summary",
+  });
+</script>
+
 <template>
   <article class="mt-8 mb-12 px-5 md:px-16 lg:px-28 xl:px-56">
     <h1
@@ -275,20 +296,3 @@
     </p>
   </article>
 </template>
-
-<script lang="ts" setup>
-  const title = "Privacy Policy";
-  const description = `Read the Privacy Policy of jarmos.dev. Learn how we collect, use,
-and protect your personal data under GDPR, analytics tools, and Indian IT laws.`;
-  const baseURL = useRuntimeConfig().public.baseURL;
-  const image = `${baseURL}/icons/favicon.svg`;
-
-  useSeoMeta({
-    title,
-    description,
-    ogImage: image,
-    ogUrl: `${baseURL}/privacy-policy`,
-    twitterImage: image,
-    twitterCard: "summary",
-  });
-</script>

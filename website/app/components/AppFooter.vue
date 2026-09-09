@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { useAppConfig, computed } from "#imports";
+
   const details = {
     logo: "/icons/favicon.svg",
     columns: ["Navigate", "Legal", "Connect"],

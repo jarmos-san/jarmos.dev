@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+  import { computed } from "#imports";
+
   interface CoverImage {
     url: string;
     alt?: string;

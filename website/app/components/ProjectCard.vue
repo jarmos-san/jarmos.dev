@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+  import { computed } from "#imports";
+
   interface Project {
     name: string;
     desc: string;
