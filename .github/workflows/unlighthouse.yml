@@ -1,0 +1,43 @@
+name: Unlighthouse Audit
+
+on:
+  schedule:
+    - cron: "00 00 * * 7"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    name: Unlighthouse Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Run Unlighthouse
+        run: npx unlighthouse-ci --site https://jarmos.dev --build-static --budget 80
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6.0.0
+
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: ./.unlighthouse
+
+  deploy:
+    name: Deploy static site
+    needs: audit
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: Lighthouse Report
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5.0.1
