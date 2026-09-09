@@ -16,5 +16,9 @@ export default defineConfig({
     defineAppConfig: "readonly",
   },
   plugins: ["typescript", "unicorn", "oxc"],
-  rules: {},
+  rules: {
+    "oxc/no-async-await": "off",
+    "oxc/no-optional-chaining": "off",
+    "no-undefined": "off",
+  },
 });
