@@ -7,7 +7,7 @@ const CI_MIN_RETRY = 0;
 
 export default defineConfig({
   test: {
-    bail: process.env.CI ? CI_MAX_BAIL : undefined,
+    bail: process.env.CI === "true" ? CI_MAX_BAIL : undefined,
     coverage: {
       enabled: true,
       exclude: [
@@ -37,11 +37,12 @@ export default defineConfig({
         },
       },
     ],
-    reporters: process.env.GITHUB_ACTIONS
-      ? ["dot", "github-actions"]
-      : ["verbose"],
-    retry: process.env.CI ? CI_MAX_RETRY : CI_MIN_RETRY,
-    silent: process.env.CI ? false : "passed-only",
+    reporters:
+      process.env.GITHUB_ACTIONS === "true"
+        ? ["dot", "github-actions"]
+        : ["verbose"],
+    retry: process.env.CI === "true" ? CI_MAX_RETRY : CI_MIN_RETRY,
+    silent: process.env.CI === "true" ? false : "passed-only",
     watch: false,
   },
 });

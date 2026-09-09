@@ -15,7 +15,9 @@ import {
   useRuntimeConfig,
 } from "#imports";
 
+// oxlint-disable-next-line typescript/prefer-readonly-parameter-types
 export default defineEventHandler(async (event) => {
+  // oxlint-disable-next-line typescript/no-unsafe-assignment typescript/no-unsafe-call typescript/no-unsafe-member-access
   const { baseURL } = useRuntimeConfig().public;
 
   // Fetch all the posts from the Nuxt Content "collection" based on specified
@@ -45,6 +47,7 @@ export default defineEventHandler(async (event) => {
     })),
     language: "en-US",
     lastBuildDate: new Date(),
+    // oxlint-disable-next-line typescript/no-unsafe-assignment
     link: baseURL,
     managingEditor: "Somraj Saha <contact@jarmos.dev>",
     pubDate: new Date(),
