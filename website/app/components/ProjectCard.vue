@@ -51,9 +51,9 @@
     return borderColors[index];
   };
 
-  const iconColour = computed(() => {
-    return getBorderColor(props.name);
-  });
+  const iconColour = computed(() =>
+    getBorderColor(props.name)
+  );
 </script>
 
 <template>

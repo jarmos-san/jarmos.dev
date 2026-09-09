@@ -1,42 +1,42 @@
 <script setup lang="ts">
   import {
+    computed,
+    queryCollection,
+    useAppConfig,
+    useAsyncData,
     useRuntimeConfig,
     useSeoMeta,
-    useAppConfig,
-    computed,
-    useAsyncData,
-    queryCollection,
   } from "#imports";
 
   const title = "Home";
   const description = `I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source
 hacker by heart. I design systems, mentor devs, and occasionally tame misbehaving
 servers.`;
-  const baseURL = useRuntimeConfig().public.baseURL;
+  const {baseURL} = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({
-    title,
     description,
     ogImage: image,
     ogUrl: baseURL,
-    twitterImage: image,
+    title,
     twitterCard: "summary",
+    twitterImage: image,
   });
 
   const config = useAppConfig();
 
-  const projects = computed(() => {
-    return config.projects.slice(0, 4);
-  });
+  const projects = computed(() =>
+    config.projects.slice(0, 4)
+  );
 
-  const { data: posts } = await useAsyncData("featured-posts", () => {
-    return queryCollection("content")
+  const { data: posts } = await useAsyncData("featured-posts", () =>
+    queryCollection("content")
       .select("path", "title", "publishedOn", "description", "coverImage")
       .order("publishedOn", "DESC")
       .limit(4)
-      .all();
-  });
+      .all()
+  );
 </script>
 
 <template>

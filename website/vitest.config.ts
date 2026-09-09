@@ -4,22 +4,22 @@ import { coverageConfigDefaults, defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     // Run the tests in isolated environments, one for unit tests and another
-    // for component tests with Nuxt
+    // For component tests with Nuxt
     projects: [
       // Unit tests
       {
         test: {
-          name: "unit",
-          include: ["tests/unittests/**/*.test.ts"],
           environment: "node",
+          include: ["tests/unittests/**/*.test.ts"],
+          name: "unit",
         },
       },
       // Component tests using Nuxt.js
       defineVitestProject({
         test: {
-          name: "nuxt",
-          include: ["tests/nuxt/**/*.test.ts"],
           environment: "nuxt",
+          include: ["tests/nuxt/**/*.test.ts"],
+          name: "nuxt",
         },
       }),
     ],
@@ -28,10 +28,9 @@ export default defineConfig({
     watch: false,
 
     // Generate a coverage report. A normal text output for the console (during
-    // development) and a JSON output (for displaying in CI environments)
+    // Development) and a JSON output (for displaying in CI environments)
     coverage: {
       enabled: true,
-      reporter: ["text", "json"],
       exclude: [
         "*.config.ts",
         "**/app.vue",
@@ -40,6 +39,7 @@ export default defineConfig({
         "**/layouts/**/*.vue",
         ...coverageConfigDefaults.exclude,
       ],
+      reporter: ["text", "json"],
     },
 
     // Log memory leak details

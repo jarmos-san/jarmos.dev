@@ -11,27 +11,27 @@
   } from "reka-ui";
 
   import {
-    useRuntimeConfig,
-    useSeoMeta,
-    ref,
     computed,
     onMounted,
+    ref,
+    useRuntimeConfig,
+    useSeoMeta,
   } from "#imports";
 
   const title = "Contact Me";
   const description =
     "Get in touch with Somraj Saha (Jarmos) for " +
     "collaborations, open-source work, or just a friendly chat about tech.";
-  const baseURL = useRuntimeConfig().public.baseURL;
+  const {baseURL} = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({
-    title,
     description,
     ogImage: image,
     ogUrl: `${baseURL}/contact-me`,
-    twitterImage: image,
+    title,
     twitterCard: "summary",
+    twitterImage: image,
   });
 
   const name = useStorage("contact-draft-name", "");
@@ -40,7 +40,7 @@
   const message = useStorage("contact-draft-message", "");
 
   const toastOpen = ref(false);
-  const toastMessage = ref({ title: "", description: "" });
+  const toastMessage = ref({ description: "", title: "" });
 
   const now = useNow();
   const jarmosTimezone = "Asia/Kolkata";
@@ -52,11 +52,11 @@
 
   const formatTime = (tz: string): string =>
     new Intl.DateTimeFormat("en-US", {
-      timeZone: tz,
       hour: "2-digit",
+      hour12: true,
       minute: "2-digit",
       second: "2-digit",
-      hour12: true,
+      timeZone: tz,
     }).format(now.value);
 
   const jarmosTime = computed(() => formatTime(jarmosTimezone));
@@ -66,7 +66,7 @@
   );
 
   const viewerTimezoneShort = computed(() => {
-    if (!viewerTimezone.value) return "";
+    if (!viewerTimezone.value) {return "";}
     return (
       new Intl.DateTimeFormat("en-US", {
         timeZone: viewerTimezone.value,
@@ -79,33 +79,33 @@
 
   const contactLinks = [
     {
-      label: "Email",
-      icon: "material-symbols:mail-outline",
       href: "mailto:contact@jarmos.dev",
+      icon: "material-symbols:mail-outline",
+      label: "Email",
       value: "contact@jarmos.dev",
     },
     {
-      label: "GitHub",
-      icon: "mdi:github",
       href: "https://github.com/jarmos-san",
+      icon: "mdi:github",
+      label: "GitHub",
       value: "@Jarmos-san",
     },
     {
-      label: "Twitter / X",
-      icon: "mdi:twitter",
       href: "https://x.com/jarmossan",
+      icon: "mdi:twitter",
+      label: "Twitter / X",
       value: "@jarmossan",
     },
     {
-      label: "LinkedIn",
-      icon: "mdi:linkedin",
       href: "https://linkedin.com/in/jarmos",
+      icon: "mdi:linkedin",
+      label: "LinkedIn",
       value: "Somraj Saha",
     },
   ];
 
   const handleSubmit = (): void => {
-    if (!name.value || !email.value || !message.value) return;
+    if (!name.value || !email.value || !message.value) {return;}
 
     const mailSubject = subject.value
       ? `${subject.value} — from ${name.value}`
@@ -124,8 +124,8 @@
     globalThis.location.href = mailtoLink;
 
     toastMessage.value = {
-      title: "Opening email client",
       description: "Your default mail app should open shortly.",
+      title: "Opening email client",
     };
     toastOpen.value = true;
 

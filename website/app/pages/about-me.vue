@@ -7,12 +7,12 @@ engineering, open-source, and the occasional dive into economics and investments
   const baseUrl = useRuntimeConfig().public.baseURL;
 
   useSeoMeta({
-    title,
     description,
     ogImage: `${baseUrl}/icons/logo.svg`,
     ogUrl: baseUrl,
-    twitterImage: `${baseUrl}/icons/logo.svg`,
+    title,
     twitterCard: "summary_large_image",
+    twitterImage: `${baseUrl}/icons/logo.svg`,
   });
 </script>
 

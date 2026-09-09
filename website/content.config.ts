@@ -1,14 +1,14 @@
 import {
+  type CollectionSource,
+  type CollectionType,
   defineCollection,
   defineContentConfig,
   z,
-  type CollectionSource,
-  type CollectionType,
 } from "@nuxt/content";
 import { defineSitemapSchema } from "@nuxtjs/seo/content";
 
 // The URL of the repository, the directory and the GitHub access token to fetch
-// the blogposts from
+// The blogposts from
 const REPOSITORY = "https://github.com/Jarmos-san/blogposts";
 const DIR = "blogs/**.md";
 const TOKEN = process.env.GITHUB_TOKEN;
@@ -27,9 +27,9 @@ const description = z.string();
 
 // The content of the blog post
 const body = z.object({
-  type: z.string(),
   children: z.any(),
   toc: z.any(),
+  type: z.string(),
 });
 
 // The internal navigation of the blog post (used to render the sidebar)
@@ -37,9 +37,9 @@ const navigation = z
   .union([
     z.boolean(),
     z.object({
-      title: z.string(),
       description: z.string(),
       icon: z.string(),
+      title: z.string(),
     }),
   ])
   .default(true);
@@ -48,10 +48,10 @@ const navigation = z
 const seo = z
   .intersection(
     z.object({
-      title: z.string().optional(),
       description: z.string().optional(),
-      meta: z.array(z.record(z.string(), z.any())).optional(),
       link: z.array(z.record(z.string(), z.any())).optional(),
+      meta: z.array(z.record(z.string(), z.any())).optional(),
+      title: z.string().optional(),
     }),
     z.record(z.string(), z.any()),
   )
@@ -60,25 +60,25 @@ const seo = z
 
 // The details of the cover image to render for a blog post
 const coverImage = z.object({
-  url: z.string(),
   alt: z.string().optional(),
+  url: z.string(),
 });
 
 // The sitemap configuration and shape to pass on to Nuxt for server-side
-// generation.
+// Generation.
 const sitemap = defineSitemapSchema();
 
 // The fields and schema defined for each individual blog post
 const schema = z.object({
-  title,
+  body,
+  coverImage,
   description,
+  navigation,
   path,
   publishedOn,
-  body,
-  navigation,
   seo,
-  coverImage,
   sitemap,
+  title,
 });
 
 // The configuration of the source to fetch the articles from
@@ -86,16 +86,16 @@ const source: CollectionSource | undefined =
   process.env.NODE_ENV === "test"
     ? undefined
     : {
-        repository: REPOSITORY,
-        include: DIR,
         authToken: TOKEN,
+        include: DIR,
+        repository: REPOSITORY,
       };
 
 // The type of the collection.
 const type: CollectionType = "page";
 
 // The "content" (basically the blogposts) collection and its configurations
-const content = defineCollection({ type, source, schema });
+const content = defineCollection({ schema, source, type });
 
 // Define the collection of the blog post content
 const collections = { content };

@@ -8,25 +8,25 @@
 
   const { projects, seo } = useAppConfig();
   const route = useRoute();
-  const baseURL = useRuntimeConfig().public.baseURL;
+  const {baseURL} = useRuntimeConfig().public;
 
   useSeoMeta({
-    title: seo.projects.title,
     description: seo.projects.desc,
     ogImage: `${baseURL}${seo.projects.img}`,
     ogUrl: `${baseURL}${route.fullPath}`,
-    twitterImage: `${baseURL}${seo.projects.img}`,
+    title: seo.projects.title,
     twitterCard: "summary",
+    twitterImage: `${baseURL}${seo.projects.img}`,
   });
 
   const pageDetails = {
     category: "OPEN-SOURCE",
-    title: "Projects",
     description:
       "Here you'll find a collection of projects I've built over the " +
       "years-most of them open-source and free for anyone to explore. If " +
       "something sparks your curiosity or solves a little problem of yours, " +
       "feel free to give it a spin.",
+    title: "Projects",
   };
 </script>
 

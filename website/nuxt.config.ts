@@ -4,14 +4,61 @@ import { defineNuxtConfig } from "nuxt/config";
 const BASE_URL = "https://jarmos.dev";
 
 export default defineNuxtConfig({
+  $production: {
+    scripts: {
+      registry: {
+        cloudflareWebAnalytics: {
+          token: process.env.CLOUDFLARE_WEB_ANALYTICS_TOKEN ?? "",
+        },
+      },
+    },
+  },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "en-GB",
+      },
+      link: [
+        {
+          rel: "alternate",
+          type: "application/rss+xml",
+          title: "jarmos.dev RSS Feed",
+          href: "/rss.xml",
+        },
+      ],
+      meta: [
+        {
+          name: "theme-color",
+          content: "#00dc82",
+        },
+        {
+          name: "theme-color",
+          content: "#18181b",
+          media: "(prefers-color-scheme: dark)",
+        },
+      ],
+      titleTemplate: "%s | jarmos.dev",
+    },
+  },
+  compatibilityDate: "2025-09-29",
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: ["python", "javascript", "typescript", "shell", "lua", "go"],
+          theme: "everforest-dark",
+        },
+      },
+    },
+  },
+  css: ["~/assets/styles/main.css"],
   devtools: {
     enabled: true,
   },
-  compatibilityDate: "2025-09-29",
-  runtimeConfig: {
-    public: {
-      baseURL: BASE_URL,
-    },
+  llms: {
+    description: "Somraj Saha's digital garden and personal website.",
+    domain: BASE_URL,
+    title: "jarmos.dev",
   },
   modules: [
     "@nuxtjs/seo",
@@ -23,63 +70,39 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/image",
   ],
-  llms: {
-    domain: BASE_URL,
-    title: "jarmos.dev",
-    description: "Somraj Saha's digital garden and personal website.",
-  },
-  content: {
-    build: {
-      markdown: {
-        highlight: {
-          theme: "everforest-dark",
-          langs: ["python", "javascript", "typescript", "shell", "lua", "go"],
-        },
-      },
-    },
+  ogImage: {
+    enabled: false,
   },
   robots: {
     blockNonSeoBots: true,
   },
+  routeRules: {
+    "/**": {
+      prerender: true,
+    },
+    "/rss.xml": {
+      prerender: true,
+    },
+  },
+  runtimeConfig: {
+    public: {
+      baseURL: BASE_URL,
+    },
+  },
   site: {
-    url: BASE_URL,
-    name: "jarmos.dev",
+    defaultLocale: "en",
     description:
       "I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source " +
       "hacker by heart. I design systems, mentor devs, and occasionally tame " +
       "misbehaving servers.",
-    defaultLocale: "en",
-  },
-  ogImage: {
-    enabled: false,
+    name: "jarmos.dev",
+    url: BASE_URL,
   },
   sitemap: {
     defaults: {
       changefreq: "monthly",
       priority: 0.7,
     },
-    xslColumns: [
-      {
-        label: "URL",
-        width: "75%",
-      },
-      {
-        label: "Last Modified",
-        select: "sitemap:lastmod",
-        width: "25%",
-      },
-      {
-        label: "Priority",
-        select: "sitemap:priority",
-        width: "12.5%",
-      },
-      {
-        label: "Change Frequency",
-        select: "sitemap:changefreq",
-        width: "12.5%",
-      },
-    ],
-    zeroRuntime: true,
     urls: [
       {
         loc: "/",
@@ -130,53 +153,30 @@ export default defineNuxtConfig({
         changefreq: "never",
       },
     ],
-  },
-  $production: {
-    scripts: {
-      registry: {
-        cloudflareWebAnalytics: {
-          token: process.env.CLOUDFLARE_WEB_ANALYTICS_TOKEN ?? "",
-        },
+    xslColumns: [
+      {
+        label: "URL",
+        width: "75%",
       },
-    },
+      {
+        label: "Last Modified",
+        select: "sitemap:lastmod",
+        width: "25%",
+      },
+      {
+        label: "Priority",
+        select: "sitemap:priority",
+        width: "12.5%",
+      },
+      {
+        label: "Change Frequency",
+        select: "sitemap:changefreq",
+        width: "12.5%",
+      },
+    ],
+    zeroRuntime: true,
   },
   vite: {
     plugins: [tailwindcss()],
   },
-  routeRules: {
-    "/rss.xml": {
-      prerender: true,
-    },
-    "/**": {
-      prerender: true,
-    },
-  },
-  app: {
-    head: {
-      meta: [
-        {
-          name: "theme-color",
-          content: "#00dc82",
-        },
-        {
-          name: "theme-color",
-          content: "#18181b",
-          media: "(prefers-color-scheme: dark)",
-        },
-      ],
-      htmlAttrs: {
-        lang: "en-GB",
-      },
-      link: [
-        {
-          rel: "alternate",
-          type: "application/rss+xml",
-          title: "jarmos.dev RSS Feed",
-          href: "/rss.xml",
-        },
-      ],
-      titleTemplate: "%s | jarmos.dev",
-    },
-  },
-  css: ["~/assets/styles/main.css"],
 });

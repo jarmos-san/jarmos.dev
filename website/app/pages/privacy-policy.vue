@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-  import { useSeoMeta, useRuntimeConfig } from "#imports";
+  import { useRuntimeConfig, useSeoMeta } from "#imports";
 
   const title = "Privacy Policy";
   const description =
     "Read the Privacy Policy of jarmos.dev. Learn how we " +
     "collect, use, and protect your personal data under GDPR, analytics " +
     "tools, and Indian IT laws.";
-  const baseURL = useRuntimeConfig().public.baseURL;
+  const {baseURL} = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({
-    title,
     description,
     ogImage: image,
     ogUrl: `${baseURL}/privacy-policy`,
-    twitterImage: image,
+    title,
     twitterCard: "summary",
+    twitterImage: image,
   });
 </script>
 

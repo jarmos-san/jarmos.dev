@@ -1,44 +1,20 @@
 export default defineAppConfig({
   icon: {
-    mode: "css",
     cssLayer: "base",
+    mode: "css",
   },
-  socialLinks: [
+  legalLinks: [
     {
-      name: "Email",
-      href: "mailto:contact@jarmos.dev",
-      icon: "mdi:gmail",
-      label: "contact@jarmos.dev",
+      label: "Terms and Conditions",
+      href: "/terms-and-conditions",
     },
     {
-      name: "Twitter",
-      href: "https://x.com/jarmosan",
-      icon: "line-md:twitter-x",
-      label: "@Jarmossan",
+      label: "Distribution Rights",
+      href: "/distribution-rights",
     },
     {
-      name: "GitHub",
-      href: "https://github.com/Jarmos-san",
-      icon: "line-md:github",
-      label: "jarmos-san",
-    },
-    {
-      name: "Instagram",
-      href: "https://www.instagram.com/jarmos.san",
-      icon: "line-md:instagram",
-      label: "jarmos.san",
-    },
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/in/jarmos",
-      icon: "line-md:linkedin",
-      label: "jarmos",
-    },
-    {
-      name: "RSS",
-      href: "/rss.xml",
-      icon: "material-symbols:rss-feed-rounded",
-      label: "RSS",
+      label: "Privacy Policy",
+      href: "/privacy-policy",
     },
   ],
   navLinks: [
@@ -86,25 +62,49 @@ export default defineAppConfig({
   ],
   seo: {
     projects: {
-      title: "Projects",
       desc:
         "Explore my personal projects in software development, ecommerce " +
         "tools, and experiments at the intersection of technology and economics.",
       img: "/icons/favicon.svg",
+      title: "Projects",
     },
   },
-  legalLinks: [
+  socialLinks: [
     {
-      label: "Terms and Conditions",
-      href: "/terms-and-conditions",
+      name: "Email",
+      href: "mailto:contact@jarmos.dev",
+      icon: "mdi:gmail",
+      label: "contact@jarmos.dev",
     },
     {
-      label: "Distribution Rights",
-      href: "/distribution-rights",
+      name: "Twitter",
+      href: "https://x.com/jarmosan",
+      icon: "line-md:twitter-x",
+      label: "@Jarmossan",
     },
     {
-      label: "Privacy Policy",
-      href: "/privacy-policy",
+      name: "GitHub",
+      href: "https://github.com/Jarmos-san",
+      icon: "line-md:github",
+      label: "jarmos-san",
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/jarmos.san",
+      icon: "line-md:instagram",
+      label: "jarmos.san",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/jarmos",
+      icon: "line-md:linkedin",
+      label: "jarmos",
+    },
+    {
+      name: "RSS",
+      href: "/rss.xml",
+      icon: "material-symbols:rss-feed-rounded",
+      label: "RSS",
     },
   ],
 });

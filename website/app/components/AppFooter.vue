@@ -1,16 +1,16 @@
 <script setup lang="ts">
-  import { useAppConfig, computed } from "#imports";
+  import { computed, useAppConfig } from "#imports";
 
   const details = {
-    logo: "/icons/favicon.svg",
     columns: ["Navigate", "Legal", "Connect"],
+    logo: "/icons/favicon.svg",
   };
 
   const { socialLinks, legalLinks, navLinks } = useAppConfig();
 
-  const currentYear = computed(() => {
-    return new Date().getFullYear();
-  });
+  const currentYear = computed(() =>
+    new Date().getFullYear()
+  );
 </script>
 
 <template>

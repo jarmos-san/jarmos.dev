@@ -20,8 +20,8 @@
 
   const props = defineProps<Props>();
 
-  const publishedOn = computed(() => {
-    return new Date(props.post.publishedOn).toLocaleDateString("en-GB", {
+  const publishedOn = computed(() =>
+    new Date(props.post.publishedOn).toLocaleDateString("en-GB", {
       weekday: "long",
       day: "numeric",
       month: "long",
@@ -29,8 +29,8 @@
       hour: "2-digit",
       minute: "2-digit",
       hour12: true,
-    });
-  });
+    })
+  );
 </script>
 
 <template>

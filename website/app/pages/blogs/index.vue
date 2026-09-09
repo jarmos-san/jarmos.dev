@@ -1,20 +1,20 @@
 <script lang="ts" setup>
   import {
-    useRuntimeConfig,
-    useRoute,
-    useSeoMeta,
-    useAsyncData,
     queryCollection,
+    useAsyncData,
+    useRoute,
+    useRuntimeConfig,
+    useSeoMeta,
   } from "#imports";
 
   const details = {
-    tagline: "blogging",
-    title: "Blog",
     description:
       "A collection of articles covering software engineering, open-source contributions, " +
       "and product development — from architecture decisions to the day-to-day realities of " +
       "building and scaling. Written for developers, founders, and anyone curious about how " +
       "software gets made.",
+    tagline: "blogging",
+    title: "Blog",
   };
 
   const config = useRuntimeConfig();
@@ -22,21 +22,21 @@
   const route = useRoute();
 
   useSeoMeta({
-    title: details.title,
     description: details.description,
     ogImage: image,
     ogUrl: config.public.baseURL + route.path,
-    twitterImage: image,
+    title: details.title,
     twitterCard: "summary",
+    twitterImage: image,
   });
 
   // Fetch the list of blog posts
-  const { data: posts } = await useAsyncData(route.path, () => {
-    return queryCollection("content")
+  const { data: posts } = await useAsyncData(route.path, () =>
+    queryCollection("content")
       .select("path", "title", "publishedOn", "description", "coverImage")
       .order("publishedOn", "DESC")
-      .all();
-  });
+      .all()
+  );
 </script>
 
 <template>

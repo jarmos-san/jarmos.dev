@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { useRuntimeConfig, computed } from "#imports";
+  import { computed, useRuntimeConfig } from "#imports";
 
   interface ProseH2Props {
     id?: string;

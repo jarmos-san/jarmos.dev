@@ -1,11 +1,11 @@
 <script setup lang="ts">
   import {
-    useRoute,
-    useAsyncData,
+    computed,
     queryCollection,
+    useAsyncData,
+    useRoute,
     useRuntimeConfig,
     useSeoMeta,
-    computed,
   } from "#imports";
 
   const route = useRoute();
@@ -14,28 +14,28 @@
   );
 
   const title = post.value?.title;
-  const baseURL = useRuntimeConfig().public.baseURL;
+  const {baseURL} = useRuntimeConfig().public;
   const description = post.value?.description;
   const image = post.value?.coverImage.url;
   const url = `${baseURL}/${route.path}`;
 
   useSeoMeta({
-    title: title ?? "Not Found",
     description,
     ogImage: image,
     ogUrl: url,
-    twitterImage: image,
+    title: title ?? "Not Found",
     twitterCard: "summary_large_image",
+    twitterImage: image,
   });
 
   // Compute and cache the publication date
   const publishedOn = computed(() =>
     post.value?.publishedOn
       ? new Date(post.value.publishedOn).toLocaleDateString("en", {
+          day: "numeric",
+          month: "long",
           weekday: "long",
           year: "numeric",
-          month: "long",
-          day: "numeric",
         })
       : "",
   );
