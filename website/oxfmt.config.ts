@@ -1,7 +1,6 @@
 import { defineConfig } from "oxfmt";
 
 export default defineConfig({
-  printWidth: 80,
   ignorePatterns: [".nuxt", ".data", "pnpm-*.yaml", "node_modules"],
   jsdoc: {
     bracketSpacing: true,
@@ -11,6 +10,7 @@ export default defineConfig({
     separateReturnsFromParam: true,
   },
   objectWrap: "preserve",
+  printWidth: 80,
   proseWrap: "always",
   semi: true,
   singleQuote: false,

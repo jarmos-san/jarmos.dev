@@ -11,7 +11,7 @@
     VisuallyHidden,
   } from "reka-ui";
 
-  import { useMediaQuery, ref, useRoute, useAppConfig } from "#imports";
+  import { ref, useAppConfig, useMediaQuery, useRoute } from "#imports";
 
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const open = ref(false);

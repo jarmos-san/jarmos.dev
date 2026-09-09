@@ -20,17 +20,17 @@
 
   const props = defineProps<Props>();
 
-  const publishedOn = computed(() => {
-    return new Date(props.post.publishedOn).toLocaleDateString("en-GB", {
-      weekday: "long",
+  const publishedOn = computed(() =>
+    new Date(props.post.publishedOn).toLocaleDateString("en-GB", {
       day: "numeric",
-      month: "long",
-      year: "numeric",
       hour: "2-digit",
-      minute: "2-digit",
       hour12: true,
-    });
-  });
+      minute: "2-digit",
+      month: "long",
+      weekday: "long",
+      year: "numeric",
+    }),
+  );
 </script>
 
 <template>

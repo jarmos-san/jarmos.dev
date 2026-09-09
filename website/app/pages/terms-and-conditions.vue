@@ -4,16 +4,16 @@
   const title = "Terms and Conditions";
   const description = `Read the Terms and Conditions for using jarmos.dev, including
 product usage, services, privacy, intellectual property, and legal disclaimers.`;
-  const baseURL = useRuntimeConfig().public.baseURL;
+  const { baseURL } = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({
-    title,
     description,
     ogImage: image,
     ogUrl: `${baseURL}/terms-and-conditions`,
-    twitterImage: image,
+    title,
     twitterCard: "summary",
+    twitterImage: image,
   });
 </script>
 

@@ -7,20 +7,31 @@ export default defineConfig({
     pedantic: "warn",
     perf: "warn",
     restriction: "error",
+    style: "warn",
     suspicious: "warn",
   },
   env: {
     builtin: true,
   },
   globals: {
+    defineAppConfig: "readonly",
     defineProps: "readonly",
     process: "readonly",
-    defineAppConfig: "readonly",
   },
+  overrides: [
+    {
+      files: ["**/components/**/*.ts", "**/components/**/*.vue"],
+      rules: { "unicorn/filename-case": ["error", { case: "pascalCase" }] },
+    },
+  ],
   plugins: ["typescript", "unicorn", "oxc"],
   rules: {
+    "no-ternary": "off",
+    "no-undefined": "off",
+    "one-var": "off",
     "oxc/no-async-await": "off",
     "oxc/no-optional-chaining": "off",
-    "no-undefined": "off",
+    "prefer-template": "off",
+    "sort-imports": "off",
   },
 });

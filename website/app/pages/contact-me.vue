@@ -11,128 +11,146 @@
   } from "reka-ui";
 
   import {
-    useRuntimeConfig,
-    useSeoMeta,
-    ref,
     computed,
     onMounted,
+    ref,
+    useRuntimeConfig,
+    useSeoMeta,
   } from "#imports";
+
+  interface Email {
+    address: string;
+    message: string;
+    sender: string;
+    subject?: string;
+  }
 
   const title = "Contact Me";
   const description =
     "Get in touch with Somraj Saha (Jarmos) for " +
     "collaborations, open-source work, or just a friendly chat about tech.";
-  const baseURL = useRuntimeConfig().public.baseURL;
+  const { baseURL } = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({
-    title,
     description,
     ogImage: image,
     ogUrl: `${baseURL}/contact-me`,
-    twitterImage: image,
+    title,
     twitterCard: "summary",
+    twitterImage: image,
   });
 
-  const name = useStorage("contact-draft-name", "");
-  const email = useStorage("contact-draft-email", "");
-  const subject = useStorage("contact-draft-subject", "");
-  const message = useStorage("contact-draft-message", "");
+  const email = useStorage("contact-draft-email", {
+    address: "",
+    message: "",
+    sender: "",
+    subject: "",
+  });
 
   const toastOpen = ref(false);
-  const toastMessage = ref({ title: "", description: "" });
+  const toastMessage = ref({ description: "", title: "" });
 
   const now = useNow();
   const jarmosTimezone = "Asia/Kolkata";
 
-  const viewerTimezone = ref<string | null>(null);
+  const viewerTimezone = ref<string | undefined>(undefined);
   onMounted(() => {
-    viewerTimezone.value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    viewerTimezone.value = new Intl.DateTimeFormat().resolvedOptions().timeZone;
   });
 
   const formatTime = (tz: string): string =>
     new Intl.DateTimeFormat("en-US", {
-      timeZone: tz,
       hour: "2-digit",
+      hour12: true,
       minute: "2-digit",
       second: "2-digit",
-      hour12: true,
+      timeZone: tz,
     }).format(now.value);
 
   const jarmosTime = computed(() => formatTime(jarmosTimezone));
 
   const viewerTime = computed(() =>
-    viewerTimezone.value ? formatTime(viewerTimezone.value) : null,
+    viewerTimezone.value ? formatTime(viewerTimezone.value) : undefined,
   );
 
   const viewerTimezoneShort = computed(() => {
-    if (!viewerTimezone.value) return "";
+    if (!viewerTimezone.value) {
+      return "";
+    }
     return (
       new Intl.DateTimeFormat("en-US", {
         timeZone: viewerTimezone.value,
         timeZoneName: "short",
       })
         .formatToParts(now.value)
-        .find((p) => p.type === "timeZoneName")?.value ?? ""
+        .find((part) => part.type === "timeZoneName")?.value ?? ""
     );
   });
 
   const contactLinks = [
     {
-      label: "Email",
-      icon: "material-symbols:mail-outline",
       href: "mailto:contact@jarmos.dev",
+      icon: "material-symbols:mail-outline",
+      label: "Email",
       value: "contact@jarmos.dev",
     },
     {
-      label: "GitHub",
-      icon: "mdi:github",
       href: "https://github.com/jarmos-san",
+      icon: "mdi:github",
+      label: "GitHub",
       value: "@Jarmos-san",
     },
     {
-      label: "Twitter / X",
-      icon: "mdi:twitter",
       href: "https://x.com/jarmossan",
+      icon: "mdi:twitter",
+      label: "Twitter / X",
       value: "@jarmossan",
     },
     {
-      label: "LinkedIn",
-      icon: "mdi:linkedin",
       href: "https://linkedin.com/in/jarmos",
+      icon: "mdi:linkedin",
+      label: "LinkedIn",
       value: "Somraj Saha",
     },
   ];
 
+  const constructMail = (mail: Email): string => {
+    const mailSubject = mail.subject
+      ? `${mail.subject} — from ${mail.sender}`
+      : `Message from ${mail.sender}`;
+
+    const body = `Hi Jarmos,\n\n${mail.message}\n\n---\n${mail.sender}${mail.address}\n`;
+
+    return (
+      "mailto:contact@jarmos.dev?subject=" +
+      encodeURIComponent(mailSubject) +
+      "&body=" +
+      encodeURIComponent(body)
+    );
+  };
+
   const handleSubmit = (): void => {
-    if (!name.value || !email.value || !message.value) return;
+    if (!email.value.sender || !email.value.address || !email.value.message) {
+      return;
+    }
 
-    const mailSubject = subject.value
-      ? `${subject.value} — from ${name.value}`
-      : `Message from ${name.value}`;
-    const body = [
-      `Hi Jarmos,`,
-      ``,
-      message.value,
-      ``,
-      `—`,
-      `${name.value}`,
-      `${email.value}`,
-    ].join("\n");
+    const mail = {
+      address: email.value.address,
+      message: email.value.message,
+      sender: email.value.sender,
+      subject: email.value.subject,
+    };
 
-    const mailtoLink = `mailto:contact@jarmos.dev?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
-    globalThis.location.href = mailtoLink;
+    globalThis.location.href = constructMail(mail);
 
     toastMessage.value = {
-      title: "Opening email client",
       description: "Your default mail app should open shortly.",
+      title: "Opening email client",
     };
-    toastOpen.value = true;
 
-    name.value = "";
-    email.value = "";
-    subject.value = "";
-    message.value = "";
+    toastOpen.value = true;
+    email.value = undefined;
   };
 </script>
 
@@ -182,7 +200,7 @@
               </Label>
               <input
                 id="contact-name"
-                v-model="name"
+                v-model="email.sender"
                 type="text"
                 required
                 placeholder="Your name"
@@ -216,7 +234,7 @@
               </Label>
               <input
                 id="contact-subject"
-                v-model="subject"
+                v-model="email.subject"
                 type="text"
                 placeholder="What's this about?"
                 class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-[#ecf8ff] transition-all duration-200 outline-none placeholder:text-white/30 focus:border-[#83f9a2] focus:ring-2 focus:ring-[#83f9a2]/50"
@@ -232,7 +250,7 @@
               </Label>
               <textarea
                 id="contact-message"
-                v-model="message"
+                v-model="email.message"
                 rows="6"
                 required
                 placeholder="Tell me about your project, question, or just say hello..."
