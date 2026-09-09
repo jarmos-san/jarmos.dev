@@ -6,7 +6,7 @@
     "Read the Privacy Policy of jarmos.dev. Learn how we " +
     "collect, use, and protect your personal data under GDPR, analytics " +
     "tools, and Indian IT laws.";
-  const {baseURL} = useRuntimeConfig().public;
+  const { baseURL } = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({

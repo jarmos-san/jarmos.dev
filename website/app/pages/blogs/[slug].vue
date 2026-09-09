@@ -14,7 +14,7 @@
   );
 
   const title = post.value?.title;
-  const {baseURL} = useRuntimeConfig().public;
+  const { baseURL } = useRuntimeConfig().public;
   const description = post.value?.description;
   const image = post.value?.coverImage.url;
   const url = `${baseURL}/${route.path}`;

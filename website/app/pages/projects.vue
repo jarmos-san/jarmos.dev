@@ -8,7 +8,7 @@
 
   const { projects, seo } = useAppConfig();
   const route = useRoute();
-  const {baseURL} = useRuntimeConfig().public;
+  const { baseURL } = useRuntimeConfig().public;
 
   useSeoMeta({
     description: seo.projects.desc,

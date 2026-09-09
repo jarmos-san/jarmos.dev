@@ -35,7 +35,7 @@
     queryCollection("content")
       .select("path", "title", "publishedOn", "description", "coverImage")
       .order("publishedOn", "DESC")
-      .all()
+      .all(),
   );
 </script>
 

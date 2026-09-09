@@ -8,9 +8,7 @@
 
   const { socialLinks, legalLinks, navLinks } = useAppConfig();
 
-  const currentYear = computed(() =>
-    new Date().getFullYear()
-  );
+  const currentYear = computed(() => new Date().getFullYear());
 </script>
 
 <template>

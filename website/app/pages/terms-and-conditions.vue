@@ -4,7 +4,7 @@
   const title = "Terms and Conditions";
   const description = `Read the Terms and Conditions for using jarmos.dev, including
 product usage, services, privacy, intellectual property, and legal disclaimers.`;
-  const {baseURL} = useRuntimeConfig().public;
+  const { baseURL } = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({

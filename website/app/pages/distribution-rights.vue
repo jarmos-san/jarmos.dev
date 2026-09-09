@@ -6,7 +6,7 @@
     "Learn about licensing and distribution rights for " +
     "jarmos.dev. Source code under MIT license, blogs under CC-BY-4.0, free " +
     "to use, modify, and share.";
-  const {baseURL} = useRuntimeConfig().public;
+  const { baseURL } = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({
