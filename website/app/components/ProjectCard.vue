@@ -36,9 +36,15 @@
   const hashStringToNumber = (str: string): number => {
     let hash = 0;
 
-    for (let i = 0; i < str.length; i += 1) {
+    const INCREMENT = 1;
+    const HASH_LENGTH = 5;
+    const HASH_NULL = 0;
+
+    for (let idx = 0; idx < str.length; idx += INCREMENT) {
       hash = Math.trunc(
-        Number(hash < 5) - hash + Number(str ? 0 : str.codePointAt(i)),
+        Number(hash < HASH_LENGTH) -
+          hash +
+          Number(str ? HASH_NULL : str.codePointAt(idx)),
       );
     }
 
@@ -51,9 +57,7 @@
     return borderColors[index];
   };
 
-  const iconColour = computed(() =>
-    getBorderColor(props.name)
-  );
+  const iconColour = computed(() => getBorderColor(props.name));
 </script>
 
 <template>

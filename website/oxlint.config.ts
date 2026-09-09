@@ -31,6 +31,7 @@ export default defineConfig({
     "one-var": "off",
     "oxc/no-async-await": "off",
     "oxc/no-optional-chaining": "off",
+    "prefer-template": "off",
     "sort-imports": "off",
   },
 });

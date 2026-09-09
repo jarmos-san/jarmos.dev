@@ -10,9 +10,9 @@
 
   const title = "Home";
   const description = `I'm Jarmos - CTO at Weburz, Senior Engineer by title, open-source
-hacker by heart. I design systems, mentor devs, and occasionally tame misbehaving
-servers.`;
-  const {baseURL} = useRuntimeConfig().public;
+  hacker by heart. I design systems, mentor devs, and occasionally tame misbehaving
+  servers.`;
+  const { baseURL } = useRuntimeConfig().public;
   const image = `${baseURL}/icons/favicon.svg`;
 
   useSeoMeta({
@@ -26,16 +26,23 @@ servers.`;
 
   const config = useAppConfig();
 
+  const PROJECTS_INDICES = {
+    max: 4,
+    min: 0,
+  };
+
   const projects = computed(() =>
-    config.projects.slice(0, 4)
+    config.projects.slice(PROJECTS_INDICES.min, PROJECTS_INDICES.max),
   );
+
+  const LIMIT = 4;
 
   const { data: posts } = await useAsyncData("featured-posts", () =>
     queryCollection("content")
       .select("path", "title", "publishedOn", "description", "coverImage")
       .order("publishedOn", "DESC")
-      .limit(4)
-      .all()
+      .limit(LIMIT)
+      .all(),
   );
 </script>
 

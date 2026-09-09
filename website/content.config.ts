@@ -49,7 +49,9 @@ const seo = z
   .intersection(
     z.object({
       description: z.string().optional(),
+      // oxlint-disable-next-line unicorn/max-nested-calls
       link: z.array(z.record(z.string(), z.any())).optional(),
+      // oxlint-disable-next-line unicorn/max-nested-calls
       meta: z.array(z.record(z.string(), z.any())).optional(),
       title: z.string().optional(),
     }),
