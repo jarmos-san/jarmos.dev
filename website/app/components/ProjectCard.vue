@@ -36,10 +36,8 @@
   const hashStringToNumber = (str: string): number => {
     let hash = 0;
 
-    for (let i = 0; i < str.length; i += i) {
-      hash = Math.trunc(
-        Number((hash << 5) - hash + str ? 0 : str.codePointAt(i)),
-      );
+    for (let i = 0; i < str.length; i += 1) {
+      hash = Math.trunc(Number(hash < 5) - hash + str.charCodeAt(i));
     }
 
     return Math.abs(hash);
