@@ -7,20 +7,22 @@ export default defineConfig({
     pedantic: "warn",
     perf: "warn",
     restriction: "error",
+    style: "warn",
     suspicious: "warn",
   },
   env: {
     builtin: true,
   },
   globals: {
+    defineAppConfig: "readonly",
     defineProps: "readonly",
     process: "readonly",
-    defineAppConfig: "readonly",
   },
   plugins: ["typescript", "unicorn", "oxc"],
   rules: {
+    "no-undefined": "off",
+    "one-var": "off",
     "oxc/no-async-await": "off",
     "oxc/no-optional-chaining": "off",
-    "no-undefined": "off",
   },
 });
