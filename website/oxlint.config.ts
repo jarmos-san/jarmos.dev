@@ -11,12 +11,25 @@ export default defineConfig({
     suspicious: "warn",
   },
   env: {
+    amd: true,
+    browser: true,
     builtin: true,
+    node: true,
+    "shared-node-browser": true,
+    vitest: true,
+    vue: true,
   },
   globals: {
     defineAppConfig: "readonly",
     defineProps: "readonly",
     process: "readonly",
+  },
+  options: {
+    maxWarnings: 10,
+    reportUnusedDisableDirectives: "error",
+    respectEslintDisableDirectives: false,
+    typeAware: true,
+    typeCheck: true,
   },
   overrides: [
     {
@@ -33,5 +46,10 @@ export default defineConfig({
     "oxc/no-optional-chaining": "off",
     "prefer-template": "off",
     "sort-imports": "off",
+  },
+  settings: {
+    vitest: {
+      typecheck: true,
+    },
   },
 });
