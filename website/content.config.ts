@@ -11,7 +11,6 @@ import { defineSitemapSchema } from "@nuxtjs/seo/content";
 // The blogposts from
 const REPOSITORY = "https://github.com/Jarmos-san/blogposts";
 const DIR = "blogs/**.md";
-const TOKEN = process.env.GITHUB_TOKEN;
 
 // The publication date of the blog post
 const publishedOn = z.date();
@@ -88,7 +87,6 @@ const source: CollectionSource | undefined =
   process.env.NODE_ENV === "test"
     ? undefined
     : {
-        authToken: TOKEN,
         include: DIR,
         repository: REPOSITORY,
       };

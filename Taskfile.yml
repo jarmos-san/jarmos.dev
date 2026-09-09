@@ -1,7 +1,5 @@
 version: "3"
 
-dotenv: [.env]
-
 tasks:
   default:
     cmds: [task --list]
@@ -75,10 +73,6 @@ tasks:
   build:
     desc: Build a production-ready version of the site.
     dir: ./website
-    requires:
-      vars: [GITHUB_TOKEN]
-    env:
-      GITHUB_TOKEN: "{{ .GITHUB_TOKEN }}"
     sources: ["*"]
     generates: [".output/**/*"]
     cmd: pnpm generate
