@@ -3,8 +3,6 @@
     header:
       "I'm Jarmos — a Senior Engineer by title, Open-Source hacker by heart.",
   };
-
-  // TODO: Figure a way out to safely the header description sections.
 </script>
 
 <template>

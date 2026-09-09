@@ -52,7 +52,7 @@ export default defineConfig({
     retry: process.env.CI ? 3 : 0,
 
     // Silence the output to STDOUT in environments other than CI
-    silent: !process.env.CI ? "passed-only" : false,
+    silent: process.env.CI ? false : "passed-only",
 
     // Configure a context-aware reporter for better development experience (DX)
     reporters: process.env.GITHUB_ACTIONS
