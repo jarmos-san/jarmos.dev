@@ -31,7 +31,7 @@
   // Compute and cache the publication date
   const publishedOn = computed(() =>
     post.value?.publishedOn
-      ? new Date(post.value.publishedOn).toLocaleDateString(undefined, {
+      ? new Date(post.value.publishedOn).toLocaleDateString("en", {
           weekday: "long",
           year: "numeric",
           month: "long",

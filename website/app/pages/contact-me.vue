@@ -50,7 +50,7 @@
     viewerTimezone.value = Intl.DateTimeFormat().resolvedOptions().timeZone;
   });
 
-  const formatTime = (tz: string) =>
+  const formatTime = (tz: string): string =>
     new Intl.DateTimeFormat("en-US", {
       timeZone: tz,
       hour: "2-digit",
@@ -104,7 +104,7 @@
     },
   ];
 
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     if (!name.value || !email.value || !message.value) return;
 
     const mailSubject = subject.value

@@ -5,6 +5,7 @@ export default defineConfig({
     correctness: "error",
     nursery: "warn",
     perf: "warn",
+    restriction: "warn",
   },
   env: {
     builtin: true,
@@ -15,5 +16,9 @@ export default defineConfig({
     defineAppConfig: "readonly",
   },
   plugins: ["typescript", "unicorn", "oxc"],
-  rules: {},
+  rules: {
+    "oxc/no-async-await": "off",
+    "oxc/no-optional-chaining": "off",
+    "no-undefined": "off",
+  },
 });
