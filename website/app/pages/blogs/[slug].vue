@@ -14,7 +14,10 @@
 
   const route = useRoute();
   const { data: post } = await useAsyncData(route.path, () =>
-    queryCollection("content").path(route.path).first(),
+    queryCollection("content")
+      .select("title", "description", "coverImage", "timestamps", "body")
+      .path(route.path)
+      .first(),
   );
 
   const title = post.value?.title;
@@ -50,15 +53,15 @@
   const timestamps = reactive({
     published: {
       formatted: computed(() =>
-        formatTimestamp(post.value?.timestamps.publishedOn),
+        formatTimestamp(post.value?.timestamps?.publishedOn),
       ),
-      timeAgo: useTimeAgo(() => post.value?.timestamps.publishedOn ?? ""),
+      timeAgo: useTimeAgo(() => post.value?.timestamps?.publishedOn ?? ""),
     },
     updated: {
       formatted: computed(() =>
-        formatTimestamp(post.value?.timestamps.updatedOn),
+        formatTimestamp(post.value?.timestamps?.updatedOn),
       ),
-      timeAgo: useTimeAgo(() => post.value?.timestamps.updatedOn ?? ""),
+      timeAgo: useTimeAgo(() => post.value?.timestamps?.updatedOn ?? ""),
     },
   });
 </script>
