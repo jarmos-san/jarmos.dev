@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { Separator } from "reka-ui";
+
   import {
     computed,
     queryCollection,
@@ -6,6 +8,8 @@
     useRoute,
     useRuntimeConfig,
     useSeoMeta,
+    useTimeAgo,
+    reactive,
   } from "#imports";
 
   const route = useRoute();
@@ -16,7 +20,8 @@
   const title = post.value?.title;
   const { baseURL } = useRuntimeConfig().public;
   const description = post.value?.description;
-  const image = post.value?.coverImage.url;
+
+  const image = post.value?.coverImage?.url;
   const url = `${baseURL}/${route.path}`;
 
   useSeoMeta({
@@ -28,17 +33,34 @@
     twitterImage: image,
   });
 
-  // Compute and cache the publication date
-  const publishedOn = computed(() =>
-    post.value?.publishedOn
-      ? new Date(post.value.publishedOn).toLocaleDateString("en", {
-          day: "numeric",
-          month: "long",
-          weekday: "long",
-          year: "numeric",
-        })
-      : "",
-  );
+  const formatTimestamp = (dateInput?: string | Date): string | undefined => {
+    if (!dateInput) {
+      return;
+    }
+
+    return new Intl.DateTimeFormat("en", {
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      month: "long",
+      year: "numeric",
+    }).format(new Date(dateInput));
+  };
+
+  const timestamps = reactive({
+    published: {
+      formatted: computed(() =>
+        formatTimestamp(post.value?.timestamps.publishedOn),
+      ),
+      timeAgo: useTimeAgo(() => post.value?.timestamps.publishedOn ?? ""),
+    },
+    updated: {
+      formatted: computed(() =>
+        formatTimestamp(post.value?.timestamps.updatedOn),
+      ),
+      timeAgo: useTimeAgo(() => post.value?.timestamps.updatedOn ?? ""),
+    },
+  });
 </script>
 
 <template>
@@ -48,12 +70,39 @@
       <section
         class="mb-6 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:p-14"
       >
-        <!-- Published date -->
-        <span
-          class="mb-4 inline-block text-xs font-semibold tracking-wide text-[#7ab6d9]"
+        <!-- Timestamps (published on & updated on) -->
+        <div
+          v-if="post.timestamps.publishedOn"
+          class="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.6875rem] font-medium tracking-wider"
         >
-          {{ publishedOn }}
-        </span>
+          <span class="inline-flex items-center gap-1.5 text-[#7ab6d9]">
+            <Icon
+              name="material-symbols:calendar-month"
+              class="size-3.5 opacity-70"
+            />
+            <time :datetime="timestamps.published.formatted">
+              Published on {{ timestamps.published.formatted }} ({{
+                timestamps.published.timeAgo
+              }})
+            </time>
+          </span>
+
+          <template v-if="post.timestamps.updatedOn">
+            <Separator
+              orientation="vertical"
+              class="mx-0.5 h-3 w-px bg-white/20"
+            />
+
+            <span class="inline-flex items-center gap-1.5 text-[#7ab6d9]/60">
+              <Icon name="mdi:calendar-refresh" class="size-3.5 opacity-70" />
+              <time :datetime="timestamps.updated.formatted">
+                Updated on {{ timestamps.updated.formatted }} ({{
+                  timestamps.updated.timeAgo
+                }})</time
+              >
+            </span>
+          </template>
+        </div>
 
         <!-- Title -->
         <h1

@@ -13,7 +13,11 @@ const REPOSITORY = "https://github.com/Jarmos-san/blogposts";
 const DIR = "blogs/**.md";
 
 // The publication date of the blog post
-const publishedOn = z.date();
+const utcDateTime = z.date().or(z.string().datetime({ offset: true }));
+const timestamps = z.object({
+  publishedOn: utcDateTime,
+  updatedOn: utcDateTime.optional(),
+});
 
 // The URL path (or slug) of the blog post
 const path = z.string();
@@ -76,9 +80,9 @@ const schema = z.object({
   description,
   navigation,
   path,
-  publishedOn,
   seo,
   sitemap,
+  timestamps,
   title,
 });
 
