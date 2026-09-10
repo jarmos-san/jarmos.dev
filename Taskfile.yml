@@ -32,6 +32,13 @@ tasks:
       - pnpm-workspace.yaml
     cmd: pnpm install --frozen-lockfile
 
+  cleanup:
+    internal: true
+    dir: ./website
+    cmds:
+      - pnpm exec nuxt cleanup
+      - rm --recursive --force .data
+
   dev:
     desc: Run the development server.
     summary: |
@@ -40,12 +47,8 @@ tasks:
       This command will run the development environment.
     dir: ./website
     cmds:
-      - defer: pnpm exec nuxt cleanup
+      - defer: { task: cleanup }
       - pnpm dev
-    requires:
-      vars: [GITHUB_TOKEN]
-    env:
-      GITHUB_TOKEN: "{{ .GITHUB_TOKEN }}"
 
   qa:
     desc: Run various code quality checks.

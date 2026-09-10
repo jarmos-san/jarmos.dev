@@ -37,12 +37,19 @@
 
   const LIMIT = 4;
 
-  const { data: posts } = await useAsyncData("featured-posts", () =>
+  const { data } = await useAsyncData("featured-posts", () =>
     queryCollection("content")
-      .select("path", "title", "publishedOn", "description", "coverImage")
-      .order("publishedOn", "DESC")
+      .select("path", "title", "timestamps", "description", "coverImage")
       .limit(LIMIT)
       .all(),
+  );
+
+  const posts = computed(() =>
+    data.value?.toSorted((firstTimestamp, secondTimestamp) => {
+      const timeA = new Date(firstTimestamp.timestamps.publishedOn).getTime();
+      const timeB = new Date(secondTimestamp.timestamps.publishedOn).getTime();
+      return timeB - timeA;
+    }),
   );
 </script>
 

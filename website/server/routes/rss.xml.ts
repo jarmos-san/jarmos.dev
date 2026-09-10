@@ -1,10 +1,3 @@
-/**
- * @description Server route to generate the site's RSS feed. This handler queries all the
- * documents, ordered by publication date from the "contents" source (managed by
- * the `@nuxt/content` module). After a successful document query, the data is
- * serialised in to an RSS 2.0 feed.
- */
-
 import { queryCollection } from "@nuxt/content/server";
 import { version } from "nuxt/package.json";
 import { Feed } from "rivu";
@@ -20,17 +13,22 @@ export default defineEventHandler(async (event) => {
   // oxlint-disable-next-line typescript/no-unsafe-assignment typescript/no-unsafe-call typescript/no-unsafe-member-access
   const { baseURL } = useRuntimeConfig().public;
 
-  // Fetch all the posts from the Nuxt Content "collection" based on specified
-  // Metadata and order them in descending order of their publication date.
+  // Fetch all the posts from the Nuxt Content collection
   const posts = await queryCollection(event, "content")
-    .select("id", "path", "title", "publishedOn", "description")
-    .order("publishedOn", "DESC")
+    .select("id", "path", "title", "description", "timestamps")
     .all();
 
-  // Create a the `Feed` instance to generate the RSS feed with.
+  // Sort posts descending by publication date
+  posts.sort((firstTimestamp, secondTimestamp) => {
+    const timeA = new Date(firstTimestamp.timestamps.publishedOn).getTime();
+    const timeB = new Date(secondTimestamp.timestamps.publishedOn).getTime();
+    return timeB - timeA;
+  });
+
+  // Create the `Feed` instance to generate the RSS feed with.
   const feed = new Feed({
     category: "Technology",
-    copyright: "Somraj Saha © 2016-" + new Date().getFullYear(),
+    copyright: "Somraj Saha c 2016-" + new Date().getFullYear(),
     description:
       "I'm Jarmos - CTO at Weburz, Senior Engineer by title, " +
       "open-source hacker by heart. I design systems, mentor devs and " +
@@ -42,7 +40,7 @@ export default defineEventHandler(async (event) => {
       description: post.description,
       guid: post.id,
       link: baseURL + post.path,
-      pubDate: new Date(post.publishedOn),
+      pubDate: new Date(post.timestamps.publishedOn),
       title: post.title,
     })),
     language: "en-US",
@@ -56,8 +54,7 @@ export default defineEventHandler(async (event) => {
     webMaster: "Somraj Saha <contact@jarmos.dev>",
   });
 
-  // Set the response header and return the data as an appropriate XML data
-  // Response.
+  // Set the response header and return the data as an appropriate XML data response.
   setResponseHeader(event, "Content-Type", "application/xml");
 
   return feed.generate();
