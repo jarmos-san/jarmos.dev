@@ -10,7 +10,10 @@
     title: string;
     description: string;
     path: string;
-    publishedOn: string;
+    timestamps: {
+      publishedOn: string;
+      updatedOn?: string;
+    };
     coverImage: CoverImage;
   }
 
@@ -21,7 +24,7 @@
   const props = defineProps<Props>();
 
   const publishedOn = computed(() =>
-    new Date(props.post.publishedOn).toLocaleDateString("en-GB", {
+    new Date(props.post.timestamps.publishedOn).toLocaleDateString("en-GB", {
       day: "numeric",
       hour: "2-digit",
       hour12: true,
