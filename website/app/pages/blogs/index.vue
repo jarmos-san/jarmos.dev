@@ -5,6 +5,7 @@
     useRoute,
     useRuntimeConfig,
     useSeoMeta,
+    computed,
   } from "#imports";
 
   const details = {
@@ -31,11 +32,18 @@
   });
 
   // Fetch the list of blog posts
-  const { data: posts } = await useAsyncData(route.path, () =>
+  const { data } = await useAsyncData(route.path, () =>
     queryCollection("content")
-      .select("path", "title", "publishedOn", "description", "coverImage")
-      .order("publishedOn", "DESC")
+      .select("path", "title", "timestamps", "description", "coverImage")
       .all(),
+  );
+
+  const posts = computed(() =>
+    data.value?.toSorted((firstTimestamp, secondTimestamp) => {
+      const timeA = new Date(firstTimestamp.timestamps.publishedOn).getTime();
+      const timeB = new Date(secondTimestamp.timestamps.publishedOn).getTime();
+      return timeB - timeA;
+    }),
   );
 </script>
 
