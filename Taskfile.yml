@@ -42,10 +42,6 @@ tasks:
     cmds:
       - defer: pnpm exec nuxt cleanup
       - pnpm dev
-    requires:
-      vars: [GITHUB_TOKEN]
-    env:
-      GITHUB_TOKEN: "{{ .GITHUB_TOKEN }}"
 
   qa:
     desc: Run various code quality checks.
