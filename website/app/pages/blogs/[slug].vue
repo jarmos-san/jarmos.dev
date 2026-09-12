@@ -64,6 +64,37 @@
       timeAgo: useTimeAgo(() => post.value?.timestamps?.updatedOn ?? ""),
     },
   });
+
+  const SLICE_INDEX_MIN = 0;
+  const SLICE_INDEX_MAX = 3;
+
+  const COUNTER = 1;
+  const RESET = 0;
+
+  const { data: relatedPosts } = await useAsyncData(
+    "related-posts",
+    async () => {
+      const all = await queryCollection("content")
+        .select("path", "title", "timestamps", "description", "coverImage")
+        .all();
+
+      const candidates = all.filter((part) => part.path !== route.path);
+
+      for (let idx = candidates.length - COUNTER; idx > RESET; idx -= COUNTER) {
+        const rng = Math.floor(Math.random() * (idx + COUNTER));
+
+        const currentItem = candidates[idx];
+        const randomItem = candidates[rng];
+
+        if (currentItem !== undefined && randomItem !== undefined) {
+          candidates[idx] = randomItem;
+          candidates[rng] = currentItem;
+        }
+      }
+
+      return candidates.slice(SLICE_INDEX_MIN, SLICE_INDEX_MAX);
+    },
+  );
 </script>
 
 <template>
@@ -134,6 +165,23 @@
         class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:p-14"
       >
         <ContentRenderer :value="post" class="text-[#ecf8ff]" />
+      </section>
+
+      <!-- Related posts -->
+      <section class="mt-12">
+        <Separator
+          class="mb-8 h-px bg-linear-to-r from-transparent via-white/20 to-transparent"
+        />
+        <h2 class="mb-6 text-xl font-semibold text-white/90">
+          Continue Reading...
+        </h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <BlogPostCard
+            v-for="post in relatedPosts"
+            :key="post.path"
+            :post="post"
+          />
+        </div>
       </section>
     </template>
 
