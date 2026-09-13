@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.7",
+    "@giscus/vue": "^3.1.1",
     "@nuxt/content": "^3.13.0",
     "@nuxt/icon": "2.5.1",
     "@nuxt/image": "2.1.0",
