@@ -12,6 +12,13 @@
     reactive,
   } from "#imports";
 
+  interface TocLink {
+    id: string;
+    text: string;
+    depth: number;
+    children?: TocLink[];
+  }
+
   const route = useRoute();
   const { data: post } = await useAsyncData(route.path, () =>
     queryCollection("content")
@@ -95,6 +102,11 @@
       return candidates.slice(SLICE_INDEX_MIN, SLICE_INDEX_MAX);
     },
   );
+
+  const toc = computed(() => {
+    const body = post.value?.body as { toc?: { links: TocLink[] } } | undefined;
+    return body?.toc?.links || [];
+  });
 </script>
 
 <template>
@@ -162,9 +174,10 @@
 
       <!-- Blog content -->
       <section
-        class="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:p-14"
+        class="grid grid-cols-1 gap-7 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:grid-cols-[1fr_15rem] lg:p-14"
       >
-        <ContentRenderer :value="post" class="text-[#ecf8ff]" />
+        <TableOfContents :links="toc" />
+        <ContentRenderer :value="post" class="text-[#ecf8ff] lg:order-first" />
       </section>
 
       <!-- Related posts -->
