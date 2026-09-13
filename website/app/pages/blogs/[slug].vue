@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import Giscus from "@giscus/vue";
   import { Separator } from "reka-ui";
 
   import {
@@ -178,6 +179,27 @@
       >
         <TableOfContents :links="toc" />
         <ContentRenderer :value="post" class="text-[#ecf8ff] lg:order-first" />
+      </section>
+
+      <!-- Comments section -->
+      <section
+        class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:p-12"
+      >
+        <Giscus
+          id="comments"
+          repo="jarmos-san/jarmos.dev"
+          repoId="R_kgDOHpVDeg"
+          category="General"
+          categoryId="DIC_kwDOHpVDes4DFgFR"
+          mapping="title"
+          strict="1"
+          reactionsEnabled="1"
+          emitMetadata="1"
+          inputPosition="top"
+          theme="noborder_dark"
+          lang="en"
+          loading="lazy"
+        />
       </section>
 
       <!-- Related posts -->
