@@ -18,6 +18,7 @@
     depth: number;
     children?: TocLink[];
   }
+
   const route = useRoute();
   const { data: post } = await useAsyncData(route.path, () =>
     queryCollection("content")
@@ -175,29 +176,7 @@
       <section
         class="grid grid-cols-1 gap-7 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:grid-cols-[1fr_15rem] lg:p-14"
       >
-        <aside class="lg:sticky lg:top-8 lg:order-last lg:self-start">
-          <nav>
-            <h2 class="mb-3 text-xl font-semibold text-white/90">
-              Table of Contents
-            </h2>
-            <ul class="ml-4 text-white/60">
-              <li v-for="link in toc" :key="link.id" class="my-2 list-disc">
-                <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
-                <ul v-if="link.children">
-                  <li
-                    v-for="child in link.children"
-                    :key="child.id"
-                    class="my-2 ml-7 list-disc text-sm"
-                  >
-                    <NuxtLink :to="`#${child.id}`">{{ child.text }}</NuxtLink>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-
-        <!-- Added lg:order-first to pull the content to the left column -->
+        <TableOfContents :links="toc" />
         <ContentRenderer :value="post" class="text-[#ecf8ff] lg:order-first" />
       </section>
 
