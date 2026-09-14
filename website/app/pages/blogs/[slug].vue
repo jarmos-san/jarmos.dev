@@ -178,7 +178,10 @@
         class="grid grid-cols-1 gap-7 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12 lg:grid-cols-[1fr_15rem] lg:p-14"
       >
         <TableOfContents :links="toc" />
-        <ContentRenderer :value="post" class="text-[#ecf8ff] lg:order-first" />
+        <ContentRenderer
+          :value="post"
+          class="max-w-none min-w-0 text-[#ecf8ff] lg:order-first"
+        />
       </section>
 
       <!-- Comments section -->
