@@ -35,7 +35,7 @@
           <li v-for="(link, index) in navLinks" :key="index">
             <NuxtLink
               :to="link.href"
-              class="rounded-lg py-1.5 text-sm text-white/50 transition-all duration-200 hover:bg-white/10 hover:text-green-200"
+              class="rounded-lg p-1.5 text-sm text-white/50 transition-all duration-200 hover:bg-white/10 hover:text-green-200"
             >
               {{ link.label }}
             </NuxtLink>
@@ -52,7 +52,7 @@
           <li v-for="(link, index) in legalLinks" :key="index">
             <NuxtLink
               :to="link.href"
-              class="rounded-lg py-1.5 text-sm text-white/50 transition-all duration-200 hover:bg-white/10 hover:text-green-200"
+              class="rounded-lg p-1.5 text-sm text-white/50 transition-all duration-200 hover:bg-white/10 hover:text-green-200"
             >
               {{ link.label }}
             </NuxtLink>
