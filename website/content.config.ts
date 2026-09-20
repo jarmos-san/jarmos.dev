@@ -9,7 +9,7 @@ import { defineSitemapSchema } from "@nuxtjs/seo/content";
 
 // The URL of the repository, the directory and the GitHub access token to fetch
 // The blogposts from
-const REPOSITORY = "https://github.com/Jarmos-san/blogposts";
+const REPOSITORY = "https://github.com/jarmos-san/blogposts";
 const DIR = "blogs/**.md";
 
 // The publication date of the blog post
@@ -73,6 +73,9 @@ const coverImage = z.object({
 // Generation.
 const sitemap = defineSitemapSchema();
 
+// The publication status of the blog post
+const status = z.enum(["draft", "published"]).default("draft");
+
 // The fields and schema defined for each individual blog post
 const schema = z.object({
   body,
@@ -82,6 +85,7 @@ const schema = z.object({
   path,
   seo,
   sitemap,
+  status,
   timestamps,
   title,
 });
