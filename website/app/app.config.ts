@@ -22,6 +22,7 @@ export default defineAppConfig({
     { href: "/about-me", label: "About Me" },
     { href: "/blogs", label: "Blogs" },
     { href: "/projects", label: "Projects" },
+    { href: "/drafts", label: "Drafts" },
   ],
   projects: [
     {
