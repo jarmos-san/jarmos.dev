@@ -15,6 +15,7 @@
       updatedOn?: string;
     };
     coverImage: CoverImage;
+    status?: "draft" | "published";
   }
 
   interface Props {
@@ -34,11 +35,21 @@
       year: "numeric",
     }),
   );
+
+  // Generate an URL to the draft blog post since 'nuxt/content' hardcodes the
+  // URL based on the path the blog posts resides at.
+  const resolvedPath = computed(() => {
+    if (props.post.status === "draft") {
+      return props.post.path.replace(/^\/blogs/u, "/drafts");
+    }
+
+    return props.post.path;
+  });
 </script>
 
 <template>
   <NuxtLink
-    :to="props.post.path"
+    :to="resolvedPath"
     class="group flex h-full flex-col justify-between gap-3 overflow-hidden rounded-xl border border-white/10 bg-white/5 p-7 no-underline backdrop-blur-md transition-all duration-200 hover:border-white/15 hover:bg-white/10 hover:shadow-xl"
   >
     <!-- Date -->
