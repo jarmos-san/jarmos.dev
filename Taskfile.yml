@@ -49,6 +49,7 @@ tasks:
     cmds:
       - defer: { task: cleanup }
       - pnpm dev
+    ignore_error: true
 
   qa:
     desc: Run various code quality checks.
