@@ -34,7 +34,15 @@
   // Fetch the list of blog posts
   const { data } = await useAsyncData(route.path, () =>
     queryCollection("content")
-      .select("path", "title", "timestamps", "description", "coverImage")
+      .select(
+        "path",
+        "title",
+        "timestamps",
+        "description",
+        "coverImage",
+        "status",
+      )
+      .where("status", "=", "published")
       .all(),
   );
 
