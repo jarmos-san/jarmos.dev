@@ -24,7 +24,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "better-sqlite3": "^13.0.3",
     "nuxt": "^4.5.2",
-    "nuxt-llms": "^0.2.0",
+    "nuxt-llms": "^0.3.0",
     "reka-ui": "^2.11.0",
     "rivu": "^1.2.1",
     "tailwindcss": "^4.3.3",
