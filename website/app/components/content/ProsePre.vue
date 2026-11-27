@@ -22,20 +22,20 @@
 <script setup lang="ts">
   interface ProsePreProps {
     /**
-     * @description The raw code content to be rendered which will render an empty block if
-     * omitted.
+     * @description The raw code content to be rendered which will render an
+     * empty block if omitted.
      */
     code?: string;
 
     /**
-     * @description The language identifier used for syntax highlighting using Shiki. If
-     * `null` or `undefined` then no syntax highlighting is applied.
+     * @description The language identifier used for syntax highlighting using
+     * Shiki. If `null` or `undefined` then no syntax highlighting is applied.
      */
     language?: string | null;
 
     /**
-     * @description Optional file name to display above the code block. If `null` then no
-     * file names are rendered above the code block.
+     * @description Optional file name to display above the code block. If
+     * `null` then no file names are rendered above the code block.
      */
     filename?: string | null;
 
@@ -43,12 +43,15 @@
     highlights?: number[];
 
     /**
-     * @description Metadata string extracted from the code fence for manipulating the
-     * rendering behaviour of the code blocks.
+     * @description Metadata string extracted from the code fence for
+     * manipulating the rendering behaviour of the code blocks.
      */
     meta?: string | null;
 
-    /** @description Additional CSS class names to apply to the container element. */
+    /**
+     * @description Additional CSS class names to apply to the container
+     * element.
+     */
     class?: string | null;
   }
 
